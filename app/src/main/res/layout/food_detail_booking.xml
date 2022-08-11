@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--<ScrollView-->
+        <!--android:id="@+id/scrollView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_above="@+id/cv_booking"-->
+        <!--android:scrollbars="none">-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp">
+
+            <!--<RelativeLayout-->
+            <!--android:id="@+id/first"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="200dp">-->
+
+            <!--<ImageView-->
+            <!--android:id="@+id/booking_profile_img"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:scaleType="centerCrop"-->
+            <!--android:src="@drawable/food_default" />-->
+
+            <!--<ImageView-->
+            <!--android:id="@+id/booking_res_cam_btn"-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_marginBottom="5dp"-->
+            <!--android:layout_marginStart="5dp"-->
+            <!--android:alpha="0.85"-->
+            <!--android:background="@drawable/food_button_round_top"-->
+            <!--android:padding="7dp"-->
+            <!--android:src="@drawable/icon_camera" />-->
+            <!--</RelativeLayout>-->
+
+            <LinearLayout
+                android:id="@+id/second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_weight="1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/book_title1"
+                    android:textColor="@color/primaryDark4"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/booking_date_btn"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_below="@+id/second"
+                android:layout_marginEnd="25dp"
+                android:layout_marginStart="20dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp">
+
+
+                <TextView
+                    android:id="@+id/bookingDateTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/DateTxt"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <LinearLayout
+                android:id="@+id/forth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/booking_date_btn"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_weight="1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/book_title2"
+                    android:textColor="@color/primaryDark4"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/booking_time_btn"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_below="@+id/forth"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp">
+
+
+                <TextView
+                    android:id="@+id/bookingTimeTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/TimeTxt"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/lasttwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/booking_time_btn"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:text="@string/book_promo_title"
+                    android:textColor="@color/grey9"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/promoView"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/lasttwo"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:elevation="5dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/grey2"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:id="@+id/titleNoPromo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/book_promo_null"
+                    android:textColor="@color/black"
+                    android:visibility="visible" />
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/lastthree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/promoView"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_weight="1"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:text="@string/book_guest_title"
+                    android:textColor="@color/primaryDark4"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_seek_bar_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="0"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/gridBoxPax"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_below="@+id/lastthree"
+                android:layout_marginEnd="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginStart="20dp"
+                android:elevation="5dp"
+                android:visibility="gone"
+                app:cardCornerRadius="10dp">
+
+                <GridView
+                    android:id="@+id/gridPax"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:choiceMode="singleChoice"
+                    android:columnWidth="10dp"
+                    android:gravity="center"
+                    android:horizontalSpacing="5dp"
+                    android:listSelector="@drawable/xml_rounded_corner"
+                    android:numColumns="5"
+                    android:padding="5dp"
+                    android:scrollbars="none"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="5dp" />
+            </androidx.cardview.widget.CardView>
+
+
+            <LinearLayout
+                android:id="@+id/setPaxNum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/gridBoxPax"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:text="@string/book_guest_title"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <SeekBar
+                android:id="@+id/sb_pax"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_below="@+id/lastthree"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:progress="50"
+                android:progressDrawable="@drawable/xml_sp_booking_seekbar"
+                android:splitTrack="false"
+                android:thumb="@android:color/transparent" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/setPaxNum"
+                android:layout_marginBottom="0dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="0dp"
+                android:elevation="5dp"
+                android:visibility="gone"
+                app:cardCornerRadius="10dp">
+
+                <EditText
+                    android:id="@+id/selectPax"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@android:color/transparent"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:padding="10dp"
+                    android:visibility="gone" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sb_pax"
+                android:layout_marginBottom="50dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:text="Min 2 Pax"
+                    android:textColor="@color/grey10"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="2dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:text="Max 50 Pax"
+                    android:textColor="@color/grey10"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!--</ScrollView>-->
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardElevation="0dp">
+
+            <Button
+                android:id="@+id/btn_booking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/xml_round_corner_primarydark2_background"
+                android:text="CONFIRM BOOKING"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_18sdp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="center"
+            android:background="@color/primaryLogo"
+            android:text="@string/confirm"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

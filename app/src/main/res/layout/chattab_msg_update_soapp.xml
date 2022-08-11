@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="25dp"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingBottom="3dp"
+    android:paddingStart="8dp"
+    android:paddingTop="3dp">
+
+    <TextView
+        android:id="@+id/chat_log_grp_status_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/update_soapp_msg"
+        android:textColor="@color/grey9"
+        android:textSize="10sp" />
+
+    <!--<TextView-->
+    <!--android:id="@+id/in_msg_time"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:text="10:00AM"-->
+    <!--android:textColor="@color/gray"-->
+    <!--android:textSize="10sp"-->
+    <!--android:gravity="center"-->
+    <!--android:layout_marginStart="20dp"-->
+    <!--/>-->
+
+</LinearLayout>

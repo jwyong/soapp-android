@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryDark2"
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_wth_statusbar"
+        android:minHeight="@dimen/toolbar_wth_statusbar"
+        android:theme="@style/toolbarBackBtnWhite"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/mybooking_title"
+            android:fontFamily="@font/quicksand_bold"
+            android:textAppearance="@style/quicksand_bold"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="-40dp"
+        android:layout_marginEnd="-40dp"
+        android:layout_marginTop="50dp"
+        app:cardCornerRadius="40dp"
+        app:cardElevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/my_bookings_rv"
+            android:layout_width="match_parent"
+            android:layout_height="521dp"
+            android:layout_marginBottom="40dp"
+            android:layout_marginEnd="40dp"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            android:scrollbars="none" />
+
+        <LinearLayout
+            android:id="@+id/ll_start_booking"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="40dp"
+            android:layout_marginEnd="40dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_booking_134px"
+                android:tint="@color/grey9" />
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/start_booking"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+    <!--scroll up btn-->
+    <ImageView
+        android:id="@+id/scroll_top"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_margin="35dp"
+        android:src="@drawable/ic_scrollup_btn"
+        android:translationZ="100dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+
+        <TextView
+            android:id="@+id/YearView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/MonthDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <com.soapp.global.DateTime.DateTimePickerHelper.DateHelper.MaterialCalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_above="@+id/test"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="center"
+        android:elevation="12dp"
+        android:orientation="horizontal">
+
+        <com.soapp.global.DateTime.DateTimePickerHelper.TimeHelper.WheelVerticalView
+            android:id="@+id/hour"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            app:selectionDivider="@color/primaryDark1"
+            app:selectionDividerHeight="3dp"
+            app:visibleItems="3" />
+        <!--app:itemOffsetPercent="5"-->
+        <!--app:selectionDivider="@color/setColor"-->
+        <!--app:selectionDividerHeight="3dp"-->
+        <com.soapp.global.DateTime.DateTimePickerHelper.TimeHelper.WheelVerticalView
+            android:id="@+id/mins"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            app:selectionDivider="@color/primaryDark1"
+            app:selectionDividerHeight="3dp"
+            app:visibleItems="3" />
+
+        <com.soapp.global.DateTime.DateTimePickerHelper.TimeHelper.WheelVerticalView
+            android:id="@+id/ampm"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            app:selectionDivider="@color/primaryDark1"
+            app:selectionDividerHeight="3dp"
+            app:visibleItems="3" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey2"
+    android:focusableInTouchMode="true"
+    tools:context=".food.food_detail.suggest_edit.SuggestEditActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_wthout_statusbar"
+        android:minHeight="@dimen/toolbar_wthout_statusbar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/primaryDark2"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+
+        <Button
+            android:id="@+id/confirm_btn"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="@string/confirmkey" />
+
+
+        <!--<EditText-->
+        <!--android:id="@+id/desc_etxt"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_marginStart="175dp"-->
+        <!--android:layout_marginTop="104dp"-->
+        <!--android:layout_weight="1" />-->
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_margin="10sp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="10sp"
+                android:text="@string/Description"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Description" />
+
+                <EditText
+                    android:id="@+id/desc_etxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Main_cuisine" />
+
+                <Spinner
+                    android:id="@+id/spinnercuisine"
+                    android:layout_width="180dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5sp"
+                    android:background="@drawable/xml_roundcorner_apptheme"
+                    android:entries="@array/cuisine_arrays"
+                    android:gravity="center_horizontal"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Cuisine_2" />
+
+                <Spinner
+                    android:id="@+id/spinnercuisine1"
+                    android:layout_width="180dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/xml_roundcorner_apptheme"
+                    android:entries="@array/cuisine_arrays"
+                    android:gravity="center_horizontal"
+                    android:textAlignment="center" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Cuisine_3" />
+
+                <Spinner
+                    android:id="@+id/spinnercuisine2"
+                    android:layout_width="180dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5sp"
+                    android:background="@drawable/xml_roundcorner_apptheme"
+                    android:entries="@array/cuisine_arrays"
+                    android:gravity="center_horizontal"
+                    android:textAlignment="center" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Price" />
+
+                <Spinner
+                    android:id="@+id/spinnerPricelist"
+                    android:layout_width="180dp"
+                    android:layout_height="29dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/xml_roundcorner_apptheme"
+                    android:entries="@array/Price_list"
+                    android:gravity="center_horizontal"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="10sp"
+                android:text="@string/Restaurant_Information"
+                android:textSize="20sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Name" />
+
+                <EditText
+                    android:id="@+id/name_etxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/address" />
+
+
+                <AutoCompleteTextView
+                    android:id="@+id/testinggforautocomplete_actv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/hintfortestingforautocomplete_etxt" />
+
+                <requestFocus />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Phone_number" />
+
+                <EditText
+                    android:id="@+id/phonenumber_etxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:inputType="phone" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:text="@string/address" />-->
+
+                <!--<EditText-->
+                <!--android:id="@+id/address_etxt"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1" />-->
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:text="@string/Mall" />-->
+
+                <!--<Spinner-->
+                <!--android:id="@+id/spinnermall"-->
+                <!--android:layout_width="180dp"-->
+                <!--android:layout_height="29dp"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:scrollbars="horizontal"-->
+                <!--android:layout_marginBottom="1dp"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:background="@drawable/roundcorner_apptheme"-->
+                <!--android:entries="@array/mallspinner"-->
+                <!--android:gravity="center_horizontal"-->
+                <!--android:textAlignment="center" />-->
+
+                <!--<EditText-->
+                <!--android:id="@+id/mall_etxt"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:inputType="text" />-->
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Alcohol" />
+
+                <CheckBox
+                    android:id="@+id/alcohol_cbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Wifi" />
+
+                <CheckBox
+                    android:id="@+id/wifi_cbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Outdoor" />
+
+                <CheckBox
+                    android:id="@+id/outdoor_cbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Halal" />
+
+                <CheckBox
+                    android:id="@+id/halal_cbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="10sp"
+                android:text="@string/Operating_Hours"
+                android:textSize="20sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="@string/Monday" />
+
+                <Spinner
+                    android:id="@+id/mon_spinner1"
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="start"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/xml_roundcorner_apptheme"
+                    android:entries="@array/BussH_Spinner_arrays"
+                    android:scrollbars="horizontal"
+                    android:textAlignment="center" />
+
+                <Spinner
+                    android:id="@+id/mon_spinner2"
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/xml_roundcorner_apptheme"
+                    android:entries="@array/BussH_Spinner_arrays"
+                    android:scrollbars="horizontal"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Tuesday" />
+
+
+                <Spinner
+                    android:id="@+id/tue_spinner1"
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="start"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/xml_roundcorner_apptheme"
+                    android:entries="@array/BussH_Spinner_arrays"
+                    android:scrollbars="horizontal"
+                    android:textAlignment="center" />
+
+                <Spinner
+                    android:id="@+id/tue_spinner2"
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/xml_roundcorner_apptheme"
+                    android:entries="@array/BussH_Spinner_arrays"
+                    android:scrollbars="horizontal"
+                    android:textAlignment="center" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Wednesday" />
+
+                <Spinner
+                    android:id="@+id/wed_spinner1"
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="start"
+                    android:layout_marginBottom="3dp"
+                    android:background="@drawable/xml_roundcorner_apptheme"
+                    android:entries="@array/BussH_Spinner_arrays"
+                    android:scrollbars="horizontal"
+                    android:textAlignment="center" />
+
+                <Spinner
+                    android:id="@+id/wed_spinner2"
+                    android:layout_width="100sp"
+                    android:layout_height="20sp"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/xml_roundcorner_apptheme"
+                    android:entries="@array/BussH_Spinner_arrays"
+                    android:scrollbars="horizontal"
+                    android:textAlignment="center" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Thursday" />
+
+                <Spinner
+                    android:id="@+id/thur_spinner1"
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="start"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/xml_roundcorner_apptheme"
+                    android:entries="@array/BussH_Spinner_arrays"
+                    android:scrollbars="horizontal"
+                    android:textAlignment="center" />
+
+                <Spinner
+                    android:id="@+id/thur_spinner2"
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/xml_roundcorner_apptheme"
+                    android:entries="@array/BussH_Spinner_arrays"
+                    android:scrollbars="horizontal"
+                    android:textAlignment="center" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Friday" />
+
+                <Spinner
+                    android:id="@+id/fri_spinner1"
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="start"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="2sp"
+                    android:background="@drawable/xml_roundcorner_apptheme"
+                    android:entries="@array/BussH_Spinner_arrays"
+                    android:scrollbars="horizontal"
+                    android:textAlignment="center" />
+
+
+                <Spinner
+                    android:id="@+id/fri_spinner2"
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="2sp"
+                    android:background="@drawable/xml_roundcorner_apptheme"
+                    android:entries="@array/BussH_Spinner_arrays"
+                    android:scrollbars="horizontal"
+                    android:textAlignment="center" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Saturday" />
+
+
+                <Spinner
+                    android:id="@+id/sat_spinner1"
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="start"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/xml_roundcorner_apptheme"
+                    android:entries="@array/BussH_Spinner_arrays"
+                    android:scrollbars="horizontal"
+                    android:textAlignment="center" />
+
+                <Spinner
+                    android:id="@+id/sat_spinner2"
+                    android:layout_width="100sp"
+                    android:layout_height="20sp"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="5sp"
+                    android:layout_marginTop="2sp"
+                    android:background="@drawable/xml_roundcorner_apptheme"
+                    android:entries="@array/BussH_Spinner_arrays"
+                    android:scrollbars="horizontal"
+                    android:textAlignment="center" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Sunday" />
+
+                <Spinner
+                    android:id="@+id/sun_spinner1"
+                    android:layout_width="100sp"
+                    android:layout_height="20sp"
+                    android:layout_gravity="start|center"
+                    android:layout_marginBottom="5sp"
+                    android:layout_marginTop="2sp"
+                    android:background="@drawable/xml_roundcorner_apptheme"
+                    android:entries="@array/BussH_Spinner_arrays"
+                    android:scrollbars="horizontal"
+                    android:textAlignment="center" />
+
+                <Spinner
+                    android:id="@+id/sun_spinner2"
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/xml_roundcorner_apptheme"
+                    android:entries="@array/BussH_Spinner_arrays"
+                    android:scrollbars="horizontal"
+                    android:textAlignment="center" />
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/locationtext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="10dp"
+                android:text="@string/location"
+                android:textSize="20sp" />
+
+            <!--to be deleted when can-->
+            <fragment
+                android:id="@+id/place_autocomplete"
+                android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:visibility="gone" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="5dp">
+
+                <ImageView
+                    android:id="@+id/res_map"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_def_location_loading_400px" />
+
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
+
+
+
+
+

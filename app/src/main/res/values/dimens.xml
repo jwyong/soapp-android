@@ -1,0 +1,36 @@
+<resources>
+    <!-- [jason] Custom dimens DateTime -->
+
+
+    <dimen name="mdtp_date_picker_component_width">270dp</dimen>
+    <dimen name="mdtp_date_picker_component_width_v2">290dp</dimen>
+    <dimen name="mdtp_date_picker_header_height">-2dp</dimen>
+    <dimen name="mdtp_date_picker_title_height">30dp</dimen>
+    <dimen name="mdtp_date_picker_view_animator_height">252dp</dimen>
+    <dimen name="mdtp_date_picker_view_animator_height_v2">300dp</dimen>
+    <dimen name="mdtp_date_picker_view_animator_padding_v2">16dp</dimen>
+
+    <dimen name="mdtp_month_list_item_header_height">56dp</dimen>
+    <dimen name="mdtp_month_list_item_header_height_v2">64dp</dimen>
+    <dimen name="mdtp_month_day_label_text_size">12sp</dimen>
+    <dimen name="mdtp_day_number_select_circle_radius">14dp</dimen>
+    <dimen name="mdtp_day_highlight_circle_radius">2dp</dimen>
+    <dimen name="mdtp_day_highlight_circle_margin">5dp</dimen>
+    <dimen name="mdtp_date_picker_header_text_size">12dp</dimen>
+    <dimen name="mdtp_month_label_size">14sp</dimen>
+    <dimen name="mdtp_day_number_size">12sp</dimen>
+    <dimen name="mdtp_year_label_height">64dp</dimen>
+    <dimen name="mdtp_year_label_text_size">22dp</dimen>
+
+    <dimen name="mdtp_datepicker_selection_text_size">30sp</dimen>
+    <dimen name="mdtp_datepicker_year_selection_text_size">16sp</dimen>
+
+    <dimen name="mdtp_material_button_height">48dp</dimen>
+    <dimen name="mdtp_material_button_textsize">14sp</dimen>
+    <dimen name="mdtp_material_button_minwidth">64dp</dimen>
+    <dimen name="mdtp_material_button_textpadding_horizontal">8dp</dimen>
+
+    <!--syah toolbar height-->
+    <dimen name="toolbar_wth_statusbar">50dp</dimen>
+    <dimen name="toolbar_wthout_statusbar">60dp</dimen>
+</resources>

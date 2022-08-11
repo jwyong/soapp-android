@@ -1,0 +1,125 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_ver_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="5dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/gl_ver_1"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/chat_log_bubble_cl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--vid thumb-->
+            <ImageView
+                android:id="@+id/chat_log_media_thumb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:src="@drawable/default_img_400" />
+
+            <!--play button-->
+            <ImageView
+                android:id="@+id/chat_log_video_play"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="4dp"
+                android:src="@drawable/ic_media_play_gradient_150px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--retry button-->
+            <ImageView
+                android:id="@+id/chat_log_retry"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="5dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_media_upload_gradient_100px"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toTopOf="@id/chat_log_media_timer"
+                app:layout_constraintStart_toStartOf="@id/chat_log_media_timer" />
+
+            <!--loading progress bar-->
+            <ProgressBar
+                android:id="@+id/chat_log_loading_round"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:visibility="invisible"
+                style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                android:progress="0"
+                android:indeterminateDrawable="@drawable/xml_indeterminate_progress_bar"
+                android:progressDrawable="@drawable/xml_custom_progress_bar_1"
+                app:layout_constraintBottom_toBottomOf="@+id/chat_log_retry"
+                app:layout_constraintEnd_toEndOf="@+id/chat_log_retry"
+                app:layout_constraintStart_toStartOf="@+id/chat_log_retry"
+                app:layout_constraintTop_toTopOf="@+id/chat_log_retry" />
+
+
+            <!--video icon-->
+            <!--<ImageView-->
+            <!--android:id="@+id/chat_log_video_icon"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/ic_toolbar_video_white"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--android:layout_marginBottom="5dp"-->
+            <!--android:layout_marginStart="15dp"-->
+            <!--app:layout_constraintStart_toStartOf="parent"/>-->
+
+            <!--video length value-->
+            <TextView
+                android:id="@+id/chat_log_media_timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="15dp"
+                android:shadowColor="@color/black"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="00.00"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!--time-->
+            <TextView
+                android:id="@+id/chat_log_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="15dp"
+                android:shadowColor="@color/black"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="10:00 am"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

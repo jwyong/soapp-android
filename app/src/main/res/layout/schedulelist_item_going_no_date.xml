@@ -1,0 +1,172 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:emojicon="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingEnd="30dp"
+    android:paddingBottom="8dp">
+
+    <!--need to do started by-->
+
+    <!--notification badge-->
+    <!--<TextView-->
+    <!--android:id="@+id/schelist_noti_badge"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@drawable/xml_oval_pd2_noti"-->
+    <!--android:elevation="1dp"-->
+    <!--android:text="1"-->
+    <!--android:textColor="@android:color/white"-->
+    <!--android:textSize="10sp"-->
+    <!--android:visibility="gone"-->
+    <!--app:layout_constraintEnd_toEndOf="@id/constraintLayout"-->
+    <!--app:layout_constraintTop_toTopOf="@id/constraintLayout" />-->
+
+    <TextView
+        android:id="@+id/schelist_noti_badge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/xml_round_corner_15dp_pd1"
+        android:backgroundTint="#FFA500"
+        android:paddingStart="5dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="2dp"
+        android:text="NEW UPDATE"
+        android:textColor="@android:color/white"
+        android:textSize="10sp"
+        android:translationZ="1dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/constraintLayout"
+        app:layout_constraintStart_toStartOf="@id/constraintLayout"
+        app:layout_constraintTop_toTopOf="@id/constraintLayout" />
+
+    <!--<ImageView-->
+    <!--android:id="@+id/schelist_noti_badge"-->
+    <!--android:layout_width="20dp"-->
+    <!--android:layout_height="20dp"-->
+    <!--android:src="@drawable/ic_orange_bell_80px"-->
+    <!--android:elevation="1dp"-->
+    <!--android:visibility="gone"-->
+    <!--android:layout_marginEnd="3dp"-->
+    <!--app:layout_constraintEnd_toEndOf="@id/constraintLayout"-->
+    <!--app:layout_constraintTop_toTopOf="@id/constraintLayout"/>-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/xml_round_corner_30dp_pdark1"
+        android:paddingStart="20dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="15dp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <io.github.rockerhieu.emojicon.EmojiconTextView
+            android:id="@+id/schelist_appt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="Appointment Title"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            emojicon:emojiconSize="25sp" />
+
+        <!--time logo-->
+        <ImageView
+            android:id="@+id/tv_one_dot"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/ic_time_green_2_30px"
+            app:layout_constraintBottom_toBottomOf="@id/schelist_appt_time"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/schelist_appt_time" />
+
+        <TextView
+            android:id="@+id/schelist_appt_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="10:00"
+            android:textColor="@color/primaryDark4"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_one_dot"
+            app:layout_constraintTop_toBottomOf="@id/schelist_appt_title" />
+
+        <!--location logo-->
+        <ImageView
+            android:id="@+id/tv_two_dot"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_location_green_2_30px"
+            app:layout_constraintBottom_toBottomOf="@id/schelist_appt_time"
+            app:layout_constraintStart_toEndOf="@id/schelist_appt_time"
+            app:layout_constraintTop_toTopOf="@id/schelist_appt_time" />
+
+        <TextView
+            android:id="@+id/schelist_appt_loc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="Appointment Venue asdfasdf adf asdf adsf "
+            android:textColor="@color/primaryDark4"
+            android:textSize="12sp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="@id/schelist_appt_time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/tv_two_dot" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/started_by"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/roboto_thin"
+        android:text="@string/chattab_started_by"
+        android:textSize="10sp"
+        app:layout_constraintLeft_toLeftOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <!--grp/chat room displayname-->
+    <io.github.rockerhieu.emojicon.EmojiconTextView
+        android:id="@+id/schelist_displayname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="start"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="Soapp Group"
+        android:textAllCaps="true"
+        android:textColor="@color/grey9"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@id/started_by"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        emojicon:emojiconSize="10sp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:background="@color/grey3"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.soapp.soapp_tab.reward.my_reward_list.MyRewardActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_wth_statusbar"
+        android:minHeight="@dimen/toolbar_wth_statusbar"
+        android:background="@color/grey5"
+        android:theme="@style/toolbarBackBtnBlack"
+        app:contentInsetStart="0dp"
+        app:contentInsetLeft="0dp"
+        app:titleTextAppearance="@style/quicksand_bold"
+        app:contentInsetStartWithNavigation="0dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Reward"
+        android:fontFamily="@font/quicksand_bold"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/my_reward_guideline_outer_ver_1"
+        app:layout_constraintGuide_percent="0.08"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/my_reward_guideline_outer_ver_2"
+        app:layout_constraintGuide_percent="0.92"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/my_reward_guideline_outer_hori_1"
+        app:layout_constraintGuide_percent="0.12"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/my_reward_guideline_outer_hori_2"
+        app:layout_constraintGuide_percent="0.19"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/my_reward_guideline_outer_hori_3"
+        app:layout_constraintGuide_percent="0.195"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_my_reward_top"
+        app:layout_constraintTop_toTopOf="@id/my_reward_guideline_outer_hori_1"
+        app:layout_constraintBottom_toBottomOf="@id/my_reward_guideline_outer_hori_2"
+        app:layout_constraintStart_toStartOf="@id/my_reward_guideline_outer_ver_1"
+        app:layout_constraintEnd_toEndOf="@id/my_reward_guideline_outer_ver_2"
+        app:cardCornerRadius="3dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/my_reward_guideline_top_inner_ver_1"
+                app:layout_constraintGuide_percent="0.05"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/my_reward_guideline_top_inner_ver_2"
+                app:layout_constraintGuide_percent="0.95"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/my_reward_guideline_top_inner_hori_1"
+                app:layout_constraintGuide_percent="0.2"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/my_reward_guideline_top_inner_hori_2"
+                app:layout_constraintGuide_percent="0.8"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                app:layout_constraintTop_toTopOf="@+id/my_reward_guideline_top_inner_hori_1"
+                app:layout_constraintBottom_toBottomOf="@+id/my_reward_guideline_top_inner_hori_2"
+                app:layout_constraintStart_toStartOf="@id/my_reward_guideline_top_inner_ver_1"
+                android:text="Rewards"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_redeemed_value"
+                app:layout_constraintTop_toTopOf="@+id/my_reward_guideline_top_inner_hori_1"
+                app:layout_constraintBottom_toBottomOf="@+id/my_reward_guideline_top_inner_hori_2"
+                app:layout_constraintEnd_toEndOf="@id/my_reward_guideline_top_inner_ver_2"
+                android:text="1 redeemed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_my_reward"
+        app:layout_constraintTop_toTopOf="@+id/my_reward_guideline_outer_hori_3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/cv_my_reward_top"
+        app:layout_constraintEnd_toEndOf="@id/cv_my_reward_top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

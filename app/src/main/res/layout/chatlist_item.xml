@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:emojicon="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="chatTabListBD"
+            type="com.soapp.sql.room.joiners.ChatTabList" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?android:selectableItemBackground"
+        android:onClick="@{chatTabListBD::onClickChatHolder}"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp">
+
+        <!--grp profile img-->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/chat_list_profile_image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/grp_propic_circle_150px"
+            app:imgByte="@{chatTabListBD.getImgByte}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:placeHolder="@{chatTabListBD.getPlaceHolder}" />
+
+        <!--group name-->
+        <io.github.rockerhieu.emojicon.EmojiconTextView
+            android:id="@+id/chat_list_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="10dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@{chatTabListBD.getDisplayName}"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/group_member_name"
+            app:layout_constraintEnd_toStartOf="@id/messageTime"
+            app:layout_constraintStart_toEndOf="@id/chat_list_profile_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            emojicon:emojiconSize="28sp"
+            emojicon:text="displayName" />
+
+        <!--last msg time-->
+        <TextView
+            android:id="@+id/messageTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{chatTabListBD.getDateTimeStr}"
+            android:textColor="@color/grey10"
+            android:textSize="10sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="@id/chat_list_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/chat_list_name"
+            emojicon:text="21:34" />
+
+        <!--for member name-->
+        <io.github.rockerhieu.emojicon.EmojiconTextView
+            android:id="@+id/group_member_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@{chatTabListBD.getMemberName}"
+            android:textColor="@color/grey9"
+            android:textSize="12sp"
+            android:textStyles="@{chatTabListBD.chatList.notiBadge > 0}"
+            android:visibility="@{chatTabListBD.chatList.chatJid.length() == 12 ? View.GONE : View.VISIBLE}"
+            app:layout_constraintBottom_toTopOf="@id/chat_list_g_last_msg_ll"
+            app:layout_constraintEnd_toEndOf="@id/chat_list_name"
+            app:layout_constraintStart_toStartOf="@id/chat_list_name"
+            app:layout_constraintTop_toBottomOf="@id/chat_list_name"
+            app:layout_constraintVertical_chainStyle="packed"
+            emojicon:text="memberName" />
+
+        <!--last display msg-->
+        <LinearLayout
+            android:id="@+id/chat_list_g_last_msg_ll"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/notification_txt"
+            app:layout_constraintStart_toStartOf="@id/chat_list_name"
+            app:layout_constraintTop_toBottomOf="@id/group_member_name"
+            app:layout_constraintVertical_chainStyle="packed">
+
+            <!--offline msg img-->
+            <ImageView
+                android:id="@+id/chatlist_offline"
+                android:layout_width="12dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:src="@drawable/ic_offline_timer"
+                android:visibility="@{chatTabListBD.getOfflineMsgStatus}"
+                />
+
+            <!--last msg-->
+            <io.github.rockerhieu.emojicon.EmojiconTextView
+                android:id="@+id/messageTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="@{chatTabListBD.getTypingStatus}"
+                android:textAlignment="textStart"
+                android:textSize="12sp"
+                android:textStyles="@{chatTabListBD.chatList.notiBadge > 0}"
+                emojicon:emojiconSize="28sp"
+                emojicon:text="Last Message" />
+        </LinearLayout>
+
+        <!--notification badge-->
+        <TextView
+            android:id="@+id/notification_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/xml_oval_pd2_noti"
+            android:text="@{chatTabListBD.chatList.notiBadge.toString()}"
+            android:textColor="@android:color/white"
+            android:textSize="10sp"
+            android:visibility="@{chatTabListBD.chatList.notiBadge > 0 ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@id/chat_list_g_last_msg_ll"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/chat_list_g_last_msg_ll"
+            emojicon:text="1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

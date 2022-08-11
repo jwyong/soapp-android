@@ -1,0 +1,132 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_ver_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.77" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        app:cardCornerRadius="20dp"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintEnd_toEndOf="@id/gl_ver_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/chat_log_bubble_cl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey2">
+
+            <!--displayname-->
+            <io.github.rockerhieu.emojicon.EmojiconTextView
+                android:id="@+id/chat_log_display_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="3dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp"
+                android:paddingTop="5dp"
+                android:shadowColor="@color/black"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:singleLine="true"
+                android:text="displayname"
+                android:textColor="@color/primaryDark4"
+                android:textSize="12sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:translationZ="@dimen/_1sdp"
+                android:background="@drawable/xml_gradient_black3a_hori"/>
+
+            <!--fav button-->
+            <!--<ImageView-->
+            <!--android:id="@+id/iv_likes"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:elevation="5dp"-->
+            <!--android:paddingEnd="20dp"-->
+            <!--android:paddingStart="0dp"-->
+            <!--android:paddingTop="20dp"-->
+            <!--android:src="@drawable/ic_chatlog_like_grey_new"-->
+            <!--app:layout_constraintStart_toStartOf="@id/iv_appt_img" />-->
+
+            <!--res img-->
+            <ImageView
+                android:id="@+id/chat_log_res_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_res_default_no_image_black_640px" />
+
+            <!--res title-->
+            <TextView
+                android:id="@+id/chat_log_res_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Restaurant Name"
+                android:textColor="@color/primaryDark4"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/chat_log_time"
+                app:layout_constraintEnd_toStartOf="@id/chat_log_res_appt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chat_log_res_img"
+                app:layout_constraintVertical_bias="0.388" />
+
+            <!--appt btn-->
+            <ImageView
+                android:id="@+id/chat_log_res_appt"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:visibility="gone"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_schedule_grey100px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chat_log_res_img" />
+
+            <!--time-->
+            <TextView
+                android:id="@+id/chat_log_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/chattab_time"
+                android:textColor="@color/grey8"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chat_log_res_title"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

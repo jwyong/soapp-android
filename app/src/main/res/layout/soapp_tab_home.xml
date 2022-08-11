@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/statusBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black3a"
+        app:layout_constraintBottom_toTopOf="@id/soapp_titleH"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/soapp_titleH"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:fontFamily="@font/quicksand_bold"
+        android:gravity="center"
+        android:text="H O M E"
+        android:textAppearance="@style/quicksand_bold"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/statusBar" />
+
+    <!--contact bubble-->
+
+    <ImageView
+        android:id="@+id/contactBubble"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/xml_oval_bg_grey4"
+        app:layout_constraintBottom_toTopOf="@id/qrBubble"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintHorizontal_bias="1.5"
+        app:layout_constraintLeft_toLeftOf="@id/start_guideline"
+        app:layout_constraintRight_toLeftOf="@id/qrBubble" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="@string/home_contacts"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@id/textView6_2"
+        app:layout_constraintLeft_toLeftOf="@id/contactBubble"
+        app:layout_constraintRight_toRightOf="@id/contactBubble"
+        app:layout_constraintTop_toTopOf="@id/contactBubble"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/textView6_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:autoSizeTextType="uniform"
+        android:text="@string/home_contacts2"
+        android:textAlignment="center"
+        android:textColor="@color/grey9"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@id/contactBubble"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="@id/contactBubble"
+        app:layout_constraintRight_toRightOf="@id/contactBubble"
+        app:layout_constraintTop_toBottomOf="@id/textView6"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!--qrCode bubble-->
+    <ImageView
+        android:id="@+id/qrBubble"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/xml_oval_pd1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toRightOf="@id/contactBubble"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="@string/home_qrscan"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:translationZ="@dimen/_1sdp"
+        app:layout_constraintBottom_toTopOf="@id/textView7_2"
+        app:layout_constraintLeft_toLeftOf="@+id/qrBubble"
+        app:layout_constraintRight_toRightOf="@+id/qrBubble"
+        app:layout_constraintTop_toTopOf="@+id/qrBubble"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/textView7_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:autoSizeTextType="uniform"
+        android:text="@string/home_qrscan2"
+        android:textAlignment="center"
+        android:textColor="@color/grey9"
+        android:textSize="11sp"
+        android:translationZ="@dimen/_1sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/qrBubble"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="@+id/qrBubble"
+        app:layout_constraintRight_toRightOf="@+id/qrBubble"
+        app:layout_constraintTop_toBottomOf="@id/textView7"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!--favorite bubble-->
+    <ImageView
+        android:id="@+id/favBubble"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/xml_oval_grey2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="w, 1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/qrBubble"
+        app:layout_constraintTop_toBottomOf="@id/contactBubble"
+
+        />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="@string/home_favorites"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@id/textView4_2"
+        app:layout_constraintLeft_toLeftOf="@id/favBubble"
+        app:layout_constraintRight_toRightOf="@id/favBubble"
+        app:layout_constraintTop_toTopOf="@id/favBubble"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/textView4_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:autoSizeTextType="uniform"
+        android:text="@string/home_favorites2"
+        android:textAlignment="center"
+        android:textColor="@color/grey9"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@id/favBubble"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@id/favBubble"
+        app:layout_constraintRight_toRightOf="@id/favBubble"
+        app:layout_constraintTop_toBottomOf="@id/textView4"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!--left upper bubble-->
+    <ImageView
+        android:id="@+id/leftUpperBubble"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/xml_oval_pl2"
+        app:layout_constraintBottom_toTopOf="@+id/contactBubble"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline" />
+
+    <!--center bubble-->
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/xml_oval_pd1"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintVertical_bias="0.602" />
+
+    <!--profile bubble-->
+    <ImageView
+        android:id="@+id/profileBubble"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/xml_oval_grey2"
+        app:layout_constraintBottom_toTopOf="@id/qrBubble"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintLeft_toRightOf="@id/contactBubble"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/contactBubble" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="@string/home_profile"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:translationZ="@dimen/_1sdp"
+        app:layout_constraintBottom_toTopOf="@id/textView5_2"
+        app:layout_constraintLeft_toLeftOf="@id/profileBubble"
+        app:layout_constraintRight_toRightOf="@id/profileBubble"
+        app:layout_constraintTop_toTopOf="@id/profileBubble"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/textView5_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:autoSizeTextType="uniform"
+        android:text="@string/home_profile2"
+        android:textAlignment="center"
+        android:textColor="@color/grey9"
+        android:textSize="11sp"
+        android:translationZ="@dimen/_1sdp"
+        app:layout_constraintBottom_toBottomOf="@id/profileBubble"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="@id/profileBubble"
+        app:layout_constraintRight_toRightOf="@id/profileBubble"
+        app:layout_constraintTop_toBottomOf="@id/textView5"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!--bottom bubble-->
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/xml_oval_pp2"
+        app:layout_constraintEnd_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+
+    <ImageView
+        android:layout_width="57dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/xml_oval_pp2"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintHorizontal_bias="0.016"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <!--setting bubble-->
+    <ImageView
+        android:id="@+id/settingBubble"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/xml_oval_bg_grey4"
+        app:layout_constraintBottom_toTopOf="@id/contactBubble"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintLeft_toRightOf="@id/leftUpperBubble"
+        app:layout_constraintStart_toEndOf="@+id/leftUpperBubble" />
+
+    <!--booking bubble-->
+
+    <ImageView
+        android:id="@+id/bookingBubble"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/xml_oval_grey2"
+        app:layout_constraintBottom_toTopOf="@id/profileBubble"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintLeft_toRightOf="@id/settingBubble"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/soapp_titleH" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="@string/home_reward"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@id/textView8_2"
+        app:layout_constraintHorizontal_bias="0.652"
+        app:layout_constraintLeft_toLeftOf="@id/bookingBubble"
+        app:layout_constraintRight_toRightOf="@id/bookingBubble"
+        app:layout_constraintTop_toTopOf="@id/bookingBubble"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/textView8_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:autoSizeTextType="uniform"
+        android:text="@string/home_reward2"
+        android:textAlignment="center"
+        android:textColor="@color/grey9"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@id/bookingBubble"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@id/bookingBubble"
+        app:layout_constraintRight_toRightOf="@id/bookingBubble"
+        app:layout_constraintTop_toBottomOf="@id/textView8"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!--bubble between setting bubble and profile bubble-->
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/xml_oval_pd1"
+        app:layout_constraintBottom_toTopOf="@+id/profileBubble"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/settingBubble"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/xml_oval_pp2"
+        app:layout_constraintTop_toBottomOf="@id/bookingBubble"
+        app:layout_constraintBottom_toTopOf="@id/profileBubble"
+        app:layout_constraintStart_toEndOf="@id/textView7"
+        />
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/xml_oval_bg_grey7"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <!--<TextView-->
+    <!--android:id="@+id/soapp_booking"-->
+    <!--android:layout_width="150dp"-->
+    <!--android:layout_height="150dp"-->
+    <!--android:layout_marginRight="28dp"-->
+    <!--android:layout_marginTop="28dp"-->
+    <!--android:background="@drawable/oval_bg_grey4"-->
+    <!--android:gravity="center"-->
+    <!--android:text="@string/home_booking"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:textSize="12sp"-->
+    <!--app:layout_constraintBottom_toTopOf="@+id/soapp_profile"-->
+    <!--app:layout_constraintRight_toRightOf="parent"-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/soapp_titleH"-->
+    <!--app:layout_constraintVertical_bias="0.391" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/soapp_contact"-->
+    <!--android:layout_width="200dp"-->
+    <!--android:layout_height="200dp"-->
+    <!--android:background="@drawable/oval_bg_grey7"-->
+    <!--android:gravity="center"-->
+    <!--android:text="@string/home_contacts"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:textSize="12sp"-->
+    <!--app:layout_constraintBottom_toTopOf="@+id/oval_image5"-->
+    <!--app:layout_constraintEnd_toStartOf="@+id/oval_image2"-->
+    <!--app:layout_constraintHorizontal_bias="0.0"-->
+    <!--app:layout_constraintStart_toEndOf="@+id/start_guideline"-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/oval_image1"-->
+    <!--app:layout_constraintVertical_bias="1.0" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/soapp_profile"-->
+    <!--android:layout_width="100dp"-->
+    <!--android:layout_height="100dp"-->
+    <!--android:layout_marginBottom="16dp"-->
+    <!--android:layout_marginLeft="16dp"-->
+    <!--android:background="@drawable/oval_bg_grey4"-->
+    <!--android:gravity="center"-->
+    <!--android:text="@string/home_profile"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:textSize="12sp"-->
+    <!--app:layout_constraintBottom_toTopOf="@+id/soapp_qrscan"-->
+    <!--app:layout_constraintLeft_toRightOf="@+id/soapp_contact" />-->
+
+
+    <!--<TextView-->
+    <!--android:id="@+id/soapp_favourite"-->
+    <!--android:layout_width="130dp"-->
+    <!--android:layout_height="130dp"-->
+    <!--android:layout_marginEnd="12dp"-->
+    <!--android:layout_marginStart="12dp"-->
+    <!--android:background="@drawable/oval_bg_grey4"-->
+    <!--android:gravity="center"-->
+    <!--android:text="@string/home_favorites"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:textSize="12sp"-->
+    <!--app:layout_constraintBottom_toTopOf="@+id/oval_image6"-->
+    <!--app:layout_constraintEnd_toStartOf="@+id/soapp_qrscan"-->
+    <!--app:layout_constraintHorizontal_bias="1.0"-->
+    <!--app:layout_constraintStart_toEndOf="@+id/oval_image5"-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/soapp_contact"-->
+    <!--app:layout_constraintVertical_bias="1.0" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/soapp_qrscan"-->
+    <!--android:layout_width="200dp"-->
+    <!--android:layout_height="200dp"-->
+    <!--android:background="@drawable/oval_bg_primarylight2"-->
+    <!--android:gravity="center"-->
+    <!--android:text="@string/home_qrscan"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:textSize="12sp"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--app:layout_constraintEnd_toEndOf="parent" />-->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="-0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="-0.20" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="1.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="1.20" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="-0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="-28dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1.15" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

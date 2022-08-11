@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/verifyreg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:scrollbars="vertical">
+
+
+    <ImageView
+        android:id="@+id/circle_1_top"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintDimensionRatio="h, 1:1"
+        android:src="@drawable/xml_oval_pd2_noti"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/enter_code_label"
+        android:visibility="visible"/>
+
+    <ImageView
+        android:layout_width="170dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="140dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/xml_oval_grey2"
+        app:layout_constraintDimensionRatio="h, 1:1"
+        app:layout_constraintBottom_toTopOf="@id/enter_code_label"
+        app:layout_constraintEnd_toEndOf="@id/circle_1_top"
+        android:visibility="visible"/>
+
+
+    <ImageView
+        android:id="@+id/circle_1_bottom"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintDimensionRatio="h, 1:1"
+        android:tint="@color/grey8"
+        android:src="@drawable/xml_oval_bg_grey7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_continue"
+        android:visibility="visible"/>
+
+    <ImageView
+        android:layout_width="170dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="120dp"
+        android:src="@drawable/xml_oval_pp2"
+        app:layout_constraintDimensionRatio="h, 1:1"
+        app:layout_constraintTop_toBottomOf="@id/btn_continue"
+        app:layout_constraintEnd_toEndOf="@id/circle_1_bottom"
+        android:visibility="visible"/>
+
+    <!--please enter 6 digit code-->
+    <TextView
+        android:id="@+id/enter_code_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:gravity="center"
+        android:text="Please enter the 6 digit code"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/edtxt1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.55"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <!--edittext field-->
+    <EditText
+        android:id="@+id/edtxt1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/xml_round_grey3"
+        android:focusable="true"
+        android:gravity="center"
+        android:inputType="phone"
+        android:maxLength="6"
+        android:maxLines="1"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/txt_timer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/enter_code_label" />
+
+    <!--resend timer-->
+    <TextView
+        android:id="@+id/txt_timer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/xml_roundcorner_apptheme_border"
+        android:gravity="center"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:text="Timer"
+        android:textColor="@color/primaryLogo"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/btn_continue"
+        app:layout_constraintTop_toBottomOf="@id/edtxt1"
+        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <!--continue btn-->
+    <Button
+        android:id="@+id/btn_continue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/xml_round_corner_20dp"
+        android:text="@string/pVContinue"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/code_desc"
+        app:layout_constraintTop_toBottomOf="@id/txt_timer" />
+
+
+    <!--code description-->
+    <TextView
+        android:id="@+id/code_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/six_digit_desc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_continue" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

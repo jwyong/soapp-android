@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:emojicon="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.soapp.chat_class.group_chat.GroupChatLog" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/grp_chat_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".chat_class.group_chat.GroupChatLog">
+
+        <!--toolbar-->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_wth_statusbar"
+            android:background="@color/primaryDark2"
+            android:minHeight="@dimen/toolbar_wth_statusbar"
+            android:theme="@style/toolbarBackBtnWhite"
+            emojicon:contentInsetLeft="0dp"
+            emojicon:contentInsetStart="0dp"
+            emojicon:contentInsetStartWithNavigation="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/grp_chat_image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="start"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/grp_propic_circle_150px"
+                    emojicon:layout_constraintBottom_toBottomOf="parent"
+                    emojicon:layout_constraintStart_toStartOf="parent"
+                    emojicon:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/group_chat_title"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    emojicon:layout_constraintEnd_toStartOf="@+id/grp_track"
+                    emojicon:layout_constraintStart_toEndOf="@+id/grp_chat_image"
+                    emojicon:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/chat_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="group chat title"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/chat_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center_horizontal"
+                        android:maxLines="1"
+                        android:text="@string/group_chat_status"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/grp_track"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/indi_track"
+                    android:scaleX="1.2"
+                    android:scaleY="1.2"
+                    android:src="@drawable/ic_track_82px"
+                    android:visibility="gone"
+                    emojicon:layout_constraintEnd_toStartOf="@+id/grp_appt"
+                    emojicon:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/grp_appt"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/indi_appt"
+                    android:padding="4dp"
+                    android:scaleX="1"
+                    android:scaleY="1"
+                    android:src="@drawable/ic_schedule_grey100px"
+                    android:tint="@color/white"
+                    emojicon:layout_constraintEnd_toEndOf="parent"
+                    emojicon:layout_constraintTop_toTopOf="parent" />
+
+                <!--appt noti badge-->
+                <TextView
+                    android:id="@+id/chatlog_appt_noti_badge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/xml_oval_red_noti"
+                    android:elevation="1dp"
+                    android:text="1"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp"
+                    android:visibility="gone"
+                    emojicon:layout_constraintEnd_toEndOf="@id/grp_appt"
+                    emojicon:layout_constraintTop_toTopOf="@id/grp_appt" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <!--option menu for long click-->
+        <RelativeLayout
+            android:id="@+id/toolbar_hold_menu"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_wth_statusbar"
+            android:background="@color/primaryDark2"
+            android:visibility="visible">
+
+            <!--back btn-->
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_back_button_white_70px" />
+
+            <!--&lt;!&ndash;linearlayout for visibility&ndash;&gt;-->
+            <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--reply btn-->
+            <ImageView
+                android:id="@+id/reply_btn"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_alignWithParentIfMissing="true"
+                android:layout_marginEnd="10dp"
+                android:layout_toStartOf="@id/copy_btn"
+                android:padding="5dp"
+                android:src="@drawable/ic_toolbar_arrow_back_white" />
+
+            <!--copy btn-->
+            <ImageView
+                android:id="@+id/copy_btn"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_copy_btn" />
+
+            <!--forward btn-->
+            <ImageView
+                android:id="@+id/forward_btn"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_forward_btn"
+                android:visibility="gone" />
+
+            <!--</LinearLayout>-->
+
+        </RelativeLayout>
+
+        <!--scroll to bottom btn-->
+        <ImageView
+            android:id="@+id/scroll_bottom"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_above="@id/msg_bar_main"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/ic_scrolldown_btn2"
+            android:translationZ="1dp"
+            android:visibility="gone" />
+
+        <!--recyclerview-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/grp_chat_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/msg_bar_main"
+            android:layout_below="@id/toolbar"
+            android:background="@color/white"
+            android:overScrollMode="never"
+            android:scrollbars="vertical" />
+
+        <!--foreground for rv - foreground: not working-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/msg_bar_main"
+            android:layout_below="@id/toolbar"
+            android:background="@drawable/xml_sp_top_left_pd2_40dp_frame" />
+
+        <!--msg input bottom bar-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/msg_bar_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white">
+
+            <!--input text bottom bar-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/msg_bar_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/xml_roundcorner_grey1_30dp"
+                emojicon:layout_constraintBottom_toBottomOf="parent"
+                emojicon:layout_constraintEnd_toStartOf="@id/msg_send"
+                emojicon:layout_constraintStart_toStartOf="parent"
+                emojicon:layout_constraintTop_toTopOf="parent"
+                emojicon:layout_constraintVertical_bias="1">
+
+                <!--reply UI-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/reply_msg_cl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/xml_roundcorner_grey3_15dp"
+                    android:visibility="visible"
+                    emojicon:layout_constraintBottom_toTopOf="@id/msg_input"
+                    emojicon:layout_constraintEnd_toEndOf="parent"
+                    emojicon:layout_constraintStart_toStartOf="parent"
+                    emojicon:layout_constraintTop_toTopOf="parent">
+
+                    <!--close btn-->
+                    <ImageView
+                        android:id="@+id/reply_close_btn"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="10dp"
+                        android:src="@drawable/ic_cross_60px"
+                        emojicon:layout_constraintEnd_toEndOf="parent"
+                        emojicon:layout_constraintTop_toTopOf="parent" />
+
+                    <!--reply displayname-->
+                    <io.github.rockerhieu.emojicon.EmojiconTextView
+                        android:id="@+id/chattab_display_reply_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:paddingStart="10dp"
+                        android:singleLine="true"
+                        android:text="displayName"
+                        android:textColor="@color/primaryDark4"
+                        android:textSize="12sp"
+                        emojicon:layout_constraintStart_toStartOf="parent"
+                        emojicon:layout_constraintTop_toTopOf="parent" />
+
+                    <!--reply media thumb-->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/reply_media_cv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        emojicon:cardCornerRadius="10dp"
+                        emojicon:cardElevation="1dp"
+                        emojicon:layout_constraintBottom_toBottomOf="parent"
+                        emojicon:layout_constraintEnd_toStartOf="@id/reply_close_btn"
+                        emojicon:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/reply_media"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/default_img_240" />
+                    </androidx.cardview.widget.CardView>
+
+
+                    <!--reply text msg-->
+                    <io.github.rockerhieu.emojicon.EmojiconTextView
+                        android:id="@+id/chattab_text_reply_msg"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:ellipsize="end"
+                        android:maxLines="3"
+                        android:singleLine="false"
+                        android:text="replied text msg"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        emojicon:emojiconSize="28sp"
+                        emojicon:layout_constraintBottom_toBottomOf="parent"
+                        emojicon:layout_constraintEnd_toStartOf="@id/reply_media_cv"
+                        emojicon:layout_constraintStart_toStartOf="parent"
+                        emojicon:layout_constraintTop_toBottomOf="@+id/chattab_display_reply_name" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!--emoji btn-->
+                <ImageView
+                    android:id="@+id/emoji_btn_indi"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:src="@drawable/ic_emoji_100px"
+                    android:tint="@color/grey9"
+                    emojicon:layout_constraintBottom_toBottomOf="@id/msg_input"
+                    emojicon:layout_constraintStart_toStartOf="parent"
+                    emojicon:layout_constraintTop_toTopOf="@id/msg_input" />
+
+                <!--text input field-->
+                <io.github.rockerhieu.emojicon.EmojiconEditText
+                    android:id="@+id/msg_input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="@{user.testStr}"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:maxLines="4"
+                    android:minHeight="45dp"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="10dp"
+                    android:scrollbars="vertical"
+                    android:scrollHorizontally="false"
+                    android:textSize="14sp"
+                    emojicon:emojiconSize="20sp"
+                    emojicon:layout_constraintBottom_toBottomOf="parent"
+                    emojicon:layout_constraintEnd_toStartOf="@+id/msg_plus"
+                    emojicon:layout_constraintStart_toEndOf="@+id/emoji_btn_indi" />
+
+                <!--attach files btn-->
+                <ImageView
+                    android:id="@+id/msg_plus"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="16dp"
+                    android:padding="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:src="@drawable/ic_attach"
+                    android:tint="@color/grey9"
+                    emojicon:layout_constraintBottom_toBottomOf="@id/msg_input"
+                    emojicon:layout_constraintEnd_toEndOf="parent"
+                    emojicon:layout_constraintTop_toTopOf="@id/msg_input" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--guidelines for send btn-->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineVerSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                emojicon:layout_constraintGuide_end="42.5dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                emojicon:layout_constraintGuide_end="22.5dp" />
+
+            <!--send button-->
+            <Button
+                android:id="@+id/msg_send"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@null"
+                android:text="@string/send_msg"
+                android:textColor="@color/primaryDark4"
+                android:textSize="14sp"
+                android:visibility="invisible"
+                emojicon:layout_constraintBottom_toBottomOf="@id/msg_bar_type"
+                emojicon:layout_constraintEnd_toEndOf="@id/guidelineVerSend"
+                emojicon:layout_constraintStart_toStartOf="@id/guidelineVerSend"
+                emojicon:layout_constraintTop_toTopOf="@id/msg_bar_type"
+                emojicon:layout_constraintVertical_bias="1" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--for audio recording-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <!--audio recording bar-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/chatlog_record_audio_bar"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/xml_roundcorner_grey1_30dp"
+                android:visibility="invisible"
+                emojicon:layout_constraintBottom_toBottomOf="parent"
+                emojicon:layout_constraintEnd_toEndOf="@id/msg_record_audio"
+                emojicon:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/record_audio_timer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center"
+                    android:text="00.00"
+                    android:textColor="@color/primaryDark3"
+                    android:textSize="20sp"
+                    emojicon:layout_constraintBottom_toBottomOf="parent"
+                    emojicon:layout_constraintStart_toStartOf="parent"
+                    emojicon:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_toEndOf="@+id/record_audio_timer"
+                    android:gravity="center"
+                    android:text="@string/swipe_to_cancel"
+                    android:textColor="@color/grey8"
+                    android:textSize="12sp"
+                    android:textStyle="italic"
+                    emojicon:layout_constraintBottom_toBottomOf="parent"
+                    emojicon:layout_constraintEnd_toStartOf="@+id/imageColor1"
+                    emojicon:layout_constraintStart_toEndOf="@+id/record_audio_timer"
+                    emojicon:layout_constraintTop_toTopOf="parent" />
+
+                <!--half circle designs-->
+                <ImageView
+                    android:id="@+id/imageColor1"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/xml_image_cornor1"
+                    android:backgroundTint="@color/grey3"
+                    emojicon:layout_constraintBottom_toBottomOf="parent"
+                    emojicon:layout_constraintEnd_toEndOf="@id/imageColor2"
+                    emojicon:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageColor2"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/xml_image_cornor1"
+                    android:backgroundTint="@color/grey4"
+                    emojicon:layout_constraintBottom_toBottomOf="parent"
+                    emojicon:layout_constraintEnd_toEndOf="@id/imageColor3"
+                    emojicon:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageColor3"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/xml_image_cornor1"
+                    android:backgroundTint="@color/grey6"
+                    emojicon:layout_constraintBottom_toBottomOf="parent"
+                    emojicon:layout_constraintEnd_toEndOf="@id/imageColor4"
+                    emojicon:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageColor4"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/xml_image_cornor1"
+                    android:backgroundTint="@color/grey7"
+                    emojicon:layout_constraintBottom_toBottomOf="parent"
+                    emojicon:layout_constraintEnd_toEndOf="@id/imageColor5"
+                    emojicon:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageColor5"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/xml_image_cornor1"
+                    android:backgroundTint="@color/grey8"
+                    emojicon:layout_constraintBottom_toBottomOf="parent"
+                    emojicon:layout_constraintEnd_toEndOf="parent"
+                    emojicon:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--guidelines for audio btn-->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineVer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                emojicon:layout_constraintGuide_end="42.5dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineHor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                emojicon:layout_constraintGuide_end="32.5dp" />
+
+            <!--record audio btn-->
+            <ImageButton
+                android:id="@+id/msg_record_audio"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/xml_rounded_corner"
+                android:backgroundTint="@color/primaryPale2"
+                android:src="@drawable/ic_chatlog_voice_note_grey_new"
+                emojicon:layout_constraintBottom_toBottomOf="@id/guidelineHor"
+                emojicon:layout_constraintEnd_toEndOf="@id/guidelineVer"
+                emojicon:layout_constraintStart_toStartOf="@id/guidelineVer"
+                emojicon:layout_constraintTop_toTopOf="@id/guidelineHor" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,407 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--background with correct scaling-->
+    <!--can't use for now as keyboard pushes it up-->
+    <!--<ImageView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:adjustViewBounds="true"-->
+    <!--android:scaleType="centerCrop"-->
+    <!--android:src="@drawable/ly_schelog_background" />-->
+
+    <!--toolbar-->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_wth_statusbar"
+        android:minHeight="@dimen/toolbar_wth_statusbar"
+        android:theme="@style/toolbarBackBtnWhite"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toStartOf="@id/btn_confirm"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="@string/new_g_appt"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/btn_confirm"
+                android:layout_width="@dimen/toolbar_wth_statusbar"
+                android:layout_height="@dimen/toolbar_wth_statusbar"
+                android:layout_alignParentEnd="true"
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                android:src="@drawable/xml_ic_tick_white_24dp" />
+        </RelativeLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/ll_progress_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/xml_roundcorner_green_border"
+        android:orientation="horizontal"
+        android:translationZ="3dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp" />
+
+        <TextView
+            android:id="@+id/tv_progress_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:paddingEnd="30dp"
+            android:text="@string/create_grp" />
+    </LinearLayout>
+    <!--appt title + small date-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/posmen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="-30dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="5dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <!--grp profile img-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/schenew_grp_profile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:elevation="5dp"
+                android:src="@drawable/grp_propic_circle_150px" />
+
+            <EditText
+                android:id="@+id/schenew_grp_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginEnd="20dp"
+                android:background="@null"
+                android:hint="@string/new_g_name"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxLength="25"
+                android:maxLines="2"
+                android:paddingStart="15dp"
+                android:paddingEnd="20dp"
+                android:singleLine="false"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/schenew_grp_profile" />
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- for going, not going nor invited -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ev_grp_title"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="-30dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintTop_toBottomOf="@id/posmen">
+
+        <EditText
+            android:id="@+id/schenew_appt_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="20dp"
+            android:background="@null"
+            android:hint="Appointment Title"
+            android:inputType="textCapSentences"
+            android:maxLength="25"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- for day, date and map, then participants -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/ev_grp_title"
+        app:layout_constraintTop_toBottomOf="@+id/ev_grp_title">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="-20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="5dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="20dp">
+
+                <ImageView
+                    android:id="@+id/clock"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/ic_time_green_100px"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--date/time-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/new_g_appt_date_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/clock">
+
+                    <TextView
+                        android:id="@+id/schelog_date_long"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/select_date_time"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/schelog_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@id/schelog_date_long"
+                        app:layout_constraintTop_toBottomOf="@id/schelog_date_long" />
+
+                    <!--<ImageView-->
+                    <!--android:layout_width="15dp"-->
+                    <!--android:layout_height="15dp"-->
+                    <!--android:src="@drawable/ic_chatlog_pen_grey_new"-->
+                    <!--app:layout_constraintEnd_toEndOf="parent" />-->
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!--[END] date/time-->
+
+                <View
+                    android:id="@+id/line1"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@color/grey6"
+                    app:layout_constraintStart_toEndOf="@id/clock"
+                    app:layout_constraintTop_toBottomOf="@+id/new_g_appt_date_time" />
+
+                <!--location-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/new_g_appt_loc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    app:layout_constraintTop_toBottomOf="@id/line1">
+
+                    <ImageView
+                        android:id="@+id/place_marker"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginTop="15dp"
+                        android:src="@drawable/ic_location_full_green_100px"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_goneMarginStart="15dp" />
+
+                    <TextView
+                        android:id="@+id/schelog_loc_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="Select Location"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/place_marker"
+                        app:layout_constraintTop_toTopOf="@id/place_marker" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="15dp"
+                        app:cardCornerRadius="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/schelog_loc_title"
+                        app:layout_constraintTop_toBottomOf="@id/schelog_loc_title">
+
+                        <ImageView
+                            android:id="@+id/schelog_map"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_def_location_no_location_400px"
+                            app:layout_constraintStart_toStartOf="@id/schelog_loc_title"
+                            app:layout_constraintTop_toBottomOf="@id/schelog_loc_title"
+                            app:layout_goneMarginEnd="5dp" />
+
+                    </androidx.cardview.widget.CardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <!--[END] location-->
+
+                <View
+                    android:id="@+id/line2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@color/grey6"
+                    app:layout_constraintStart_toEndOf="@id/clock"
+                    app:layout_constraintTop_toBottomOf="@+id/new_g_appt_loc" />
+
+                <!--number of grp members-->
+                <ImageView
+                    android:id="@+id/iv_participants"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginTop="10dp"
+                    android:elevation="2dp"
+                    android:src="@drawable/ic_media_contact_100px"
+                    app:layout_constraintStart_toStartOf="@id/clock"
+                    app:layout_constraintTop_toBottomOf="@id/line2" />
+
+                <TextView
+                    android:id="@+id/grpmem_no_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/grpmem_no"
+                    android:textColor="@color/grey8"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@id/iv_participants"
+                    app:layout_constraintTop_toBottomOf="@id/line2" />
+
+                <TextView
+                    android:id="@+id/grpmem_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:text="8"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/grpmem_no_label"
+                    app:layout_constraintTop_toTopOf="@id/grpmem_no_label" />
+
+
+                <!--add from contacts-->
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginEnd="5dp"-->
+                <!--android:text="Add from contacts"-->
+                <!--android:textColor="@color/grey8"-->
+                <!--android:textSize="10sp"-->
+                <!--app:layout_constraintBottom_toBottomOf="@id/grpmem_no"-->
+                <!--app:layout_constraintEnd_toEndOf="parent" />-->
+
+                <!--see all members-->
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="20dp"-->
+                <!--android:layout_marginEnd="10dp"-->
+                <!--android:gravity="center"-->
+                <!--android:text="@string/see_all"-->
+                <!--android:textSize="10sp"-->
+                <!--app:layout_constraintBaseline_toBaselineOf="@id/grpmem_no"-->
+                <!--app:layout_constraintEnd_toEndOf="parent" />-->
+
+                <!--self's profile img-->
+                <ImageView
+                    android:id="@+id/schelog_self_profile"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="50dp"
+                    android:src="@drawable/in_propic_circle_150px"
+                    app:layout_constraintStart_toStartOf="@id/grpmem_no_label"
+                    app:layout_constraintTop_toBottomOf="@id/grpmem_no_label" />
+
+                <!--recyclerview for friends' images-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/new_grp_appt_rv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:background="@null"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="horizontal"
+                    android:overScrollMode="never"
+                    android:paddingBottom="10dp"
+                    app:layout_constraintStart_toStartOf="@id/schelog_self_profile"
+                    app:layout_constraintTop_toTopOf="@id/schelog_self_profile" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+

@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.soapp">
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="com.google.android.providers.gsf.permissions.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.apps.photos.permission.GOOGLE_PHOTOS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!--for sms auto receive-->
+    <!--<uses-permission android:name="android.permission.RECEIVE_SMS" />-->
+    <!--<uses-permission android:name="android.permission.READ_SMS" />-->
+    <!--<uses-permission android:name="android.permission.MANAGE_OWN_CALLS" />-->
+    <!--<uses-permission android:name="android.permission.READ_CALL_LOG" />-->
+
+    <!-- Needed only if your calling app reads numbers from the `PHONE_STATE`
+         intent action. -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+
+    <!-- to set sounds for push notification -->
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+
+    <!-- <permission android:name="android.permission.REQUEST_WRITE_EXTERNAL_STORAGE" /> -->
+    <permission android:name="android.permission.INTERACT_ACROSS_USERS" />
+    <permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    <!-- <permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" /> -->
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <!-- required false to cater for chrome books (might not have camera/phone) -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <application
+        android:name=".setup.Soapp"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/soapp_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:label, allowBackup">
+
+
+        <activity
+            android:name=".registration.Splash"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/soapp_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- for deep linking -->
+            <intent-filter android:label="@string/soapp_name">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="launch"
+                    android:pathPrefix="/splash"
+                    android:scheme="soapp" />
+            </intent-filter>
+        </activity>
+
+        <!-- Crashlytics -->
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="65180c2c65520d5b8c08391206335484ffece786" />
+
+        <!-- >>> Registration <<< -->
+        <!-- <activity -->
+        <!-- android:name=".setup.BasicPermissions" -->
+        <!-- android:configChanges="orientation|screenSize" -->
+        <!-- android:label="@string/app_name" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:theme="@style/SoAppTheme.AppCompat" /> -->
+        <activity
+            android:name=".registration.country_codes.CountryCodes"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/soapp_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".registration.Registration"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/soapp_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".registration.PhoneVerification"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/soapp_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat"
+            android:windowSoftInputMode="stateAlwaysVisible" />
+        <activity
+            android:name=".registration.UserProfile"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/soapp_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".registration.SyncContact"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/soapp_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".home.Home"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/soapp_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompatFullScreenNoColor" />
+        <!-- >>> END of registration <<< -->
+
+
+        <!-- >>> GLOBAL <<< -->
+        <activity
+            android:name=".global.MediaGallery.GalleryMainActivity"
+            android:color="@style/SoAppTheme.AppCompat"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".global.MediaGallery.OpenGallery"
+            android:color="@style/SoAppTheme.AppCompat"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".global.ImagePreviewSlide"
+            android:theme="@style/SoAppTheme.AppCompatFull" />
+        <activity
+            android:name=".global.ImagePreviewSlideFood"
+            android:theme="@style/SoAppTheme.AppCompatFull" />
+        <activity
+            android:name=".global.ImageFullView"
+            android:theme="@style/SoAppTheme.AppCompatFull" />
+        <activity
+            android:name=".global.ImageVideoViewList"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".global.ImagePreviewByte"
+            android:theme="@style/SoAppTheme.AppCompatFull" />
+        <activity
+            android:name=".global.sharing.SharingController"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat">
+
+            <!-- for ext sharing images -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+
+            <!-- ext share text -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+
+            <!-- for sending multiple images/urls -->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.SEND_MULTIPLE" /> -->
+            <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+            <!-- <data android:mimeType="image/*" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <!-- >>> END OF GLOBAL <<< -->
+
+
+        <!-- >>> SOAPP TAB <<< -->
+        <activity
+            android:name=".soapp_tab.contact.ContactActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".soapp_tab.favourite.FavResController"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".soapp_tab.bookinglist.ResBookingsController"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".soapp_tab.booking.ResBookingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompatFullScreen" />
+
+        <!-- >>> END OF SOAPP TAB <<< -->
+
+
+        <!-- >>> FOOD TAB <<< -->
+        <activity
+            android:name=".food.FoodTabActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".food.food_nearby.FoodNearbyActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".food.food_hotspot_area.FoodHotspotActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".food.food_filter.FoodFilter"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".food.food_detail.suggest_edit.SuggestEditActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".soapp_tab.reward.reward_list.RewardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <!-- >>> END OF FOOD TAB <<< -->
+
+
+        <!-- >>> ContactTab <<< -->
+        <activity
+            android:name=".soapp_tab.contact.contact_details.ContactDetails"
+            android:label="@string/soapp_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+        <!-- >>> END of ContactTab <<< -->
+
+
+        <!-- >>> ChatTab <<< -->
+        <!-- New indi or group chat rooms -->
+        <activity
+            android:name=".new_chat_schedule.group.create_grp.NewCreateGroupController"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".new_chat_schedule.individual.NewChatController"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".new_chat_schedule.group.NewGrpChatController"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+
+        <!-- Chat Room Popup Buttons -->
+        <!-- Maps -->
+        <activity
+            android:name=".global.MapGps"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+
+        <!-- Contacts-related -->
+        <activity
+            android:name=".chat_class.share_contact.ShareContactActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".chat_class.share_contact.share_contact_details.ShareContactDet"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".chat_class.add_new_contact.AddNewContactDet"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+
+        <!-- Indi -->
+        <activity
+            android:name=".chat_class.single_chat.IndiChatLog"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".chat_class.single_chat.details.IndiChatDetail"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+
+        <!-- Group -->
+        <activity
+            android:name=".chat_class.group_chat.GroupChatLog"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".chat_class.group_chat.details.GroupChatDetail"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".chat_class.group_chat.details.GroupProfilePic"
+            android:theme="@style/SoAppTheme.AppCompatFull" />
+        <activity
+            android:name=".chat_class.group_add_member.AddListController"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+
+        <!-- Others -->
+        <!-- >>> END of ChatTab <<< -->
+
+
+        <!-- >>> ScheduleTab <<< -->
+        <!-- Indi -->
+        <activity
+            android:name=".schedule_class.new_appt.NewIndiExistApptActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".schedule_class.single_appt.IndiScheLog"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+
+        <!-- Grp -->
+        <activity
+            android:name=".schedule_class.new_appt.NewGrpAppt.NewGrpApptActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".schedule_class.group_appt.GroupScheLog"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <!-- >>> END of ScheduleTab <<< -->
+
+
+        <!-- >>> SettingsTab <<< -->
+        <activity
+            android:name=".settings_tab.AdditionalSettings"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".settings_tab.Profile"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".settings_tab.ProfilePic"
+            android:theme="@style/SoAppTheme.AppCompatFull" />
+        <activity
+            android:name=".settings_tab.AboutUs"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".settings_tab.DataUsage"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".settings_tab.ContactUs"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".settings_tab.Notifications"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".settings_tab.QrReader"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".settings_tab.ScheduleNotification"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+
+        <!-- >>> END of SettingsTab <<< -->
+
+
+        <!-- >>> Camera <<< -->
+        <!-- camera -->
+        <activity
+            android:name=".camera.CameraActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".camera.Camera2Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+
+        <!-- preview with crop and rotate -->
+        <activity
+            android:name=".camera.VideoPreviewActivity"
+            android:theme="@style/SoAppTheme.AppCompatFull" />
+        <activity
+            android:name=".camera.ImageCropPreviewActivity"
+            android:theme="@style/SoAppTheme.AppCompatFull" />
+        <activity
+            android:name=".camera.ImageNormalPreviewActivity"
+            android:theme="@style/SoAppTheme.AppCompatFull" />
+        <activity
+            android:name=".food.food_detail.FoodDetailLog"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompatFullScreenNoColor1" />
+        <!-- >>> Camera end <<< -->
+
+
+        <!-- >>> Services <<< -->
+        <!-- connect xmpp and detect contacts changed, started at spla`sh -->
+        <service
+            android:name=".xmpp.connection.SoappService"
+            android:enabled="true" />
+
+        <!-- Get fcm instance/token -->
+        <!--<service-->
+        <!--android:name=".push_notifications.MyFirebaseInstanceIDService"-->
+        <!--android:exported="false">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="com.google.firebase.INSTANCE_ID_EVENT" />-->
+        <!--</intent-filter>-->
+        <!--</service>-->
+
+        <!-- FCM receiver for PUSH notifications -->
+        <service android:name=".push_notifications.FireBaseMessageNotification">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!-- SoappJobScheduler for handling local notifications -->
+        <service
+            android:name=".local_notifications.SoappJobScheduler"
+            android:exported="true"
+            android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE">
+            <intent-filter>
+                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE" />
+            </intent-filter>
+        </service>
+
+        <!-- Video compression service -->
+        <service
+            android:name=".camera.VideoCompressionService"
+            android:exported="false" />
+
+        <!-- >>> Receivers <<< -->
+        <!-- reply msg from push notifications -->
+        <receiver
+            android:name=".local_notifications.NotiMsgReplyReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.soapp.MsgReply" />
+            </intent-filter>
+        </receiver>
+
+        <!-- for deep linking when sharing soapp to friends -->
+        <receiver
+            android:name=".registration.InstallListener"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAhnRJcwQhHiPRQRCF1eg5OClxByUHjK1k" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <!-- Branch URI Scheme -->
+
+
+        <!-- Branch init -->
+        <meta-data
+            android:name="io.branch.sdk.BranchKey"
+            android:value="key_live_leEWPRazdWYFEnBl7qE2cfpdAyfcwpZD" />
+        <meta-data
+            android:name="io.branch.sdk.BranchKey.test"
+            android:value="key_test_coF8MRhrl86swbAh4CLBKcmnDCobBe7N" />
+        <meta-data
+            android:name="io.branch.sdk.TestMode"
+            android:value="false" /> <!-- Set to true to use Branch_Test_Key -->
+
+
+        <!-- end branch -->
+
+        <activity
+            android:name=".soapp_tab.reward.reward_list.reward_details.RewardDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".soapp_tab.reward.reward_personal_info.RewardPersonalInfoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".soapp_tab.reward.my_reward_list.MyRewardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".soapp_tab.reward.my_reward_list.MyRewardDetails.MyRewardDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SoAppTheme.AppCompat" />
+        <activity
+            android:name=".xmpp.soapp_call.PeerClient"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".xmpp.connection.MessagingService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <service
+            android:name=".xmpp.soapp_call.CallService"
+            android:permission="android.permission.BIND_TELECOM_CONNECTION_SERVICE">
+            <intent-filter>
+                <action android:name="android.telecom.ConnectionService" />
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E1E6F2"
+    android:scrollbars="vertical"
+    tools:context="com.soapp.soapp_tab.reward.reward_personal_info.RewardPersonalInfoActivity">
+
+    <!--toolbar-->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_wth_statusbar"
+        android:minHeight="@dimen/toolbar_wth_statusbar"
+        android:theme="@style/toolbarBackBtnWhite"
+        android:translationZ="1dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--sharing progress bar-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/progress_bar_cl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black9a"
+        android:translationZ="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--top blue background-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_reward_test"
+        app:layout_constraintDimensionRatio="h, 30:20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--welcome msg-->
+    <io.github.rockerhieu.emojicon.EmojiconTextView
+        android:id="@+id/tv_welcome_plus_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/gotham_medium"
+        android:gravity="center"
+        android:maxLines="2"
+        android:singleLine="false"
+        android:text="Welcome, Ryan"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <!--main body-->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="20dp"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_welcome_plus_name">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_below_welcome_plus_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/xml_roundcorner_white_background">
+
+            <!--reward title-->
+            <TextView
+                android:id="@+id/tv_point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/gotham_medium"
+                android:text="REWARD"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/v_top"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--top gradient bg-->
+            <View
+                android:id="@+id/v_top"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/xml_gradient_top_reward"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_point" />
+
+            <!--1/2 points text-->
+            <TextView
+                android:id="@+id/tv_point_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/xml_round_corner_primarydark2_background"
+                android:paddingStart="50dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="50dp"
+                android:paddingBottom="10dp"
+                android:text="1/2"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_point" />
+
+            <!--text 1/2 in seekbar-->
+            <TextView
+                android:id="@+id/tv_between_circular_seekbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="1 / 2"
+                app:layout_constraintEnd_toEndOf="@id/csb_points_value"
+                app:layout_constraintStart_toStartOf="@id/csb_points_value"
+                app:layout_constraintTop_toTopOf="@+id/csb_points_value" />
+
+            <!--claim button-->
+            <LinearLayout
+                android:id="@+id/claim_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/csb_points_value"
+                app:layout_constraintEnd_toEndOf="@id/csb_points_value"
+                app:layout_constraintStart_toStartOf="@id/csb_points_value"
+                app:layout_constraintTop_toTopOf="@+id/csb_points_value">
+
+                <!--ice cream img-->
+                <ImageView
+                    android:id="@+id/imgv_inside_circular_seekbar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_ice_cream_green_100px" />
+
+                <!--claim text - hidden -->
+                <TextView
+                    android:id="@+id/tv_claim_in_csb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/gotham_medium"
+                    android:text="Claim"
+                    android:textColor="@color/primaryDark2"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <!--circular seek bar-->
+            <me.tankery.lib.circularseekbar.CircularSeekBar
+                android:id="@+id/csb_points_value"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:cs_circle_color="@color/grey4"
+                app:cs_circle_progress_color="@color/primaryDark1"
+                app:cs_circle_stroke_width="10dp"
+                app:cs_disable_pointer="true"
+                app:cs_end_angle="225"
+                app:cs_start_angle="-45"
+                app:layout_constraintBottom_toTopOf="@id/reward_desc_tv"
+                app:layout_constraintDimensionRatio="5:2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/v_top" />
+
+            <!--sharing description-->
+            <TextView
+                android:id="@+id/reward_desc_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="40dp"
+                android:fontFamily="@font/gotham_medium"
+                android:gravity="center"
+                android:text="@string/reward_desc"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/csb_points_value" />
+
+            <TextView
+                android:id="@+id/rewards_terms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:autoLink="web"
+                android:padding="5dp"
+                android:text="@string/terms"
+                android:textColor="@color/primaryDark4"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/reward_desc_tv"
+                app:layout_constraintTop_toBottomOf="@id/reward_desc_tv" />
+
+            <!--hori line 1-->
+            <View
+                android:id="@+id/v_line1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="@color/grey3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rewards_terms" />
+
+            <!--quest list-->
+            <TextView
+                android:id="@+id/quest_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/gotham_medium"
+                android:text="QUEST LIST"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/v_line1" />
+
+            <!--register-->
+            <TextView
+                android:id="@+id/tv_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/gotham_light"
+                android:text="Register"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/quest_list" />
+
+            <!--checked img-->
+            <ImageView
+                android:id="@+id/imgv_reward_personal_register"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_tick_green_black_120px"
+                app:layout_constraintBottom_toBottomOf="@id/tv_register"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_register"
+                app:layout_constraintTop_toTopOf="@id/tv_register" />
+
+            <!--invite friends-->
+            <TextView
+                android:id="@+id/tv_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/gotham_light"
+                android:gravity="start"
+                android:text="@string/invite_friends"
+                app:layout_constraintStart_toStartOf="@id/tv_register"
+                app:layout_constraintTop_toBottomOf="@id/tv_register" />
+
+            <!--checked-->
+            <ImageView
+                android:id="@+id/imgv_reward_personal_share"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_tick_green_black_120px"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/tv_share"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_register"
+                app:layout_constraintTop_toTopOf="@id/tv_share" />
+
+            <!--invite friends btn-->
+            <TextView
+                android:id="@+id/tv_share_now"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/xml_round_corner_primarydark2_background"
+                android:backgroundTint="#006666"
+                android:fontFamily="@font/gotham_light"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="Invite friends now!"
+                android:textColor="@color/white"
+                android:translationZ="1dp"
+                app:layout_constraintBottom_toTopOf="@id/tv_my_reward_list"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_share" />
+
+            <!--my reward list (after done quests)-->
+            <TextView
+                android:id="@+id/tv_my_reward_list"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/xml_roundcorner_green_border"
+                android:fontFamily="@font/gotham_light"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="My Reward List"
+                android:textColor="@color/black"
+                android:translationZ="1dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!--bottom gradient bg-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/xml_gradient_bottom_reward"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

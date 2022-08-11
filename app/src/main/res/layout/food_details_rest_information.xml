@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingEnd="30dp"
+        android:paddingStart="30dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:id="@+id/firsRowImg"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_location_full_green_100px"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_rest_add"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:text="D215/1F jalan pjs 5/1 D215/1FD215/1F jalan pjs 5/1 D215/1F jalan pjs 5/1 D215/1F jalan pjs 5/1 taman desaria 47000 petaling jaya selnagor"
+                android:textSize="12sp"
+                android:fontFamily="@font/roboto_light"
+                app:layout_constraintBottom_toTopOf="@+id/tv_rest_get_direction"
+                app:layout_constraintEnd_toStartOf="@+id/tv_rest_map"
+                app:layout_constraintStart_toEndOf="@+id/firsRowImg"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_rest_get_direction"
+                android:layout_width="0dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:text="get directions"
+                android:textColor="@color/primaryDark4"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toEndOf="@id/firsRowImg"
+                app:layout_constraintTop_toBottomOf="@id/tv_rest_add" />
+
+            <ImageView
+                android:id="@+id/tv_rest_map"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/in_propic_circle_520px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/imgv_phone"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_phone_green_100px"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_rest_contactno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="+603 6151 8081"
+                android:textSize="12sp"
+                android:fontFamily="@font/roboto_light"
+                app:layout_constraintStart_toEndOf="@id/imgv_phone" />
+
+            <TextView
+                android:id="@+id/tv_call_now"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="call now"
+                android:textColor="@color/primaryDark4"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/imgv_second"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_time_green_100px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_rest_operation_hour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="Open now"
+                android:fontFamily="@font/roboto_light"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/imgv_second" />
+
+            <TextView
+                android:id="@+id/tv_rest_showall"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:text="show more"
+                android:textColor="@color/primaryDark4"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/food_det_op_hours"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginBottom="25dp"
+            android:layout_marginStart="40dp">
+
+            <!--monday-->
+            <TextView
+                android:id="@+id/monday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monday"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_monday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23:30-23:45"
+                app:layout_constraintStart_toEndOf="@id/monday"
+                app:layout_constraintTop_toTopOf="@id/monday"
+                android:layout_marginStart="80dp"/>
+
+            <!--tues-->
+            <TextView
+                android:id="@+id/tuesday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tuesday"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/monday"
+                app:layout_constraintTop_toBottomOf="@id/monday" />
+
+            <TextView
+                android:id="@+id/tv_tuesday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="---"
+                app:layout_constraintStart_toStartOf="@id/tv_monday"
+                app:layout_constraintTop_toBottomOf="@id/tv_monday" />
+
+            <!--wed-->
+            <TextView
+                android:id="@+id/wednesday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wednesday"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tuesday"
+                app:layout_constraintTop_toBottomOf="@id/tuesday" />
+
+            <TextView
+                android:id="@+id/tv_wednesday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Closed"
+                app:layout_constraintStart_toStartOf="@id/tv_tuesday"
+                app:layout_constraintTop_toBottomOf="@id/tv_tuesday" />
+
+            <!--thurs-->
+            <TextView
+                android:id="@+id/thursday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thursday"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/wednesday"
+                app:layout_constraintTop_toBottomOf="@id/wednesday" />
+
+            <TextView
+                android:id="@+id/tv_thursday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00-01:00"
+                app:layout_constraintStart_toStartOf="@id/tv_wednesday"
+                app:layout_constraintTop_toBottomOf="@id/tv_wednesday" />
+
+            <TextView
+                android:id="@+id/friday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Friday"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/thursday"
+                app:layout_constraintTop_toBottomOf="@id/thursday" />
+
+            <TextView
+                android:id="@+id/tv_friday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00-00:00"
+                app:layout_constraintStart_toStartOf="@id/tv_thursday"
+                app:layout_constraintTop_toBottomOf="@id/tv_thursday" />
+
+            <TextView
+                android:id="@+id/saturday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saturday"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/friday"
+                app:layout_constraintTop_toBottomOf="@id/friday" />
+
+            <TextView
+                android:id="@+id/tv_saturday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="---"
+                app:layout_constraintStart_toStartOf="@id/tv_friday"
+                app:layout_constraintTop_toBottomOf="@id/tv_friday" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sunday"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/saturday"
+                app:layout_constraintTop_toBottomOf="@id/saturday" />
+
+            <TextView
+                android:id="@+id/tv_sunday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="09:00-00:00"
+                app:layout_constraintStart_toStartOf="@id/tv_saturday"
+                app:layout_constraintTop_toBottomOf="@id/tv_saturday" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:tint="@color/primaryDark3"
+                android:id="@+id/imgv_third"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_info_grey100px"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imgv_tick_halal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_green_tick_40px"
+                app:layout_constraintStart_toEndOf="@id/imgv_third"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_halal"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Halal"
+                android:fontFamily="@font/roboto_light"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@id/imgv_tick_halal"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imgv_tick_wifi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:src="@drawable/ic_green_tick_40px"
+                app:layout_constraintStart_toEndOf="@id/imgv_third"
+                app:layout_constraintTop_toTopOf="@id/tv_wifi"
+                app:layout_constraintBottom_toBottomOf="@id/tv_wifi"/>
+
+            <TextView
+                android:id="@+id/tv_wifi"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Wifi"
+                android:fontFamily="@font/roboto_light"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@id/imgv_tick_wifi"
+                app:layout_constraintTop_toBottomOf="@+id/tv_halal" />
+
+            <ImageView
+                android:id="@+id/imgv_tick_alcohol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:src="@drawable/ic_green_tick_40px"
+                app:layout_constraintStart_toEndOf="@id/imgv_third"
+                app:layout_constraintTop_toTopOf="@id/tv_alcohol"
+                app:layout_constraintBottom_toBottomOf="@id/tv_alcohol"/>
+
+            <TextView
+                android:id="@+id/tv_alcohol"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Alcohol"
+                android:fontFamily="@font/roboto_light"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@id/imgv_tick_alcohol"
+                app:layout_constraintTop_toBottomOf="@+id/tv_wifi" />
+
+            <ImageView
+                android:id="@+id/imgv_tick_smoking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_green_tick_40px"
+                app:layout_constraintEnd_toStartOf="@id/tv_smoking"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@id/tv_halal"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_smoking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Smoking section"
+                android:fontFamily="@font/roboto_light"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imgv_tick_smoking" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:overScrollMode="never"
+            android:paddingBottom="30dp"
+            android:paddingTop="30dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_cuisine_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/xml_round_corner_grey1_background"
+                    android:gravity="center"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:text="Coffee"
+                    android:fontFamily="@font/roboto_light"
+                    android:textSize="@dimen/_15sdp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_cuisine_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/xml_round_corner_grey4_background"
+                    android:gravity="center"
+                    android:text="Malaysian"
+                    android:fontFamily="@font/roboto_light"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:textSize="@dimen/_15sdp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_cuisine_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/xml_bg_grey7_20dp"
+                    android:gravity="center"
+                    android:text="Western"
+                    android:fontFamily="@font/roboto_light"
+                    android:textSize="@dimen/_15sdp"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

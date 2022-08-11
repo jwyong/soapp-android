@@ -1,0 +1,541 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--date-->
+    <LinearLayout
+        android:id="@+id/ll_month_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/schelog_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/quicksand_book"
+                android:gravity="center_horizontal"
+                android:text="MAR"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/schelog_date_short"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/schelog_date_short"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-10dp"
+                android:fontFamily="@font/quicksand_book"
+                android:text="24"
+                android:textColor="@color/white"
+                android:textSize="45sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/schelog_month" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <!--appt title-->
+    <io.github.rockerhieu.emojicon.EmojiconTextView
+        android:id="@+id/schelog_appt_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:ellipsize="end"
+        android:fontFamily="@font/quicksand_bold"
+        android:maxLines="2"
+        android:paddingStart="10dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="5dp"
+        android:scrollbars="vertical"
+        android:singleLine="false"
+        android:text="Appt Title asdfasdf asdfasdf "
+        android:textAppearance="@style/quicksand_bold"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/schelog_hosted_by"
+        app:layout_constraintEnd_toStartOf="@+id/schelog_edit_title"
+        app:layout_constraintStart_toEndOf="@id/ll_month_date"
+        app:layout_constraintTop_toTopOf="@id/ll_month_date"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <!--noti badge for title-->
+    <TextView
+        android:id="@+id/schelog_noti_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/xml_round_corner_15dp_pd1"
+        android:backgroundTint="#FFA500"
+        android:padding="4dp"
+        android:text="TITTLE CHANGED"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@id/schelog_appt_title"
+        app:layout_constraintStart_toStartOf="@id/schelog_appt_title"
+        app:layout_constraintTop_toTopOf="@id/schelog_appt_title" />
+
+
+    <!--delete btn-->
+    <ImageView
+        android:id="@+id/schelog_delete_appt"
+        android:layout_width="25dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="10dp"
+        android:padding="3dp"
+        android:src="@drawable/ic_dustbin_white_100px"
+        app:layout_constraintBottom_toBottomOf="@+id/schelog_appt_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/schelog_appt_title" />
+
+    <!--edit btn-->
+    <ImageView
+        android:id="@+id/schelog_edit_title"
+        android:layout_width="25dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="4dp"
+        android:padding="3dp"
+        android:src="@drawable/ic_pen_white_70px"
+        app:layout_constraintBottom_toBottomOf="@+id/schelog_appt_title"
+        app:layout_constraintRight_toLeftOf="@+id/schelog_delete_appt"
+        app:layout_constraintTop_toTopOf="@+id/schelog_appt_title" />
+
+    <!--hosted by-->
+    <TextView
+        android:id="@+id/schelog_hosted_by"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/quicksand_book"
+        android:paddingStart="10dp"
+        android:text="@string/schelog_hosted_by"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/ll_month_date"
+        app:layout_constraintStart_toStartOf="@id/schelog_appt_title"
+        app:layout_constraintTop_toBottomOf="@+id/schelog_appt_title" />
+
+    <!--host name-->
+    <TextView
+        android:id="@+id/schelog_host_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="5dp"
+        android:fontFamily="@font/quicksand_bold"
+        android:maxLines="2"
+        android:text="Soapp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/schelog_hosted_by"
+        app:layout_constraintTop_toTopOf="@id/schelog_hosted_by" />
+
+    <!--status btns-->
+    <LinearLayout
+        android:id="@+id/self_status_btns"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/xml_left_round_right_square_primarydark5"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/schelog_hosted_by"
+        app:layout_constraintTop_toBottomOf="@id/schelog_hosted_by">
+
+        <TextView
+            android:id="@+id/schelog_going"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/quicksand_bold"
+            android:gravity="center"
+            android:text="@string/appt_going"
+            android:textColor="@color/grey1" />
+
+        <TextView
+            android:id="@+id/schelog_undec"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/quicksand_bold"
+            android:gravity="center"
+            android:text="@string/appt_undecided"
+            android:textColor="@color/grey1" />
+
+        <TextView
+            android:id="@+id/schelog_not_going"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/quicksand_bold"
+            android:gravity="center"
+            android:text="@string/appt_not_going"
+            android:textColor="@color/grey1" />
+
+    </LinearLayout>
+
+    <!--hosting textview-->
+    <TextView
+        android:id="@+id/host_status_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/xml_left_round_right_square_primarydark5"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:text="@string/appt_hosting"
+        android:textColor="@color/grey1"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/schelog_hosted_by"
+        app:layout_constraintTop_toBottomOf="@id/schelog_hosted_by" />
+
+    <!-- for day, date and map, then participants -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/schelog_hosted_by"
+        app:layout_constraintTop_toBottomOf="@+id/self_status_btns">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="-20dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="5dp">
+
+            <!--noti badge for date/time-->
+            <TextView
+                android:id="@+id/schelog_noti_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/xml_round_corner_15dp_pd1"
+                android:backgroundTint="#FFA500"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="DATE / TIME CHANGED"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toTopOf="@id/indi_appt_date_time" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="20dp">
+
+                <ImageView
+                    android:id="@+id/clock"
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_marginTop="18dp"
+                    android:src="@drawable/ic_time_green_100px"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <!--date/time-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/indi_appt_date_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/clock"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/schelog_date_long"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="Sat, 24 March 2018"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/schelog_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="16:30 - 18:00"
+                        app:layout_constraintStart_toStartOf="@id/schelog_date_long"
+                        app:layout_constraintTop_toBottomOf="@id/schelog_date_long" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/line1"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/grey6"
+                    app:layout_constraintStart_toEndOf="@id/clock"
+                    app:layout_constraintTop_toBottomOf="@+id/indi_appt_date_time" />
+
+                <!--noti badge for location-->
+                <TextView
+                    android:id="@+id/schelog_noti_loc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/xml_round_corner_15dp_pd1"
+                    android:backgroundTint="#FFA500"
+                    android:padding="4dp"
+                    android:text="VENUE CHANGED"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toTopOf="@id/indi_appt_loc"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/indi_appt_loc" />
+
+                <!--location-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/indi_appt_loc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    app:layout_constraintTop_toBottomOf="@id/line1">
+
+
+                    <ImageView
+                        android:id="@+id/place_marker"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/ic_location_full_green_100px"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_goneMarginStart="15dp" />
+
+                    <RelativeLayout
+                        android:id="@+id/schelog_loc_rl"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toEndOf="@id/place_marker"
+                        app:layout_constraintTop_toTopOf="@id/place_marker">
+
+                        <TextView
+                            android:id="@+id/schelog_loc_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_toStartOf="@id/schelog_loc_edit"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/roboto_regular"
+                            android:maxLines="2"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:singleLine="false"
+                            android:text="Soapp International Sdn. Bhd."
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/schelog_loc_edit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/ic_pen_white_70px"
+                            android:tint="@color/grey10" />
+                    </RelativeLayout>
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/schelog_loc_title"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginStart="10dp"-->
+                    <!--android:ellipsize="end"-->
+                    <!--android:fontFamily="@font/roboto_regular"-->
+                    <!--android:maxLines="1"-->
+                    <!--android:paddingStart="10dp"-->
+                    <!--android:paddingTop="5dp"-->
+                    <!--android:paddingEnd="10dp"-->
+                    <!--android:singleLine="true"-->
+                    <!--android:text="Selected Location"-->
+                    <!--android:textStyle="bold"-->
+                    <!--app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--app:layout_constraintStart_toEndOf="@id/place_marker"-->
+                    <!--app:layout_constraintTop_toTopOf="@id/place_marker" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/schelog_loc_desc"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="B-02-21, No. 13A, Jalan PJU 5/1, Kota Damansara,Unit B-02-21, Dataran Cascades,No. 13A, Jalan PJU 5/1, Kota Damansara, 47810 Petaling Jaya, Selangor"-->
+                    <!--app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--app:layout_constraintStart_toStartOf="@id/schelog_loc_title"-->
+                    <!--app:layout_constraintTop_toBottomOf="@id/schelog_loc_title" />-->
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/schelog_map_cv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="15dp"
+                        app:cardCornerRadius="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/schelog_loc_rl"
+                        app:layout_constraintTop_toBottomOf="@id/schelog_loc_rl">
+
+                        <ImageView
+                            android:id="@+id/schelog_map"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_def_location_loading_400px"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@id/schelog_loc_title"
+                            app:layout_constraintTop_toBottomOf="@id/schelog_loc_title"
+                            app:layout_goneMarginEnd="5dp" />
+                    </androidx.cardview.widget.CardView>
+
+                    <!--button for navigation popup-->
+                    <LinearLayout
+                        android:layout_width="40dp"
+                        android:layout_height="0dp"
+                        android:background="@drawable/xml_gradient_black_hori_10dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:translationZ="2dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/schelog_map_cv"
+                        app:layout_constraintEnd_toEndOf="@+id/schelog_map_cv"
+                        app:layout_constraintTop_toTopOf="@+id/schelog_map_cv">
+
+                        <!--button for navigation popup-->
+                        <ImageButton
+                            android:id="@+id/waze_btn"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginEnd="3dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/ic_waze_200px"
+                            android:translationZ="15dp"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toTopOf="@id/google_map_btn"
+                            app:layout_constraintEnd_toEndOf="@id/schelog_map_cv"
+                            app:layout_constraintTop_toTopOf="@id/schelog_map_cv"
+                            app:layout_constraintVertical_chainStyle="packed" />
+
+                        <ImageButton
+                            android:id="@+id/google_map_btn"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginEnd="3dp"
+                            android:background="@drawable/ic_googlemap_200px"
+                            android:translationZ="15dp"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="@id/schelog_map_cv"
+                            app:layout_constraintEnd_toEndOf="@id/schelog_map_cv"
+                            app:layout_constraintTop_toBottomOf="@id/waze_btn" />
+
+                    </LinearLayout>
+
+                    <!--<ImageButton-->
+                    <!--android:id="@+id/schelog_navi_popup"-->
+                    <!--android:layout_width="40dp"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:layout_marginBottom="3dp"-->
+                    <!--android:layout_marginEnd="3dp"-->
+                    <!--android:background="@drawable/ic_more_201px"-->
+                    <!--android:elevation="6dp"-->
+                    <!--android:visibility="gone"-->
+                    <!--app:layout_constraintBottom_toBottomOf="@+id/schelog_map_cv"-->
+                    <!--app:layout_constraintEnd_toEndOf="@id/schelog_map_cv" />-->
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/line2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@color/grey6"
+                    app:layout_constraintStart_toEndOf="@id/clock"
+                    app:layout_constraintTop_toBottomOf="@+id/indi_appt_loc" />
+
+                <ImageView
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:id="@+id/iv_participants_number"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/ic_media_contact_100px"
+                    app:layout_constraintTop_toBottomOf="@id/line2" />
+
+                <!--friend's status-->
+                <TextView
+                    android:id="@+id/schelog_frnd_status"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:text="Friend is going"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/line2"
+                    app:layout_constraintTop_toTopOf="@id/iv_participants_number" />
+
+                <!--self's profile img-->
+                <ImageView
+                    android:id="@+id/schelog_self_profile"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/in_propic_circle_150px"
+                    app:layout_constraintStart_toEndOf="@id/clock"
+                    app:layout_constraintTop_toBottomOf="@id/schelog_frnd_status" />
+
+                <!--friend's profile img-->
+                <ImageView
+                    android:id="@+id/schelog_frnd_profile"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="30dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/in_propic_circle_150px"
+                    app:layout_constraintStart_toStartOf="@id/schelog_self_profile"
+                    app:layout_constraintTop_toTopOf="@id/schelog_self_profile" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/popup"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="20dp"
+    android:paddingBottom="20dp"
+    android:background="@drawable/xml_round_grey3">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <ImageView
+        android:id="@+id/chat_popup_camera"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:contentDescription="@string/camera"
+        android:padding="10dp"
+        android:src="@drawable/ic_chat_popup_camera"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@string/popup_medialibrary"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/popup_camera_string"
+        android:textSize="10sp"
+        app:layout_constraintTop_toBottomOf="@id/chat_popup_camera"
+        app:layout_constraintStart_toStartOf="@id/chat_popup_camera"
+        app:layout_constraintEnd_toEndOf="@id/chat_popup_camera"/>
+
+    <ImageView
+        android:id="@+id/chat_popup_medialib"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:contentDescription="@string/popup_medialibrary"
+        android:padding="10dp"
+        android:src="@drawable/ic_chattab_popup_gallery"
+        app:layout_constraintRight_toLeftOf="@id/chat_popup_appoint"
+        app:layout_constraintLeft_toRightOf="@+id/chat_popup_camera"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/popup_medialibrary"
+        android:textSize="10sp"
+        app:layout_constraintTop_toBottomOf="@id/chat_popup_medialib"
+        app:layout_constraintStart_toStartOf="@id/chat_popup_medialib"
+        app:layout_constraintEnd_toEndOf="@id/chat_popup_medialib"/>
+
+    <ImageView
+        android:id="@+id/chat_popup_appoint"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:contentDescription="@string/popup_appointment"
+        android:padding="10dp"
+        android:src="@drawable/ic_chattab_popup_sched"
+        app:layout_constraintEnd_toStartOf="@id/guideline2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/popup_appointment"
+        android:textSize="10sp"
+        app:layout_constraintTop_toBottomOf="@id/chat_popup_appoint"
+        app:layout_constraintStart_toStartOf="@id/chat_popup_appoint"
+        app:layout_constraintEnd_toEndOf="@id/chat_popup_appoint"/>
+
+    <ImageView
+        android:id="@+id/chat_popup_shareLocation"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/popup_share_loc"
+        android:src="@drawable/ic_chattab_popup_location"
+        app:layout_constraintTop_toBottomOf="@id/chat_popup_camera"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@string/popup_share_contact"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/popup_share_loc"
+        android:textSize="10sp"
+        app:layout_constraintTop_toBottomOf="@id/chat_popup_shareLocation"
+        app:layout_constraintStart_toStartOf="@id/chat_popup_shareLocation"
+        app:layout_constraintEnd_toEndOf="@id/chat_popup_shareLocation"/>
+
+    <ImageView
+        android:id="@+id/chat_popup_shareContact"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/popup_share_contact"
+        android:padding="10dp"
+        android:src="@drawable/ic_chattab_popup_contact"
+        app:layout_constraintLeft_toRightOf="@id/chat_popup_shareLocation"
+        app:layout_constraintRight_toLeftOf="@id/chat_popup_shareRes"
+        app:layout_constraintTop_toBottomOf="@+id/chat_popup_medialib"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/popup_share_contact"
+        android:textSize="10sp"
+        app:layout_constraintTop_toBottomOf="@id/chat_popup_shareContact"
+        app:layout_constraintStart_toStartOf="@id/chat_popup_shareContact"
+        app:layout_constraintEnd_toEndOf="@id/chat_popup_shareContact"/>
+
+    <ImageView
+        android:id="@+id/chat_popup_shareRes"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/popup_share_res"
+        android:src="@drawable/ic_chattab_popup_poll"
+        app:layout_constraintEnd_toStartOf="@id/guideline2"
+        app:layout_constraintTop_toBottomOf="@id/chat_popup_appoint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/popup_share_res"
+        android:textSize="10sp"
+        app:layout_constraintTop_toBottomOf="@id/chat_popup_shareRes"
+        app:layout_constraintStart_toStartOf="@id/chat_popup_shareRes"
+        app:layout_constraintEnd_toEndOf="@id/chat_popup_shareRes"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

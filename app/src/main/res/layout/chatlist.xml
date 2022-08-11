@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryDark2"
+    tools:context=".home.Home">
+
+    <!--status bar background-->
+    <ImageView
+        android:id="@+id/statusBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:background="@color/black3a"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--soapp logo-->
+    <ImageView
+        android:id="@+id/image_chat_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_soapp_word_130px"
+        app:layout_constraintBottom_toTopOf="@id/chat_list_rv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/statusBar" />
+
+    <!--search btn-->
+    <SearchView
+        android:id="@+id/search_button"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:searchIcon="@drawable/ic_search_white70px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/statusBar" />
+
+    <!--scroll to top btn-->
+    <ImageView
+        android:id="@+id/scroll_top"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="15dp"
+        android:src="@drawable/ic_scrollup_btn"
+        android:translationZ="1dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/new_chat_btn"
+        app:layout_constraintEnd_toEndOf="@id/new_chat_btn"
+        app:layout_constraintStart_toStartOf="@id/new_chat_btn" />
+
+    <!--floating new chat btn-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/new_chat_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:foreground="@drawable/ic_float_btn_250px"
+        app:cardBackgroundColor="@color/grey3"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chat_list_rv"
+        android:layout_width="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_height="0dp"
+        android:layout_marginTop="90dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--foreground for rv - foreground: not working-->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/xml_sp_top_left_pd2_40dp_frame"
+        app:layout_constraintBottom_toBottomOf="@id/chat_list_rv"
+        app:layout_constraintEnd_toEndOf="@id/chat_list_rv"
+        app:layout_constraintStart_toStartOf="@id/chat_list_rv"
+        app:layout_constraintTop_toTopOf="@id/chat_list_rv" />
+
+    <!--start new chat-->
+    <LinearLayout
+        android:id="@+id/start_new_chat"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/chat_list_rv">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_smiley_chat_200px" />
+
+        <TextView
+            android:id="@+id/start_new_chat_msg"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/quicksand_bold"
+            android:gravity="center"
+            android:text="@string/start_new_chat"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+    <!--</androidx.cardview.widget.CardView>-->
+</androidx.constraintlayout.widget.ConstraintLayout>

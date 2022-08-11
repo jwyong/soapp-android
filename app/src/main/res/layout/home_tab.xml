@@ -1,0 +1,774 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:emojicon="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--progress dialog for ops e.g. sharing-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/progress_bar_cl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black9a"
+        android:elevation="10dp"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--tutorial: swipe to change tab-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tute_swipe_cl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black9a"
+        android:elevation="2dp"
+        android:translationZ="1dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:rotation="180"
+            android:src="@drawable/ic_right_arrow_black_100px"
+            android:tint="@color/white"
+            app:layout_constraintEnd_toStartOf="@id/swipe_icon"
+            app:layout_constraintTop_toTopOf="@id/swipe_icon" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_right_arrow_black_100px"
+            android:tint="@color/white"
+            app:layout_constraintStart_toEndOf="@id/swipe_icon"
+            app:layout_constraintTop_toTopOf="@id/swipe_icon" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="40dp"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:text="Swipe left or right to go to other pages."
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/swipe_icon" />
+
+        <ImageView
+            android:id="@+id/swipe_icon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_swipe_hand_943px"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--tutorial: start a new chat-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tute_new_chat_sche"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black9a"
+        android:elevation="2dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/img_icon"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_menubar_chat_green_280px"
+            android:translationZ="5dp"
+            app:layout_constraintBottom_toTopOf="@id/cv_msg_popup1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cv_msg_popup1" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_msg_popup1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/popup_msg"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="30dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Click here to start a"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toTopOf="@id/popup_msg2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/popup_msg2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:text="NEW CHAT"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="@id/popup_msg"
+                    app:layout_constraintStart_toStartOf="@id/popup_msg"
+                    app:layout_constraintTop_toBottomOf="@id/popup_msg" />
+
+                <TextView
+                    android:id="@+id/home_new_chat_dismiss"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/xml_roundcorner_apptheme"
+                    android:backgroundTint="@color/primaryDark3"
+                    android:fontFamily="@font/roboto_bold"
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="5dp"
+                    android:text="DISMISS"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/popup_msg2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:id="@+id/view_hoz"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginEnd="4dp"
+            android:background="@color/white"
+            android:elevation="3dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/home_new_chat_sche_btn"
+            app:layout_constraintEnd_toStartOf="@id/home_new_chat_sche_btn"
+            app:layout_constraintStart_toStartOf="@id/view_ver"
+            app:layout_constraintTop_toTopOf="@id/home_new_chat_sche_btn" />
+
+        <View
+            android:id="@+id/view_ver"
+            android:layout_width="2dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/white"
+            android:elevation="3dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@id/view_hoz"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cv_msg_popup1" />
+
+        <!--new chat/sche button-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/home_new_chat_sche_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="70dp"
+            android:foreground="@drawable/ic_float_btn_250px"
+            app:cardBackgroundColor="@color/grey3"
+            app:cardCornerRadius="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--tutorial: schedule going, undec, not going-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black9a"
+        android:elevation="2dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/schelist_appt_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/schelist_appt_day"
+            app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/constraintLayout"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/schelist_appt_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TUE"
+            android:textColor="@color/primaryDark4"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/constraintLayout"
+            app:layout_constraintEnd_toEndOf="@id/schelist_appt_date"
+            app:layout_constraintStart_toStartOf="@id/schelist_appt_date"
+            app:layout_constraintTop_toBottomOf="@id/schelist_appt_date" />
+
+        <!--going-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/xml_round_corner_30dp_pdark1"
+            android:paddingStart="20dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="15dp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toTopOf="@id/schelist_displayname"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed">
+
+            <!--grp/chat room displayname-->
+            <io.github.rockerhieu.emojicon.EmojiconTextView
+                android:id="@+id/schelist_appt_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_medium"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Family Gathering"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                emojicon:emojiconSize="25sp" />
+
+            <!--time logo-->
+            <ImageView
+                android:id="@+id/tv_one_dot"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:src="@drawable/ic_time_green_2_30px"
+                app:layout_constraintBottom_toBottomOf="@id/schelist_appt_time"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/schelist_appt_time" />
+
+            <TextView
+                android:id="@+id/schelist_appt_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="10:00"
+                android:textColor="@color/primaryDark4"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_one_dot"
+                app:layout_constraintTop_toBottomOf="@id/schelist_appt_title" />
+
+            <!--location logo-->
+            <ImageView
+                android:id="@+id/tv_two_dot"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_location_green_2_30px"
+                app:layout_constraintBottom_toBottomOf="@id/schelist_appt_time"
+                app:layout_constraintStart_toEndOf="@id/schelist_appt_time"
+                app:layout_constraintTop_toTopOf="@id/schelist_appt_time" />
+
+            <TextView
+                android:id="@+id/schelist_appt_loc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="No 13, Taman Jaya"
+                android:textColor="@color/primaryDark4"
+                android:textSize="12sp"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="@id/schelist_appt_time"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/tv_two_dot" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/started_by"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/roboto_thin"
+            android:text="@string/chattab_started_by"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@id/schelist_displayname"
+            app:layout_constraintLeft_toLeftOf="@+id/constraintLayout"
+            app:layout_constraintTop_toTopOf="@+id/schelist_displayname" />
+
+        <io.github.rockerhieu.emojicon.EmojiconTextView
+            android:id="@+id/schelist_displayname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="start"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="Happy Family Group"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@id/txt_going"
+            app:layout_constraintStart_toEndOf="@id/started_by"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            emojicon:emojiconSize="10sp" />
+
+        <TextView
+            android:id="@+id/txt_going"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/xml_round_corner_30dp_pd2"
+            android:backgroundTint="@color/primaryDark3"
+            android:fontFamily="@font/quicksand_bold"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="5dp"
+            android:text="Going"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/view_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/schelist_displayname" />
+
+        <View
+            android:id="@+id/view_1"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:background="@color/grey4"
+            app:layout_constraintBottom_toTopOf="@id/constraintLayout_undecided"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_going" />
+
+        <!--undecided-->
+        <TextView
+            android:id="@+id/schelist_appt_date_undecided"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/schelist_appt_day_undecided"
+            app:layout_constraintEnd_toStartOf="@id/constraintLayout_undecided"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/constraintLayout_undecided"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/schelist_appt_day_undecided"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TUE"
+            android:textColor="@color/primaryDark4"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/constraintLayout_undecided"
+            app:layout_constraintEnd_toEndOf="@id/schelist_appt_date_undecided"
+            app:layout_constraintStart_toStartOf="@id/schelist_appt_date_undecided"
+            app:layout_constraintTop_toBottomOf="@id/schelist_appt_date_undecided" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout_undecided"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/xml_round_corner_30dp_pdark1"
+            android:paddingStart="20dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="15dp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toTopOf="@id/schelist_displayname_undecided"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_1">
+
+            <!--grp/chat room displayname-->
+            <io.github.rockerhieu.emojicon.EmojiconTextView
+                android:id="@+id/schelist_appt_title_undecided"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_medium"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Family Gathering"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                emojicon:emojiconSize="25sp" />
+
+            <!--time logo-->
+            <ImageView
+                android:id="@+id/tv_one_do_undecided"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:src="@drawable/ic_time_green_2_30px"
+                app:layout_constraintBottom_toBottomOf="@id/schelist_appt_time_undecided"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/schelist_appt_time_undecided" />
+
+            <TextView
+                android:id="@+id/schelist_appt_time_undecided"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="10:00"
+                android:textColor="@color/primaryDark4"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_one_do_undecided"
+                app:layout_constraintTop_toBottomOf="@id/schelist_appt_title_undecided" />
+
+            <!--location logo-->
+            <ImageView
+                android:id="@+id/tv_two_dot_undecided"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_location_green_2_30px"
+                app:layout_constraintBottom_toBottomOf="@id/schelist_appt_time_undecided"
+                app:layout_constraintStart_toEndOf="@id/schelist_appt_time_undecided"
+                app:layout_constraintTop_toTopOf="@id/schelist_appt_time_undecided" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="No 13, Taman Jaya"
+                android:textColor="@color/primaryDark4"
+                android:textSize="12sp"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="@id/schelist_appt_time_undecided"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/tv_two_dot_undecided" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--going button-->
+        <ImageView
+            android:id="@+id/schelist_going_tick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_tick_green_black_120px"
+            app:layout_constraintBottom_toBottomOf="@id/constraintLayout_undecided"
+            app:layout_constraintEnd_toStartOf="@id/schelist_not_going_cross"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@id/constraintLayout_undecided"
+            app:layout_constraintTop_toTopOf="@id/constraintLayout_undecided" />
+
+        <!--not going button-->
+        <ImageView
+            android:id="@+id/schelist_not_going_cross"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/ic_cross_green_black_120px"
+            app:layout_constraintBottom_toBottomOf="@id/constraintLayout_undecided"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@id/schelist_going_tick"
+            app:layout_constraintTop_toTopOf="@id/constraintLayout_undecided" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/roboto_thin"
+            android:text="@string/chattab_started_by"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@id/schelist_displayname_undecided"
+            app:layout_constraintLeft_toLeftOf="@+id/constraintLayout_undecided"
+            app:layout_constraintTop_toTopOf="@+id/schelist_displayname_undecided" />
+
+        <io.github.rockerhieu.emojicon.EmojiconTextView
+            android:id="@+id/schelist_displayname_undecided"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="start"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="Happy Family Group"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@id/txt_undecided"
+            app:layout_constraintStart_toEndOf="@id/started_by"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout_undecided"
+            emojicon:emojiconSize="10sp" />
+
+        <TextView
+            android:id="@+id/txt_undecided"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/xml_round_corner_30dp_pd2"
+            android:backgroundTint="@color/grey8"
+            android:fontFamily="@font/quicksand_bold"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="5dp"
+            android:text="Undecided"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/view_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/schelist_displayname_undecided" />
+
+        <View
+            android:id="@+id/view_2"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:background="@color/grey4"
+            app:layout_constraintBottom_toTopOf="@id/not_going_ll"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_undecided" />
+
+        <!--not going-->
+
+        <TextView
+            android:id="@+id/schelist_appt_date_not_go"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="10"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/schelist_appt_day_not_go"
+            app:layout_constraintEnd_toStartOf="@id/not_going_ll"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/not_going_ll"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/schelist_appt_day_not_go"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TUE"
+            android:textColor="@color/primaryDark4"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/not_going_ll"
+            app:layout_constraintEnd_toEndOf="@id/schelist_appt_date_not_go"
+            app:layout_constraintStart_toStartOf="@id/schelist_appt_date_not_go"
+            app:layout_constraintTop_toBottomOf="@id/schelist_appt_date_not_go" />
+
+        <LinearLayout
+            android:id="@+id/not_going_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingEnd="30dp"
+            app:layout_constraintBottom_toTopOf="@id/txt_not_going"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sche_notgoing1"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/schelist_not_going_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 2 Not Going events"
+                android:textColor="@color/primaryDark4"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_not_going"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/xml_round_corner_30dp_pd2"
+            android:backgroundTint="@color/red"
+            android:fontFamily="@font/quicksand_bold"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="5dp"
+            android:text="Not Going"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/dissmiss_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/not_going_ll" />
+
+
+        <TextView
+            android:id="@+id/dissmiss_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/xml_round_corner_30dp_pd2"
+            android:backgroundTint="@color/primaryDark5"
+            android:fontFamily="@font/quicksand_bold"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="10dp"
+            android:text="DISMISS"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_not_going" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--fragment space-->
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linear_layout_tabs" />
+
+
+    <!--home tab icons-->
+    <LinearLayout
+        android:id="@+id/linear_layout_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/grey9" />
+
+        <TextView
+            android:id="@+id/xmppcheck"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/orange"
+            android:text="Not Connected to Server"
+            android:textAlignment="center"
+            android:visibility="gone" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            style="@style/MyCustomTabLayout_Home"
+            android:layout_width="match_parent"
+            android:layout_height="55dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

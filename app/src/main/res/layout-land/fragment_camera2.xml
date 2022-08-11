@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.soapp.camera.AutoFitTextureView
+        android:id="@+id/texture"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <RelativeLayout
+        android:id="@+id/forthetimer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_toLeftOf="@+id/land_rightbar"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <ProgressBar
+            android:id="@+id/progressBarCircle"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/xml_ic_camera_record_red"
+            android:indeterminate="false"
+            android:max="61"
+            android:progress="0"
+            android:progressDrawable="@drawable/xml_anim_timer_count"
+            android:rotation="-90" />
+
+        <TextView
+            android:id="@+id/recordSeconds_txtview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/progressBarCircle"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+    <!--<FrameLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_alignParentStart="true"-->
+    <!--android:layout_below="@id/texture"-->
+    <!--android:background="@color/transparent_black">-->
+
+    <!--<Button-->
+    <!--android:id="@+id/video"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:text="Record" />-->
+
+    <!--<ImageButton-->
+    <!--android:id="@+id/info"-->
+    <!--style="@android:style/Widget.Material.Light.Button.Borderless"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_vertical|right"-->
+    <!--android:padding="20dp"-->
+    <!--android:src="@drawable/icon_video_upload" />-->
+    <RelativeLayout
+        android:id="@+id/land_rightbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:background="#8cb3b2b2"
+        android:padding="16dp">
+
+
+        <ImageButton
+            android:id="@+id/switchCamera2"
+            android:layout_width="63dp"
+            android:layout_height="63dp"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:src="@drawable/xml_ic_switch_camera_black_24dp" />
+
+
+        <ImageButton
+            android:id="@+id/capturePhoto2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/xml_ic_panorama_fish_eye_black_24dp" />
+
+
+        <ImageButton
+            android:id="@+id/switchFlash2"
+            android:layout_width="63dp"
+            android:layout_height="63dp"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:src="@drawable/xml_ic_flash_off_black_24dp" />
+    </RelativeLayout>
+    <!--</FrameLayout>-->
+</RelativeLayout>

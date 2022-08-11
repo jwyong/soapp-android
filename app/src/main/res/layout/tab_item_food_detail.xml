@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_food_detail_tab"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="0dp"
+    android:padding="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgv_icon"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/ic_info_grey100px" />
+    </LinearLayout>
+
+    <!--<TextView-->
+    <!--android:id="@+id/noti_badge"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentEnd="true"-->
+    <!--android:layout_alignParentTop="true"-->
+    <!--android:background="@drawable/ic_notification_bubble_green"-->
+    <!--android:textAppearance="@style/TextAppearance.AppCompat.Large"-->
+    <!--android:textColor="@android:color/white"-->
+    <!--android:textSize="10sp"-->
+    <!--android:visibility="gone"-->
+    <!--/>-->
+</RelativeLayout>

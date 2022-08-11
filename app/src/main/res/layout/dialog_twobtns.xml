@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="15dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent">
+
+        <!-- dialog title -->
+        <TextView
+            android:id="@+id/dialog2Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/xml_border_bottom_grey7_0dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="dialogTitle"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- dialog2ImageView , dialog2Message is  normal message can just using TextView -->
+        <ImageView
+            android:id="@+id/dialog2ImageView"
+            android:layout_width="80dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/dialog_negative2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/dialog2Message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="edittext body"
+            android:textSize="18sp"
+            android:fontFamily="@font/roboto_light"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/dialog_negative2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/dialog2ImageView"
+            app:layout_constraintTop_toBottomOf="@+id/dialog2Title" />
+        <!--android:background="@drawable/xml_br_grey7_0dp"-->
+
+        <!-- phoneName , phoneNumber is add new contact function -->
+        <EditText
+            android:id="@+id/phoneName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginBottom="4dp"
+            android:visibility="gone"
+            android:maxLength="24"
+            android:inputType=""
+            android:layout_marginEnd="45dp"
+            app:layout_constraintBottom_toTopOf="@+id/phoneNumber"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/dialog2ImageView"
+            app:layout_constraintEnd_toStartOf="@+id/delete_btn"
+            app:layout_constraintTop_toBottomOf="@+id/dialog2Title" />
+
+        <EditText
+            android:id="@+id/phoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:padding="20dp"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/dialog_negative2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/dialog2ImageView"
+            app:layout_constraintTop_toBottomOf="@+id/phoneName" />
+
+        <ImageView
+            android:id="@+id/delete_btn1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/ic_cross_60px"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/phoneName"
+            app:layout_constraintEnd_toEndOf="@+id/num_editTxt"
+            app:layout_constraintStart_toEndOf="@+id/phoneName"
+            app:layout_constraintTop_toTopOf="@+id/phoneName" />
+
+        <TextView
+            android:id="@+id/num_editTxt1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            android:text="24"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/delete_btn1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/delete_btn1" />
+
+
+        <!-- alert_dialog_edit_text , delete_btn , num_editTxt is change name function-->
+        <EditText
+            android:id="@+id/alert_dialog_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="45dp"
+            android:focusableInTouchMode="true"
+            android:maxLength="24"
+            android:padding="20dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/dialog_negative2"
+            app:layout_constraintEnd_toEndOf="@+id/delete_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dialog2Title" />
+
+        <ImageView
+            android:id="@+id/delete_btn"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/ic_cross_60px"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/alert_dialog_edit_text"
+            app:layout_constraintEnd_toEndOf="@+id/num_editTxt"
+            app:layout_constraintStart_toEndOf="@+id/alert_dialog_edit_text"
+            app:layout_constraintTop_toTopOf="@+id/alert_dialog_edit_text" />
+
+        <TextView
+            android:id="@+id/num_editTxt"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            android:text="24"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/delete_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/delete_btn" />
+
+        <!-- for dialog checkbox -->
+        <TextView
+            android:id="@+id/dialogTextView_Check"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/dialog_checkBox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dialog2Title" />
+
+        <CheckBox
+            android:id="@+id/dialog_checkBox"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center_vertical"
+            android:text="@string/dialogcheckbox"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/dialog_negative2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dialogTextView_Check" />
+
+
+        <!-- dialog_negative2 , dialog_positive2 is button  -->
+        <TextView
+            android:id="@+id/dialog_negative2"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:fontFamily="@font/quicksand_bold"
+            android:textColor="@color/primaryDark3"
+            android:background="@drawable/xml_border_top_grey7_0dp"
+            app:layout_constraintEnd_toStartOf="@+id/dialog_positive2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dialog2Message" />
+
+        <TextView
+            android:id="@+id/dialog_positive2"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:fontFamily="@font/quicksand_bold"
+            android:background="@drawable/xml_border_grey7_bg_green"
+            app:layout_constraintBottom_toBottomOf="@+id/dialog_negative2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/dialog_negative2"
+            app:layout_constraintTop_toBottomOf="@+id/dialog2Message" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

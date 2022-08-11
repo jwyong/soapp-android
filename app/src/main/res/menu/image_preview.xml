@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.ViewImageActivity">
+
+
+    <item
+        android:id="@+id/action_crop"
+        android:icon="@drawable/xml_ic_crop_24dp"
+        android:title="@string/action_crop"
+        android:visible="false"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_rotate_anti_clockwise"
+        android:icon="@drawable/xml_ic_rotate_left_24dp"
+        android:title="@string/action_rotate_anti_clockwise"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_rotate_clockwise"
+        android:icon="@drawable/xml_ic_rotate_right_24dp"
+        android:title="@string/action_rotate_clockwise"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/cropaction_save"
+        android:icon="@drawable/xml_ic_tick_white_24dp"
+        android:title="@string/action_save"
+        app:showAsAction="always" />
+</menu>

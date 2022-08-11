@@ -1,0 +1,153 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primaryLogo</item>
+        <item name="colorPrimaryDark">@color/primaryDark4</item>
+        <item name="colorAccent">@color/red</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:textViewStyle">@style/QuicksandTextViewStyle</item>
+    </style>
+
+    <!-- [JAY] toolbar text styling -->
+    <style name="toolbarText" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <!--white back btn for toolbars-->
+    <style name="toolbarBackBtnWhite" parent="android:Theme.Holo">
+        <item name="android:homeAsUpIndicator">@drawable/ic_back_button_white_70px</item>
+    </style>
+
+    <!--black back btn for toolbars-->
+    <style name="toolbarBackBtnBlack" parent="android:Theme.Holo">
+        <item name="android:homeAsUpIndicator">@drawable/ic_back_btn_black_70px</item>
+    </style>
+
+    <!-- [jason] toolbar Style-->
+
+    <style name="MyMaterialTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/primaryLogo</item>
+        <item name="colorPrimaryDark">@color/primaryDark4</item>
+        <item name="colorAccent">@color/red</item>
+    </style>
+
+    <style name="MyMaterialTheme" parent="MyMaterialTheme.Base">
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+        <item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
+        <item name="android:windowSharedElementExitTransition">@android:transition/move</item>
+
+        <!--colors-->
+        <item name="colorPrimary">@color/primaryDark3</item>
+        <item name="colorPrimaryDark">@color/primaryDark4</item>
+        <item name="colorButtonNormal">@color/primaryDark2</item>
+        <item name="colorAccent">@color/primaryDark2</item>
+    </style>
+
+    <!--tab bar-->
+    <style name="MyCustomTabLayout_Home" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">?attr/colorPrimary</item>
+        <item name="tabIndicatorHeight">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="tabBackground">@color/grey1</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="tabTextAppearance">@style/MyCustomTabTextAppearance_Home</item>
+        <item name="tabSelectedTextColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="MyCustomTabTextAppearance_Home" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">10sp</item>
+        <item name="android:drawablePadding">0dp</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:padding">-10dp</item>
+        <item name="textAllCaps">false</item>
+    </style>
+    <!--tab bar-->
+
+    <!--[JAY] Schedule status spinner (down) style-->
+
+    <!--[Jon] Camera - Trying to style it such that the damn thing is fullscreen-->
+
+    <!--[Ryan] Custom Camera-->
+    <!-- Base application theme. -->
+
+    <!--[Ash] Remove the NP Divider-->
+
+    <!--[Ash]Alert Title color-->
+
+    <!--[Ash] Custom Media Testing-->
+
+    <!--[jason] Custom dateTime  -->
+    <attr name="mdtp_theme_dark" format="boolean">false</attr>
+
+    <style name="mdtp_ActionButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/mdtp_material_button_height</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="mdtp_ActionButton.Text" tools:ignore="NewApi">
+        <item name="android:textSize">@dimen/mdtp_material_button_textsize</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:background">@drawable/mdtp_material_button_background</item>
+        <item name="android:minWidth">@dimen/mdtp_material_button_minwidth</item>
+        <item name="android:paddingLeft">@dimen/mdtp_material_button_textpadding_horizontal</item>
+        <item name="android:paddingRight">@dimen/mdtp_material_button_textpadding_horizontal</item>
+        <item name="android:textColor">@color/primaryDark4</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+
+    <!-- [jason] Timer count Style -->
+
+    <!--[jason] material calender style-->
+    <style name="TextAppearance.MaterialCalendarWidget.Header" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.MaterialCalendarWidget.Date" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/mcv_text_date_light</item>
+    </style>
+
+    <style name="TextAppearance.MaterialCalendarWidget.WeekDay" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!-- [jason] testing bg -->
+
+    <style name="Custom.ActionBar.TabView.Empty" parent="@android:style/Widget.ActionBar.TabView">
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:background">#000000</item>
+    </style>
+
+    <style name="CustomActionbartab" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="actionBarTabStyle">@style/Custom.ActionBar.TabView.Empty</item>
+        <item name="android:actionBarTabStyle">@style/Custom.ActionBar.TabView.Empty</item>
+    </style>
+
+    <!--syah family font-->
+    <style name="quicksand_bold" parent="@android:style/TextAppearance.Medium">
+        <item name="android:fontFamily">@font/quicksand_bold</item>
+    </style>
+
+    <style name="QuicksandTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/quicksand_bold</item>
+    </style>
+
+    <!--ryan-->
+
+</resources>
+

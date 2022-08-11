@@ -1,0 +1,74 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/not_going_main_cl"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--hidden text view for height value-->
+    <!--<TextView-->
+        <!--android:id="@+id/schelist_ng_height"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="0dp"-->
+        <!--/>-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/schelist_not_going_init"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        android:paddingEnd="30dp"
+        android:paddingTop="5dp"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sche_notgoing1"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/schelist_not_going_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 2 Not Going events"
+            android:textColor="@color/primaryDark4"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/textView1" />
+
+
+        <!--<TextView-->
+            <!--android:id="@+id/textView2"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/sche_notgoing2"-->
+            <!--android:textColor="@color/primaryDark4"-->
+            <!--android:textSize="12sp"-->
+            <!--android:textStyle="bold"-->
+            <!--app:layout_constraintStart_toEndOf="@id/schelist_not_going_number" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/schelist_event"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text=" events"-->
+            <!--android:textColor="@color/primaryDark4"-->
+            <!--android:textSize="12sp"-->
+            <!--android:textStyle="bold"-->
+            <!--app:layout_constraintStart_toEndOf="@id/textView2" />-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--recyclerview for not going details-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/schelist_not_going_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/schelist_not_going_init" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

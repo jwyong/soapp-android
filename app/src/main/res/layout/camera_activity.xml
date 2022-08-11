@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF444444">
+
+    <!-- Camera -->
+    <com.example.soappcamera.CameraView
+        android:id="@+id/camera_jon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center"
+        android:keepScreenOn="true"
+        app:cameraAudio="off"
+        app:cameraCropOutput="false"
+        app:cameraFacing="back"
+        app:cameraFlash="off"
+        app:cameraGestureLongTap="none"
+        app:cameraGesturePinch="zoom"
+        app:cameraGestureScrollHorizontal="exposureCorrection"
+        app:cameraGestureScrollVertical="none"
+        app:cameraGestureTap="focusWithMarker"
+        app:cameraGrid="off"
+        app:cameraJpegQuality="100"
+        app:cameraSessionType="picture"
+        app:cameraVideoQuality="max480p" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:padding="16dp">
+
+        <!--<com.soapp.camera.TouchableImageButton-->
+        <!--android:id="@+id/capturePhoto"-->
+        <!--android:layout_width="85dp"-->
+        <!--android:layout_height="85dp"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:background="@drawable/ic_panorama_fish_eye_black_24dp" />-->
+        <ImageButton
+            android:id="@+id/capturePhoto"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="5dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/xml_ic_panorama_fish_eye_black_24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/capturePhoto"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-5dp"
+            android:text="Hold button to record a video"
+            android:textColor="@color/white" />
+
+
+        <ImageButton
+            android:id="@+id/switchCamera"
+            android:layout_width="63dp"
+            android:layout_height="63dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:src="@drawable/xml_ic_switch_camera_black_24dp" />
+
+
+        <ImageButton
+            android:id="@+id/switchFlash"
+            android:layout_width="63dp"
+            android:layout_height="63dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:src="@drawable/xml_ic_flash_off_black_24dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/forthetimer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <ProgressBar
+            android:id="@+id/progressBarCircle"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/xml_ic_camera_record_red"
+            android:indeterminate="false"
+            android:max="61"
+            android:progress="0"
+            android:progressDrawable="@drawable/xml_anim_timer_count"
+            android:rotation="-90" />
+
+        <TextView
+            android:id="@+id/recordSeconds_txtview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/progressBarCircle"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

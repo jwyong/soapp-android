@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--profile img-->
+    <ImageView
+        android:id="@+id/chat_log_profile_img"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:elevation="4dp"
+        android:src="@drawable/in_propic_circle_150px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/new_card"
+        app:layout_constraintStart_toStartOf="@id/new_card"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--main msg body-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/new_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginEnd="50dp"
+        app:cardBackgroundColor="@color/grey1"
+        app:cardCornerRadius="13dp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@id/chat_log_profile_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/chat_log_profile_img">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/chat_log_bubble_cl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="5dp">
+
+            <!--appt title-->
+            <TextView
+                android:id="@+id/chat_log_appt_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/gotham_medium"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Appt Title asdfasdfasdfasdfasdffasdf"
+                android:textColor="@color/black"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--displayname-->
+            <io.github.rockerhieu.emojicon.EmojiconTextView
+                android:id="@+id/chat_log_display_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/gotham_light"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Syah 012-3391028"
+                android:textColor="@color/black"
+                android:textSize="10dp"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/chat_log_appt_user_status"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="@id/chat_log_appt_title"
+                app:layout_constraintTop_toBottomOf="@id/chat_log_appt_title" />
+
+            <!--user status-->
+            <TextView
+                android:id="@+id/chat_log_appt_user_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/xml_round_corner_30dp_pd3"
+                android:fontFamily="@font/quicksand_bold"
+                android:paddingStart="4dp"
+                android:paddingTop="2dp"
+                android:paddingEnd="4dp"
+                android:paddingBottom="2dp"
+                android:text="GOING"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="8sp"
+                app:layout_constraintBottom_toBottomOf="@id/chat_log_display_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/chat_log_display_name"
+                app:layout_constraintTop_toTopOf="@id/chat_log_display_name" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

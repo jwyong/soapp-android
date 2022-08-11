@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?><!--Colors to be used throughout the app - DON'T hardcode any colours-->
+<resources>
+    <!--black and white-->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!--main-->
+    <color name="primaryLogo">#5EE4A3</color>
+
+    <!--first shades-->
+    <color name="primaryDark1">#CCFFD9</color>
+    <color name="primaryDark2">#7FDDA7</color>
+    <color name="primaryDark3">#5BD394</color>
+    <color name="primaryDark4">#7DB38B</color>
+    <color name="primaryDark5">#2b4832</color>
+
+    <!--second shades-->
+    <color name="primaryLight1">#E6FFEC</color>
+    <color name="primaryLight2">#B5F2D1</color>
+    <color name="primaryLight3">#9EE5BF</color>
+    <color name="primaryLight4">#AAD1B2</color>
+
+    <!--third shades-->
+    <color name="primaryPale1">#E6F2E9</color>
+    <color name="primaryPale2">#DCEFE0</color>
+
+    <!--ONLY RED COLOUR IN SOAPP-->
+    <color name="red">#FF214D</color>
+
+    <!--grey shades-->
+    <color name="grey1">#F4F4F4</color>
+    <color name="grey2">#F2F2F2</color>
+    <color name="grey3">#E6E6E6</color>
+    <color name="grey4">#E0E0E0</color>
+    <color name="grey5">#D9D9D9</color>
+    <color name="grey6">#D4D4D4</color>
+    <color name="grey7">#CCCCCC</color>
+    <color name="grey8">#B3B3B3</color>
+    <color name="grey9">#7F7F7F</color>
+    <color name="grey10">#646464</color>
+
+    <!--[ALPHA] grey shades-->
+
+    <!--[ALPHA] black -->
+    <color name="black1a">#10000000</color>
+    <color name="black3a">#30000000</color>
+    <color name="black9a">#90000000</color>
+
+    <!--[ALPHA] white -->
+    <color name="white0a">#50ffffff</color>
+    <!--left out colours-->
+    <color name="orange">#ffff9800</color>
+
+    <!--[ALPHA] green-->
+
+    <!--groupmem displayname colors have to be hard-coded in GlobalVariables.java due to int changing
+    when saved into sqlite-->
+</resources>

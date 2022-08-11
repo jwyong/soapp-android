@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.ViewImageActivity">
+
+
+    <!--<item-->
+    <!--android:id="@+id/undoDraw"-->
+    <!--android:icon="@drawable/ic_toolbar_arrow_back_white"-->
+    <!--android:title="Undo"-->
+    <!--android:visible="false"-->
+    <!--app:showAsAction="always" />-->
+
+    <item
+        android:id="@+id/colorPen"
+        android:icon="@drawable/ic_pen_white_70px"
+        android:title="color"
+        android:visible="false"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_crop"
+        android:icon="@drawable/xml_ic_crop_24dp"
+        android:title="@string/action_crop"
+        android:visible="true"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_save"
+        android:icon="@drawable/xml_ic_tick_white_24dp"
+        android:title="@string/action_save"
+        app:showAsAction="always" />
+</menu>

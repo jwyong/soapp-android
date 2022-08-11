@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!--<androidx.appcompat.widget.Toolbar-->
+    <!--android:id="@+id/toolbar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="44dp"-->
+    <!--android:background="@null"-->
+    <!--android:theme="@style/ThemeOverlay.AppCompat.Dark"-->
+    <!--android:translationZ="10dp">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/food_detail_share"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_alignParentEnd="true"-->
+    <!--android:layout_alignParentTop="true"-->
+    <!--android:layout_gravity="end"-->
+    <!--android:background="@null"-->
+    <!--android:scaleX="0.6"-->
+    <!--android:scaleY="0.6"-->
+    <!--android:src="@drawable/food_share"-->
+    <!--android:tint="@color/transparent_black" />-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/food_detail_appt"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_gravity="end"-->
+    <!--android:background="@null"-->
+    <!--android:scaleX="0.6"-->
+    <!--android:scaleY="0.6"-->
+    <!--android:src="@drawable/food_appt"-->
+    <!--android:tint="@color/transparent_black" />-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/res_cam_btn"-->
+    <!--android:layout_width="25dp"-->
+    <!--android:layout_height="25dp"-->
+    <!--android:layout_gravity="end"-->
+    <!--android:layout_marginEnd="5dp"-->
+    <!--android:background="@null"-->
+    <!--android:src="@drawable/ic_camera_grey_new"-->
+    <!--android:tint="@color/transparent_black" />-->
+
+    <!--</androidx.appcompat.widget.Toolbar>-->
+
+    <!--toolbar and set animation-->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            <!--app:contentScrim="#80000000"-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_collapseMode="parallax">
+
+                <!-- res promo video -->
+                <RelativeLayout
+                    android:id="@+id/video_relay"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:visibility="visible">
+
+                    <VideoView
+                        android:id="@+id/videoStreaming"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true">
+
+                    </VideoView>
+
+                    <ImageButton
+                        android:id="@+id/mute_imgbtn"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginBottom="30dp"
+                        android:background="@null"
+                        android:src="@drawable/ic_mute_100px"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/video_percent_txtview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@color/white" />
+
+                    <ProgressBar
+                        android:id="@+id/video_loading_probar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true" />
+
+                    <!--<Button-->
+                    <!--android:id="@+id/btn_promo"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="25dp"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:layout_centerHorizontal="true"-->
+                    <!--android:layout_marginBottom="15dp"-->
+                    <!--android:background="@drawable/button_radius"-->
+                    <!--android:shadowRadius="2"-->
+                    <!--android:text="@+id/btn_promo"-->
+                    <!--android:textSize="12sp"-->
+                    <!--android:visibility="visible" />-->
+                </RelativeLayout>
+
+                <!-- action button to appear after video finish -->
+                <RelativeLayout
+                    android:id="@+id/video_imgBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:drawableTop="@drawable/ic_booking_134px"
+                        android:text="@string/book_now" />
+
+                </RelativeLayout>
+
+                <!-- res profile image for if no res propic-->
+                <RelativeLayout
+                    android:id="@+id/food_propic_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/food_default_profile_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_res_default_no_image_black_640px" />
+                </RelativeLayout>
+
+                <!--res img slider for when got propic-->
+                <RelativeLayout
+                    android:id="@+id/rl_image_slider"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp">
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <me.relex.circleindicator.CircleIndicator
+                        android:id="@+id/indicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="30dp" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/xml_gradient_black3a_hori"
+                android:theme="@style/toolbarBackBtnWhite"
+                app:contentInsetEnd="0dp"
+                app:contentInsetStart="0dp"
+                app:contentInsetStartWithNavigation="0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:translationZ="10dp">
+
+                    <ImageView
+                        android:id="@+id/b_backBtn"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:scaleX="0.5"
+                        android:scaleY="0.5"
+                        android:src="@drawable/ic_back_button_white_70px"
+                        android:tint="@color/white" />
+
+                    <ImageView
+                        android:id="@+id/res_cam_btn"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@null"
+                        android:scaleX="0.5"
+                        android:scaleY="0.5"
+                        android:src="@drawable/ic_camera_90px"
+                        android:tint="@color/white"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/food_detail_share"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:scaleX="0.6"
+                        android:scaleY="0.6"
+                        android:src="@drawable/ic_pen_white_70px"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/food_detail_share"
+                        android:layout_width="35dp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:scaleX="0.5"
+                        android:scaleY="0.5"
+                        android:src="@drawable/ic_share_grey100px"
+                        android:tint="@color/white"
+                        app:layout_constraintEnd_toStartOf="@+id/food_detail_appt" />
+
+                    <ImageView
+                        android:id="@+id/food_detail_appt"
+                        android:layout_width="35dp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:scaleX="0.6"
+                        android:scaleY="0.6"
+                        android:src="@drawable/ic_schedule_grey100px"
+                        android:tint="@color/white"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_res_intro"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="-30dp"
+            android:background="@drawable/xml_round_white"
+            android:visibility="visible">
+
+            <!--res title-->
+            <TextView
+                android:id="@+id/tv_food_intro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:text="Soapp Restaurant"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--price-->
+            <LinearLayout
+                android:id="@+id/food_det_price_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toStartOf="@id/food_det_rating_ll"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_food_intro">
+
+                <!--dollar logos-->
+                <ImageView
+                    android:id="@+id/imgv_price_intro_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_dolar_grey_40px" />
+
+                <ImageView
+                    android:id="@+id/imgv_price_intro_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_dolar_grey_40px" />
+
+                <ImageView
+                    android:id="@+id/imgv_price_intro_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_dolar_grey_40px" />
+
+                <ImageView
+                    android:id="@+id/imgv_price_intro_four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_dolar_grey_40px" />
+
+                <ImageView
+                    android:id="@+id/imgv_price_intro_five"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_dolar_grey_40px" />
+
+                <!--price range-->
+                <TextView
+                    android:id="@+id/tv_price_range_intro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="RM11-RM25"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!--rating-->
+            <LinearLayout
+                android:id="@+id/food_det_rating_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toStartOf="@id/tv_open_status"
+                app:layout_constraintStart_toEndOf="@id/food_det_price_ll"
+                app:layout_constraintTop_toBottomOf="@id/tv_food_intro">
+
+                <!--stars logo-->
+                <ImageView
+                    android:id="@+id/imgv_rating_intro_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_star_grey_40px" />
+
+                <ImageView
+                    android:id="@+id/imgv_rating_intro_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_star_grey_40px" />
+
+                <ImageView
+                    android:id="@+id/imgv_rating_intro_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_star_grey_40px" />
+
+                <ImageView
+                    android:id="@+id/imgv_rating_intro_four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_star_grey_40px" />
+
+                <ImageView
+                    android:id="@+id/imgv_rating_intro_five"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_star_grey_40px" />
+
+                <TextView
+                    android:id="@+id/tv_rating_intro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="126"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!--open now label-->
+            <TextView
+                android:id="@+id/tv_open_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="OPEN NOW"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/food_det_rating_ll"
+                app:layout_constraintTop_toBottomOf="@+id/tv_food_intro" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/food_detail_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:translationZ="10dp"
+        android:visibility="visible">
+
+        <ProgressBar
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/food_detail_loading"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/food_detail_failed"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="100dp"
+        android:translationZ="10dp"
+        android:visibility="gone"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_info_full_green_150px" />
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="@string/food_detail_loading_failed"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!--hide tab layout for now-->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/food_det_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:theme="@style/CustomActionbartab"
+            android:visibility="gone"
+            app:tabGravity="fill"
+            app:tabMode="fixed"
+            app:tabPaddingEnd="0dp"
+            app:tabPaddingStart="0dp" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/food_det_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

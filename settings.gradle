@@ -1,0 +1,2 @@
+include ':app', ':soappcamera', ':soappcompressor', ':soappemoji', ':DebugGhostLib'
+//, ':soappgallery'

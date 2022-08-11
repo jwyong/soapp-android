@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="_5sdp">5.00dp</dimen>
+    <dimen name="_80sdp">80.00dp</dimen>
+    <dimen name="_10sdp">10.00dp</dimen>
+    <dimen name="_12sdp">12.00dp</dimen>
+    <dimen name="_14sdp">14.00dp</dimen>
+    <dimen name="_15sdp">15.00dp</dimen>
+    <dimen name="_18sdp">18.00dp</dimen>
+    <dimen name="_1sdp">1.00dp</dimen>
+    <dimen name="_20sdp">20.00dp</dimen>
+    <dimen name="_21sdp">21.00dp</dimen>
+    <dimen name="_30sdp">30.00dp</dimen>
+
+    <!--[JAY]-->
+    <dimen name="soapp_tab_divider_height">0.7dp</dimen>
+
+    <!-- [gallery media] jason -->
+
+    <!--option menus icon [syah]-->
+
+
+</resources>

@@ -1,0 +1,1310 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!--<string name="soapp_name">Soapp</string>-->
+
+    <!--alert messages (response, error, etc)-->
+    <string name="onresponse_unsuccessful">Response from server unsuccessful, please try again later.</string>
+    <string name="onfailure">Connection to server failed, please try again.</string>
+    <string name="check_connection">Please check your internet connection and try again</string>
+    <string name="xmpp_waiting_connection">Waiting for connection&#8230;</string>
+
+    <!--location-related-->
+    <string name="gps_accurate">Location accuracy can be improved by turning choosing high
+    accuracy in location services</string>
+
+    <!-- Device whitelisting (Asus, Huawei, Xiaomi...) -->
+    <string name="allow">Allow</string>
+    <string name="whitelist_msg">Please add Soapp into any whiltelists for battery manager apps if you can\'t receive push notifications</string>
+    <string name="dialogcheckbox">don\'t ask again</string>
+    <string name="whitelist_title">Push Notifications</string>
+    <string name="whitelist_asus_msg">Please allow Soapp to receive push notifications in
+        the Auto-start Manager.</string>
+    <string name="whitelist_huawei_msg">Please allow Soapp to receive push notifications under Protected Apps.</string>
+    <string name="whitelist_samsung_msg">Please disable battery optimisation for Soapp by
+        clicking on the \"Detail\" button in the next screen to receive push notifications.</string>
+    <string name="whitelist_denied">You may not be able to receive push notifications from your
+        friends or appointment reminders</string>
+    <string name="whitelist_allowed">Push Notifications Permission Enabled</string>
+    <string name="oppo_last_msg">Whitelist Soapp</string>
+    <string name="oppo_whitelist_app_manual">To get push notifications, lock Soapp in the
+    recent apps tab by dragging it downwards</string>
+
+    <!--GLOBAL (sharing controller, etc)-->
+    <string name="cancel">Cancel</string>
+    <string name="share_confirm_title">Confirm Sharing</string>
+    <string name="share_confirm">Share item to</string>
+    <string name="update">Update</string>
+    <string name="new_ver_avail">New Version Available</string>
+    <string name="update_expired_msg">Please update Soapp to the latest version to continue
+    using Soapp.</string>
+    <string name="update_half_expired_msg">Please update Soapp to enjoy the latest features
+        available.</string>
+    <string name="update_failed">Unable to open Google Play Store - please update Soapp
+        manually by searching for \"Soapp\" in Google Play Store</string>
+    <string name="update_half_expired_cancel">You will not be able to access Soapp after </string>
+    <string name="days">day(s).</string>
+    <string name="ok_label">OK</string>
+    <string name="share_to_appt">Update appointment</string>
+    <string name="share_to_chat">Share to chat room</string>
+    <string name="media_gallery">Select Media</string>
+    <string name="crop_image">Processing Image</string>
+
+    <!--permissions-->
+    <string name="open_settings">Open Settings</string>
+    <string name="need_basic_title">Permissions Required</string>
+    <string name="need_camera">Please allow camera and storage access to start taking pictures.</string>
+    <string name="need_gallery">Please allow storage access to start viewing photos in the gallery.</string>
+    <string name="need_audio_title">Microphone and Storage Access Required</string>
+    <string name="need_audio">Please allow microphone and storage access to start recording audio.</string>
+    <string name="start_audio">Permission granted! Tap and hold onto the microphone to
+        start recording audio.</string>
+    <string name="need_res_loc_title">Location Access Required</string>
+    <string name="need_res_loc">Please allow location access to start searching for nearby
+        restaurants</string>
+    <string name="need_appt_loc">Please allow location access to start access map nearby functions</string>
+    <string name="need_res_gps_title">GPS Required</string>
+    <string name="need_res_gps">Please turn on GPS to start searching for nearby restaurants.</string>
+    <string name="need_phone_title">Phone Call Permission</string>
+    <string name="need_phone">Please allow phone call access to start a phone call.</string>
+    <string name="permission_txt">Soapp requires permission to access contacts and storage in order to
+    function properly</string>
+    <string name="need_noti_permission_txt">Please enable Soapp to change systems settings in order to access Notifications</string>
+
+
+    <!-- Registration -->
+    <string name="terms">Terms &amp; Conditions</string>
+    <string name="phonenumber">What\'s your phone number?</string>
+    <string name="phonelabel">Phone Number</string>
+    <string name="sendotp">Send Confirmation Code</string>
+    <string name="six_digit_desc">A 6-digit confirmation code has been sent to your phone
+        number, please wait for the code and input it into the field above. If you do not
+        receive the code in 2 minutes, please click on the \"re-send code\" button to get
+        a new code, or try again later.</string>
+    <string name="invalidOTP">The 6-digit code is invalid, please click the \"re-send code\"
+        button or try again later.</string>
+    <string name="sync_contact_done">Contacts Synced Successfully</string>
+    <string name="skip">SKIP</string>
+
+    <!-- Phone Verification -->
+    <string name="pVContinue">Continue</string>
+    <string name="pVResend">Resend Code</string>
+    <string name="searchHint">Search your country here</string>
+
+    <!-- UserProfile -->
+    <string name="selectphoto">Select Photo</string>
+    <string name="inp_name">Input your name</string>
+    <string name="next">Next</string>
+
+    <!-- External Share -->
+    <string name="search">Search</string>
+    <string name="share_with">Share item with&#8230;</string>
+
+    <!-- Food -->
+    <!-- Promotion -->
+    <string name="Featured">Featured</string>
+    <string name="video_buffering">Buffering video:</string>
+    <string name="no_promo">There are currently no promotions for this restaurant</string>
+
+    <!-- Booking -->
+    <string name="TimeTxt">-:-</string>
+    <string name="DateTxt">-/-/-</string>
+    <string name="CurrentLocation">CURRENT LOCATION</string>
+    <string name="nearby1">Nearby</string>
+    <string name="view_all">View All</string>
+    <string name="view_less">View Less</string>
+    <string name="book_now">BOOK NOW!</string>
+    <string name="book_title1">DATE</string>
+    <string name="book_title2">TIME</string>
+    <string name="book_guest_title">NO. OF PAX</string>
+    <string name="book_promo_title">Select Promotion</string>
+    <string name="book_promo_null">No Promo</string>
+    <string name="booking_confirmation">Booking Confirmation</string>
+    <string name="booking_confirmation_3_hours">You can only place a booking 3 hours ahead of now.</string>
+    <string name="booking_no_attempts">You can no longer edit this booking as you have edited it 3 times.</string>
+    <string name="booking_confirmed">Booking Confirmed</string>
+    <string name="booking_cancelled">Booking Cancelled</string>
+    <string name="booking_retry_1">You have</string>
+    <string name="booking_retry_2">Are you sure you would like to continue with this booking?</string>
+    <string name="booking_accept_status">Thank you. Your booking has been sent for review. Please
+        check your status in \"My Bookings\". You have </string>
+    <string name="attempt_left"> attempt left.</string>
+    <string name="attempts_left"> attempts left.</string>
+    <string name="thanks">Thank you</string>
+    <string name="booking_sent_review">Booking sent for review</string>
+    <string name="cancel_booking">Booking Cancellation</string>
+    <string name="booking_cancellation_ask">Are you sure you\'d like to cancel and delete this
+        booking?</string>
+    <string name="booking_deleted">Booking Successfully Deleted</string>
+    <string name="booking_cancelled_success">Booking Successfully Cancelled</string>
+    <string name="booking_sent">Booking Code Sent</string>
+    <string name="booking_set_appt_title">Update Appointment</string>
+    <string name="booking_set_appt_msg">Would you like to update booking details to
+        appointment?</string>
+    <string name="booking_not_exist">Booking no longer exist as it has been cancelled or deleted</string>
+    <string name="booking_progress">Submitting booking for review</string>
+    <string name="share_booking">Share booking with…</string>
+    <string name="booking_no_date_title">No Booking Date/Time</string>
+    <string name="booking_no_date_msg">Please select a booking Date and time slot</string>
+    <string name="booking_no_guest_title">No Guests Number</string>
+    <string name="booking_no_guest_msg">Please select the number of guests for this booking</string>
+    <!--todo multiple booking-->
+
+    <!-- Food Filter -->
+    <string name="confirm">Confirm</string>
+    <string name="advanced_search">Advanced Search</string>
+    <string name="filtered_fnb">Filtered F&amp;B</string>
+
+    <!-- Food Nearby -->
+    <string name="food_loading">Loading Restaurants</string>
+    <string name="food_retry">Please click on the nearby button to try searching again.</string>
+    <string name="food_gps">Please enable location access and GPS to search nearby restaurants.</string>
+    <string name="food_loc_permission">Please enable location permission to search nearby restaurants.</string>
+
+    <!-- Food Detail-->
+    <string name="food_detail_loading">Loading Details</string>
+    <string name="food_title_main">D I S C O V E R</string>
+    <string name="food_detail_loading_failed">Failed to Load Details</string>
+    <string name="food_open_caps">OPEN NOW</string>
+    <string name="food_closed_caps">CLOSED</string>
+    <string name="food_open">Open Now</string>
+    <string name="food_closed">Closed</string>
+
+    <!--Food rating-->
+
+    <!-- SOAPP TAB -->
+    <!-- Contact -->
+    <string name="contTermsCond">Please wait while we search for friends who are already on Soapp,
+    and re-join old groups if you\'re a returning user.</string>
+    <string name="searchContactHint">Search Contacts</string>
+    <string name="refresh">Refresh Contacts</string>
+    <string name="invite">Invite to Soapp</string>
+    <string name="save">Save</string>
+    <string name="saving_contact">Saving Contact</string>
+    <string name="contact_exists">Contact already exists in Soapp</string>
+    <string name="contact_details">Contact Details</string>
+    <string name="sync_contacts_title">Sync Contacts</string>
+    <string name="sync_contacts_msg">Your Soapp contacts will be synced with your phone
+        contacts, which will take some time depending on the number of contacts.</string>
+    <string name="contact_call">Call Contact</string>
+    <string name="contact_call_msg">Would you like to call this contact\?</string>
+
+    <!--Favourites-->
+    <string name="soapp_favourites">Favourites</string>
+    <string name="start_fav">Tap here to start adding favourite restaurants now!</string>
+
+    <!--My Booking-->
+    <string name="mybooking_title">My Bookings</string>
+    <string name="start_booking">Tap here to start booking now!</string>
+
+    <!--Plan Details-->
+
+    <!--END of Soapp Tab-->
+
+    <!-- Dialog String -->
+
+    <!-- Home 5 Tabs Title -->
+    <string name="contacts">Contacts</string>
+    <string name="food">F&amp;B</string>
+    <string name="chat">Chat</string>
+    <string name="schedule">Schedule</string>
+    <string name="settings">Settings</string>
+
+    <!-- Home 5 Tabs Title , New UI (Faiza)-->
+    <string name="home_contacts">C O N T A C T S</string>
+    <string name="home_contacts2">friends and family</string>
+    <string name="home_favorites">F A V O R I T E S</string>
+    <string name="home_favorites2">restaurant</string>
+    <string name="home_profile">P R O F I L E</string>
+    <string name="home_profile2">personal info</string>
+    <string name="home_reward">R E W A R D S</string>
+    <string name="home_reward2">check details</string>
+    <string name="home_qrscan">QR SCANNER</string>
+    <string name="home_qrscan2">tap to scan</string>
+
+    <!-- Chat -->
+    <string name="search_chat">Search Chat</string>
+    <string name="view_profile">View Profile</string>
+    <string name="start_new_chat">Tap here to start Soapp-ing now!</string>
+    <string name="start_new_appt">Tap here to start scheduling an appointment now!</string>
+    <string name="no_search_results">No results</string>
+    <string name="send_msg">Send</string>
+    <string name="share">Share</string>
+    <string name="block_user_msg">Are you sure you want to block this user?</string>
+    <string name="unblock_contact">Are you sure you want to unblock this user?</string>
+    <string name="add_to_contact">Add to contacts</string>
+    <string name="done">Done</string>
+    <string name="delete">Delete</string>
+    <string name="map_navigate_title">Navigation</string>
+    <string name="typing">Typing&#8230;</string>
+    <string name="audio_sent">Voice Message Sent</string>
+    <string name="audio_received">Voice Message Received</string>
+    <string name="contact_received">Contact Received</string>
+    <string name="contact_sent">Contact Sent</string>
+    <string name="location_received">Location Received</string>
+    <string name="location_sent">Location Sent</string>
+    <string name="image_received">Image Received</string>
+    <string name="image_sent">Image Sent</string>
+    <string name="restaurant_received">Restaurant Received</string>
+    <string name="restaurant_sent">Restaurant Sent</string>
+    <string name="tracking_sent">Location Tracking Sent</string>
+    <string name="video_received">Video Received</string>
+    <string name="video_sent">Video Sent</string>
+    <string name="unread_msg">Unread Messages</string>
+
+    <!--appt update msg-->
+    <string name="appt_title_updated_self_from">You have changed the appointment title from </string>
+    <string name="appt_title_updated_in_from">has changed the appointment title from </string>
+    <string name="to">to</string>
+    <string name="appt_for">for</string>
+    <string name="appt_det_updated">: Appointment details updated</string>
+    <string name="appt_self_delete">You have deleted</string>
+    <string name="appt_other_delete">has deleted</string>
+    <string name="update_soapp_msg">Please update Soapp to the latest version</string>
+
+    <!--map-->
+    <string name="map_current_loc">You Are Here</string>
+
+    <!--reply-->
+    <string name="reply_out_img">Image</string>
+    <string name="reply_out_vid">Video</string>
+    <string name="reply_in_img">Image</string>
+    <string name="reply_in_vid">Video</string>
+
+    <!--record audio-->
+    <string name="swipe_to_cancel">Swipe to cancel</string>
+
+    <string name="et_text_hint"><i>Type your message here</i></string>
+
+    <!-- Indi -->
+    <string name="indi_appt">Individual Appointment</string>
+    <string name="indi_track">Individual Tracking</string>
+    <string name="indi_chat_status">Tap here for more info</string>
+    <string name="clear">Clear</string>
+    <string name="clear_chat">Clear Chat</string>
+    <string name="clear_chat_msg">Are you sure you want to clear the chat history?</string>
+    <string name="block_user">Block User</string>
+    <string name="block">Block</string>
+    <string name="unblock_user">Unblock User</string>
+    <string name="progress_sending_res_appt">Updating Appointment Venue</string>
+    <string name="blocked_user">You have blocked this user</string>
+    <string name="unblocked_user">You have unblocked this user</string>
+    <string name="contact_added_soapp">Contact has been added to Soapp</string>
+    <string name="contact_added_phone">Contact has been added to phone book</string>
+    <string name="blocked_user_title">[Blocked]</string>
+
+    <!-- Group -->
+    <string name="group_chat_status">Tap here for group details</string>
+    <string name="self_left_grp">You have left the group</string>
+    <string name="self_removed_grp">You have been removed from the group</string>
+    <string name="has_left_grp">has left the group</string>
+    <string name="other_removed_grp">has been removed from the group</string>
+    <string name="other_left_grp">has left the group</string>
+    <string name="grp_created">The group has been created</string>
+    <string name="grp_added">You have been added to the group</string>
+    <string name="grp_creating">Creating Group</string>
+    <string name="adding_members">Adding Members</string>
+    <string name="assign_adm">Assign Admin</string>
+    <string name="delete_grp_mem">Delete Member</string>
+    <string name="delete_grp_mem_msg">Are you sure want to delete?</string>
+    <string name="add_contacts">Add to Contacts</string>
+    <string name="call_user">Call User</string>
+    <string name="msg_user">Message User</string>
+    <string name="create_grp">Create Group</string>
+    <string name="leave_grp">Leave Group</string>
+    <string name="leave_grp_msg">Are you sure you want to leave this group?</string>
+    <string name="profile_grp">Group Profile</string>
+    <string name="exist_member_added">Selected members already exist in this group</string>
+    <string name="single_member_added">has been added to the group</string>
+    <string name="multi_member_self_added">You have added a few members to the group</string>
+    <string name="single_member_self_added">You have added</string>
+    <string name="single_member_self_removed">You have removed</string>
+    <string name="you">You</string>
+    <string name="updated_grp_profile">has updated the group profile</string>
+    <string name="updating_grp_profile">Updating Group Profile</string>
+    <string name="add_member_title">Add Members</string>
+    <string name="create_grpInGrp_title">Create Another Group</string>
+    <string name="assign_admin">has been assigned as admin</string>
+    <string name="assign_admin_you">have been assigned as admin</string>
+    <string name="grp_title_edit">Edit group title</string>
+    <string name="removed_user_title">[Removed]</string>
+    <!-- Tracking -->
+
+    <!-- New Indi Chat-->
+    <string name="new_chat">New Chat</string>
+
+    <!-- New Group Chat -->
+    <string name="new_g_chat">New Group</string>
+    <string name="new_g_name_tap">Please input your group name</string>
+    <string name="new_g_name">Group Name</string>
+    <string name="grp_no_member">No Members Selected</string>
+    <string name="grp_no_member_msg">Please select at least one member for the new group</string>
+    <string name="grp_no_title">No Group Name</string>
+    <string name="grp_no_title_msg">Please input a group name to proceed</string>
+
+    <!-- Chat others -->
+    <string name="share_contact">Share Contact</string>
+    <string name="share_forward">Forward item to…</string>
+
+    <!--[JON] Popup-->
+    <string name="popup_camera_string">Camera</string>
+    <string name="popup_medialibrary">Gallery</string>
+    <string name="popup_appointment">Appointment</string>
+    <string name="popup_share_loc">Location</string>
+    <string name="popup_share_contact">Contact</string>
+    <string name="popup_share_res">Restaurant</string>
+
+    <!-- ScheduleTab -->
+    <!--global-->
+    <string name="appt_host_delete">Only the host can delete the appointment</string>
+    <string name="appt_deleted">Appointment has been deleted</string>
+    <string name="grpmem_no">Selected Members:</string>
+    <string name="delete_appt">Delete Appointment</string>
+    <string name="clear_appt_noti_title">Clear Appointment Badges</string>
+    <string name="clear_appt_noti_msg">Would you like to clear all appointment notification badges?
+    This action cannot be un-done</string>
+
+    <!--new appt-->
+    <string name="new_indi_appt">New Appointment</string>
+    <string name="new_g_appt">New Group</string>
+    <string name="exist_chatrooms">Existing Groups</string>
+    <string name="appt_no_title">Appointment Details Incomplete</string>
+    <string name="appt_no_msg">Please make sure that you have set the appointment title, date, time and location.</string>
+    <string name="appt_no_grp_msg">Please make sure that you have filled in the group name.</string>
+    <string name="grp_appt_created">The group appointment has been created</string>
+    <string name="appt_no_map_title">No Location Chosen</string>
+    <string name="appt_no_map_msg">Please select a location by searching or choosing a POI from the map.</string>
+    <string name="appt_no_loc_title">No Location Title</string>
+    <string name="appt_no_appt_title">No Appointment Title</string>
+
+    <string name="chatroom">Chat Room</string>
+    <string name="appt_title">Appointment Title</string>
+    <string name="appt_undecided">Undecided</string>
+    <string name="appt_is_undecided">is undecided</string>
+    <string name="appt_hosting">Hosting</string>
+    <string name="appt_is_hosting">is hosting</string>
+    <string name="appt_going">Going</string>
+    <string name="appt_is_going">is going</string>
+    <string name="appt_you_are">You are</string>
+    <string name="appt_not_going">Not Going</string>
+    <string name="appt_is_not_going">is not going</string>
+    <string name="sche_location">Choose Location</string>
+    <string name="appt_creating">Creating Appointment</string>
+    <string name="appt_created">Appointment has been created</string>
+    <string name="appt_updated">Appointment details updated</string>
+    <string name="appt_date_changed">Appointment date and time updated</string>
+    <string name="appt_title_edit">Edit appointment title</string>
+    <string name="appt_loc_edit">Edit appointment location</string>
+    <string name="appt_title_changed">Appointment title updated</string>
+    <string name="appt_location_changed">Appointment venue updated</string>
+    <string name="appt_status_changed">Appointment status updated</string>
+    <string name="sche_delete_title">Delete Appointment</string>
+    <string name="sche_delete_msg">Are you sure you want to delete this appointment?</string>
+    <string name="sche_notgoing1">Change your mind for</string>
+    <string name="sche_notgoing_event">Not Going event</string>
+    <string name="sche_notgoing_events">Not Going events</string>
+    <string name="exist_g_schedule">Existing Groups</string>
+
+    <!--Schelog-->
+    <string name="schelog_hosted_by">hosted by</string>
+    <string name="schelog_appt_status_title">Update Appointment Status</string>
+    <string name="schelog_appt_status_msg">Are you sure you want to update your status?</string>
+
+    <!-- Data Usage Setting -->
+
+    <string name="wifi">Wifi</string>
+    <string name="cellular">Cellular</string>
+    <string name="photos">Photos</string>
+    <string name="audio">Audio</string>
+    <string name="video">Videos</string>
+
+
+    <!-- Schedule Reminder -->
+    <string name="appt_next_reminder_title">Upcoming Appointments</string>
+    <string name="appt_now">Happening Now!</string>
+    <string name="appt_in">Appointment in</string>
+    <string name="appt_minutes">Minutes</string>
+    <string name="appt_hour">Hour</string>
+    <string name="appt_hours">Hours</string>
+    <string name="appt_days">Days</string>
+    <string name="appt_week">Week</string>
+
+    <!-- Progress Dialog -->
+
+
+    <!-- [Jay] settings tab -->
+    <string name="settings_profile_img">Profile Image</string>
+    <string name="settings_contact_us">Contact Us</string>
+    <string name="settings_notifications">Notifications</string>
+    <string name="settings_qrreader">QR Reader</string>
+    <string name="settings_joined_grp">Retrieve Joined Groups</string>
+    <string name="settings_joined_grp_msg">Would you like to check for old groups and re-join
+        them\?</string>
+    <string name="settings_joined_grp_success">Successfully joined old groups</string>
+    <string name="chattab_Admin">Admin </string>
+
+
+    <!-- [Faiza] settings tab -->
+    <string name="settings_notification_setting">Notification Settings</string>
+    <string name="settings_data_usage"> Data Usage</string>
+    <string name="settings_edit_profile"> Edit Profile </string>
+    <string name="settings_SETTINGS">Settings </string>
+    <string name="settings_CONTACTS">Contact Us</string>
+    <string name="settings_about_US">About Us </string>
+    <string name="settings_retrieve_old_groups">Retrieve Groups</string>
+    <string name="settings_delete_acc">Delete Account</string>
+    <string name="delete_acc_msg">Are you sure you want to delete your Soapp Account? This action CANNOT
+    be un-done.</string>
+    <string name="delete_acc_msg2">Please select DELETE to confirm deletion of your Soapp account. ALL
+    of your chat and appointments will be deleted as well.</string>
+
+
+    <string name="chattab_gerald">Loo Jye Min</string>
+    <string name="chattab_time">10:00 am </string>
+    <string name="chattab_in_name">In Name </string>
+    <string name="chattab_Leave_Group">Leave Group </string>
+    <string name="chattab_view_all">View All</string>
+    <string name="chattab_Shared_Content">Shared Content</string>
+    <string name="chattab_started_by">with </string>
+    <string name="chattab_members">Members</string>
+    <string name="chattab_Group_Events">Group Events</string>
+    <string name="chattab_add_people">Add People</string>
+    <string name="chattab_common_grps">Common Groups</string>
+
+
+    <string name="chattab_Common_Events">Common Events</string>
+
+
+    <!-- my profile -->
+    <string name="edit">Edit</string>
+    <string name="profile_name_edit">Edit profile name</string>
+    <string name="updating_profile">Updating Profile</string>
+    <!-- about us -->
+    <string name="about_logo">Soapp Logo</string>
+    <string name="welcome1">Welcome to Soapp version</string>
+    <string name="welcome2">Thank you very much for downloading Soapp, We hope you enjoy using
+        it. If you face any issues with the app or simply wish to drop us a message, just use the
+        "contact us" button in the Soapp Settings tab to get to us. Otherwise, enjoy!</string>
+
+    <!--Share to friends-->
+    <string name="invite_friends">Invite Friends</string>
+    <string name="welcome">Welcome</string>
+    <string name="soapp_desc">So much better together</string>
+    <string name="welcome_msg">Thank you for downloading Soapp!</string>
+
+    <!--Contact Us-->
+    <string name="contact_email_title">Email (Optional):</string>
+    <string name="contact_email_placeholder">Enter Your Email</string>
+    <string name="contact_desc_title">Please describe the issue below:</string>
+    <string name="contact_desc_placeholder">Enter Description of Issue</string>
+    <string name="contact_us_sent_title">Feedback Sent</string>
+    <string name="contact_us_sent_msg">Thank you for your feedback!</string>
+
+    <!-- Notifications -->
+    <string name="settings_chat">Chat</string>
+    <string name="settings_in_app">In-app Message Tone</string>
+    <string name="settings_notification_switch">Push Notification</string>
+    <string name="settings_notification">Push Notification Tone</string>
+    <string name="settings_g_chat">Group Chat</string>
+    <string name="settings_appointment">Appointment Reminder</string>
+    <string name="settings_appointment_enable">Enable Notifications</string>
+    <string name="settings_reminder_alert">Reminder Alert</string>
+    <string name="qr_code_text">Tap or scan to add contact</string>
+
+    <!--End of SettingsTab -->
+
+    <!--Network Usage-->
+
+    <!--Custom Camera-->
+    <string name="img_preview">Image Preview</string>
+    <string name="video_preview">Video Preview</string>
+    <string name="action_rotate_anti_clockwise">Anti Clockwise</string>
+    <string name="action_rotate_clockwise">Clockwise</string>
+    <string name="action_crop">Crop</string>
+    <string name="action_save">Save</string>
+
+    <!--FoodFilter-->
+    <string name="filterandb">Filter F&amp;B</string>
+    <!--String for State Spinner-->
+
+    <!-- [jason] Custom String -->
+    <string name="calendar">Calendar</string>
+
+    <!-- Pattern for the v1 month and year string (localised) -->
+    <string name="mdtp_date_v1_monthyear">MMMM yyyy</string>
+    <!-- Pattern for the v2 day month and year string (localised) -->
+    <string name="mdtp_date_v2_daymonthyear">EEE, MMM dd</string>
+
+    <!-- Label for Date or time [CHAR LIMIT=30] -->
+    <!--
+         Content description for the hour selector in the time picker, which displays
+         selectable hours of the day along the inside edge of a circle, as in an analog clock.
+         [CHAR LIMIT=50]
+    -->
+    <!--
+         Content description for the minute selector in the time picker, which displays
+         selectable five-minute intervals along the inside edge of a circle, as in an analog clock.
+         [CHAR LIMIT=50]
+    -->
+    <!--
+         Content description for the second selector in the time picker, which displays
+         selectable five-second intervals along the inside edge of a circle, as in an analog clock.
+         [CHAR LIMIT=50]
+    -->
+    <!-- Accessibility announcement for hour circular picker [CHAR LIMIT=NONE] -->
+    <!-- Accessibility announcement for minute circular picker [CHAR LIMIT=NONE] -->
+    <!-- Accessibility announcement for second circular picker [CHAR LIMIT=NONE] -->
+
+    <!--
+        Content description for the month and day selector in the Date picker, which displays
+        a selectable grid of days laid out by month.
+        [CHAR LIMIT=50]
+     -->
+    <string name="mdtp_day_picker_description">Month grid of days</string>
+    <!--
+        Content description for the year selector in the Date picker, which displays
+        a scrolling, vertical list of years.
+        [CHAR LIMIT=50]
+    -->
+    <string name="mdtp_year_picker_description">Year list</string>
+    <!-- Accessibility announcement for the day picker [CHAR LIMIT=NONE] -->
+    <string name="mdtp_select_day">Select month and day</string>
+    <string name="select_date_time">Select Date and Time</string>
+    <!-- Accessibility announcement for the year picker [CHAR LIMIT=NONE] -->
+    <string name="mdtp_select_year">Select year</string>
+    <!-- Accessibility description for the item that is currently selected. -->
+    <string name="mdtp_item_is_selected"><xliff:g example="2013" id="item">%1$s</xliff:g> selected</string>
+    <!-- Accessibility announcement when a number that had been typed in is deleted [CHAR_LIMIT=NONE] -->
+
+    <!-- DO NOT TRANSLATE -->
+    <!-- DO NOT TRANSLATE -->
+
+    <!-- DO NOT TRANSLATE -->
+    <!-- DO NOT TRANSLATE -->
+    <string name="mdtp_sans_serif" translatable="false">sans-serif</string>
+
+    <!-- DO NOT TRANSLATE -->
+    <string name="mdtp_day_of_week_label_typeface" translatable="false">sans-serif</string>
+    <string name="mdtp_button_typeface" translatable="false">Roboto-Medium</string>
+
+
+    <string-array name="state_arrays">
+        <item>Please Select State</item>
+        <item>Kuala Lumpur (KL)</item>
+        <item>Selangor</item>
+        <item>Penang</item>
+        <item>Malacca</item>
+        <item>Perak</item>
+        <item>Johor</item>
+        <item>Kedah</item>
+        <item>Kelantan</item>
+        <item>Negeri Sembilan</item>
+        <item>Pahang</item>
+        <item>Perlis</item>
+        <item>Sabah</item>
+        <item>Sarawak</item>
+        <item>Terengganu</item>
+    </string-array>
+
+
+    <!--String For KL Locations Spinner-->
+
+    <string-array name="kl_location_arrays">
+        <item>Please select location</item>
+        <item>Ampang</item>
+        <item>Bangsar</item>
+        <item>Brickfields</item>
+        <item>Bukit Bintang</item>
+        <item>Bukit Damansara</item>
+        <item>Bukit Jalil</item>
+        <item>Bukit Petaling</item>
+        <item>Bukit Tunku</item>
+        <item>Cheras</item>
+        <item>Chow Kit</item>
+        <item>City Center (old)</item>
+        <item>Damansara Heights</item>
+        <item>Dang Wangi</item>
+        <item>Imbi</item>
+        <item>Jinjang" >Jinjang</item>
+        <item>Kampung Baru</item>
+        <item>Kepong</item>
+        <item>Kerinchi</item>
+        <item>Kuala Lumpur City Center</item>
+        <item>Kuchai Lama</item>
+        <item>Mont Kiara</item>
+        <item>OUG</item>
+        <item>Pekeliling</item>
+        <item>Pudu</item>
+        <item>Salak South</item>
+        <item>Segambut</item>
+        <item>Sentul</item>
+        <item>Seputeh</item>
+        <item>Solaris Dutamas</item>
+        <item>Sri Hartamas</item>
+        <item>Sri Petaling</item>
+        <item>Sungai Besi</item>
+        <item>Taman Tun Dr Ismail</item>
+        <item>Titiwangsa</item>
+    </string-array>
+
+    <!--String For Selangor Location Spinner-->
+
+    <string-array name="selangor_location_arrays">
+        <item>Please select location</item>
+        <item>Aman Suria</item>
+        <item>Ara Damansara</item>
+        <item>Bandar Baru Klang</item>
+        <item>Bandar Kinrara</item>
+        <item>Bandar Puncak Alam</item>
+        <item>Bandar Sunway</item>
+        <item>Bandar Utama</item>
+        <item>Bangi</item>
+        <item>Banting</item>
+        <item>Batang Kali</item>
+        <item>Batu Caves</item>
+        <item>Bukit Tinggi</item>
+        <item>Cyberjaya</item>
+        <item>Damansara Jaya</item>
+        <item>Damansara Perdana</item>
+        <item>Damansara Utama</item>
+        <item>Dengkil</item>
+        <item>Equine Park</item>
+        <item>Gombak</item>
+        <item>Jalan Universiti</item>
+        <item>Kajang</item>
+        <item>Kampung Sungai Kayu Ara</item>
+        <item>Kapar</item>
+        <item>Kelana Jaya</item>
+        <item>Klang</item>
+        <item>Kota Damansara (KD)</item>
+        <item>Kuala Selangor</item>
+        <item>Meru</item>
+        <item>Mines Resort City</item>
+        <item>Mutiara Damansara</item>
+        <item>Petaling Jaya (PJU)</item>
+        <item>Petaling Jaya (PJS)</item>
+        <item>Port Klang</item>
+        <item>Taman Kinrara</item>
+        <item>Puchong Bandar Puteri</item>
+        <item>Puchong Gateway</item>
+        <item>Puchong Jaya</item>
+        <item>Puchong Prima</item>
+        <item>Puchong Town Center</item>
+        <item>Puchong Utama</item>
+        <item>Putra Heights</item>
+        <item>Putrajaya</item>
+        <item>Rawang</item>
+        <item>Seksyen 14</item>
+        <item>Selayang</item>
+        <item>Semenyih</item>
+        <item>Sepang</item>
+        <item>Serdang</item>
+        <item>Serendah</item>
+        <item>Setapak</item>
+        <item>Shah Alam (Central)</item>
+        <item>Shah Alam (North)</item>
+        <item>Shah Alam (South)</item>
+        <item>Subang Jaya</item>
+        <item>Sungai Besar</item>
+        <item>Sungai Buloh</item>
+        <item>Sungai Chua</item>
+        <item>Sungai Long</item>
+        <item>Sungai Way</item>
+        <item>Sunway City</item>
+        <item>Tanjung Karang</item>
+        <item>Teluk Gong</item>
+        <item>Tropicana</item>
+        <item>USJ</item>
+
+    </string-array>
+
+    <!--String For Penang Location Spinner-->
+
+    <string-array name="penang_location_arrays">
+        <item>Air Itam</item>
+        <item>Balik Pulau</item>
+        <item>Batu Ferringhi</item>
+        <item>Batu Maung</item>
+        <item>Bayan Lepas</item>
+        <item>Bukit Mertajam</item>
+        <item>Bukit Tengah</item>
+        <item>Butterworth</item>
+        <item>Gelugor</item>
+        <item>George Town</item>
+        <item>Jelutong</item>
+        <item>Kepala Batas</item>
+        <item>Perai</item>
+        <item>Pulai</item>
+        <item>Simpang Ampat</item>
+        <item>Tanjung Bungah</item>
+        <item>Tanjung Tokong</item>
+        <item>Teluk Bahang</item>
+
+    </string-array>
+
+    <!--String For Malacca Location Spinner-->
+
+    <string-array name="malacca_location_arrays">
+        <item>Alor Gajah Town</item>
+        <item>Ayer Keroh</item>
+        <item>Bachang</item>
+        <item>Bandar Hilir</item>
+        <item>Batu Berendam</item>
+        <item>Bukit Baru</item>
+        <item>Durian Tunggal</item>
+        <item>Jasin Town</item>
+        <item>Kesibang</item>
+        <item>Kota Laksamana</item>
+        <item>Malacca Town</item>
+        <item>Masjid Tanah</item>
+        <item>Melaka Pindah</item>
+        <item>Merlimau</item>
+        <item>Paya Rumput</item>
+        <item>Sungai Udang</item>
+
+    </string-array>
+
+    <!--String For Perak Location Spinner-->
+
+    <string-array name="perak_location_arrays">
+        <item>Batu Gajah</item>
+        <item>Bercham</item>
+        <item>Bidor</item>
+        <item>Chemor</item>
+        <item>Gopeng</item>
+        <item>Gunung Rapat</item>
+        <item>Ipoh Town</item>
+        <item>Jelapang</item>
+        <item>Kampar</item>
+        <item>Kuala Kangsar</item>
+        <item>Manjung</item>
+        <item>Menglembu</item>
+        <item>Parit Buntar</item>
+        <item>Pulau Pangkor</item>
+        <item>Seri Iskandar</item>
+        <item>Simpang Pulai</item>
+        <item>Taiping</item>
+        <item>Tambun</item>
+        <item>Tanjung Malim</item>
+        <item>Tapah</item>
+        <item>Teluk Intan</item>
+
+    </string-array>
+
+    <!--String For Johor Location Spinner-->
+
+    <string-array name="johor_location_arrays">
+        <item>Ayer Hitam</item>
+        <item>Bandar Baru Uda</item>
+        <item>Batu Pahat</item>
+        <item>Bukit Indah</item>
+        <item>Danga Bay</item>
+        <item>Gelang Patah</item>
+        <item>Johor Bahru Town</item>
+        <item>Kempas</item>
+        <item>Kluang Town</item>
+        <item>Kota Tinggi town</item>
+        <item>Kulai</item>
+        <item>Larkin</item>
+        <item>Masai</item>
+        <item>Mersing Town</item>
+        <item>Muar town</item>
+        <item>Pandan</item>
+        <item>Pekan Nanas</item>
+        <item>Pontian Town</item>
+        <item>Segamat</item>
+        <item>Senai</item>
+        <item>Skudai</item>
+        <item>Tampoi</item>
+        <item>Tebrau</item>
+        <item>Ulu Tiram</item>
+        <item>Yong Peng</item>
+    </string-array>
+
+    <!--String For Kedah Location Spinner-->
+
+    <string-array name="kedah_location_arrays">
+        <item>Alor Setar</item>
+        <item>Bedong</item>
+        <item>Bukit Kayu Hitam</item>
+        <item>Changloon</item>
+        <item>Gurun</item>
+        <item>Jitra</item>
+        <item>Kota Sarang Semut</item>
+        <item>Kuala Kedah</item>
+        <item>Kulim</item>
+        <item>Langkawi</item>
+        <item>Lunas</item>
+        <item>Sungai Petani</item>
+        <item>Yan</item>
+    </string-array>
+
+    <!--String For Kelantan Location Spinner-->
+
+    <string-array name="kelantan_location_arrays">
+        <item>Besut</item>
+        <item>Ketereh</item>
+        <item>Kota Bharu (KB)</item>
+        <item>Machang</item>
+        <item>Tanah Merah</item>
+    </string-array>
+
+    <!--String For Negeri Sembilan Location Spinner-->
+
+    <string-array name="negerisembilan_location_arrays">
+        <item>Bahau</item>
+        <item>Bandar Baru Nilai</item>
+        <item>Bandar Seremban Selatan</item>
+        <item>Gemas</item>
+        <item>Jalan Pantai</item>
+        <item>Kuala Pilah Town</item>
+        <item>Labu</item>
+        <item>Lenggeng</item>
+        <item>Lobak</item>
+        <item>Mantin</item>
+        <item>Nilai</item>
+        <item>Paroi</item>
+        <item>Pedas</item>
+        <item>Rahang</item>
+        <item>Rasah Jaya</item>
+        <item>Rasah Kemayan</item>
+        <item>Rembau Town</item>
+        <item>Senawang</item>
+        <item>Seremban</item>
+        <item>Seremban 2</item>
+        <item>Sikamat</item>
+        <item>Tampin</item>
+        <item>Tampin Town</item>
+        <item>Tanjung Gemuk</item>
+        <item>Teluk Kemang</item>
+        <item>Titi</item>
+    </string-array>
+
+    <!--String For Pahang Location Spinner-->
+
+    <string-array name="pahang_location_arrays">
+        <item>Bentong</item>
+        <item>Cameron Highlands</item>
+        <item>Cherating</item>
+        <item>Genting Highlands</item>
+        <item>Kuantan</item>
+        <item>Raub</item>
+        <item>Temerloh</item>
+    </string-array>
+
+    <!--String For Perlis Location Spinner-->
+
+    <string-array name="perlis_location_arrays">
+        <item>Arau</item>
+        <item>Kangar</item>
+        <item>Kuala Perlis</item>
+        <item>Padang Besar</item>
+    </string-array>
+
+    <!--String For Sabah Location Spinner-->
+
+    <string-array name="sabah_location_arrays">
+        <item>Kota Kinabalu (KK)</item>
+        <item>Labuan Town</item>
+        <item>Lahad Datu</item>
+        <item>Papar</item>
+        <item>Penampang</item>
+        <item>Sandakan</item>
+        <item>Semporna</item>
+        <item>Tawau</item>
+    </string-array>
+
+    <!--String For Sarawak Location Spinner-->
+
+    <string-array name="sarawak_location_arrays">
+        <item>Bau</item>
+        <item>Betong</item>
+        <item>Bintulu</item>
+        <item>Kuching</item>
+        <item>Miri</item>
+        <item>Miri Division</item>
+        <item>Sarikei</item>
+        <item>Serian</item>
+        <item>Sibu</item>
+        <item>Sri Aman</item>
+    </string-array>
+
+    <!--String For Terengganu Location Spinner-->
+
+    <string-array name="terengganu_location_arrays">
+        <item>Cukai</item>
+        <item>Dungun</item>
+        <item>Gong Badak</item>
+        <item>Hulu Terengganu</item>
+        <item>Kemaman</item>
+        <item>Kemasik</item>
+        <item>Kijal</item>
+        <item>Kuala Berang</item>
+        <item>Kuala Terengganu (KT)</item>
+        <item>Marang</item>
+        <item>Setiu</item>
+    </string-array>
+
+    <!--String for Cuisines-->
+
+    <string-array name="cuisine_arrays">
+        <item>Please select a cuisine</item>
+        <item>Asian</item>
+        <item>Bak Kut Teh</item>
+        <item>Bakery / Cake / Kuih</item>
+        <item>Banana Leaf</item>
+        <item>Bar &amp; Pub</item>
+        <item>BBQ</item>
+        <item>Buffet</item>
+        <item>Burgers / Sandwiches</item>
+        <item>Café</item>
+        <item>Chinese</item>
+        <item>Desserts</item>
+        <item>Dim sum</item>
+        <item>Drinks/Juices &amp; Smoothies</item>
+        <item>European</item>
+        <item>Fast Food</item>
+        <item>Fine Dining</item>
+        <item>Food court</item>
+        <item>French</item>
+        <item>Fruit</item>
+        <item>Fusion</item>
+        <item>German</item>
+        <item>Hong Kong</item>
+        <item>Hotel Dining</item>
+        <item>Ice Cream / Froyo</item>
+        <item>Indian</item>
+        <item>Indonesian</item>
+        <item>Irish</item>
+        <item>Italian</item>
+        <item>Japanese</item>
+        <item>Kopitiam</item>
+        <item>Korean</item>
+        <item>Malay</item>
+        <item>Malaysian</item>
+        <item>Mexican</item>
+        <item>Middle Eastern</item>
+        <item>Mixed rice</item>
+        <item>Multi-national</item>
+        <item>Nasi Lemak</item>
+        <item>Noodles</item>
+        <item>Pizza/Pasta</item>
+        <item>Porridge</item>
+        <item>Ramen/Udon/Soba</item>
+        <item>Restaurant</item>
+        <item>Salad</item>
+        <item>Seafood</item>
+        <item>Singaporean</item>
+        <item>Stall / Warung</item>
+        <item>Steaks / Chops</item>
+        <item>Steamboat</item>
+        <item>Sweets/Snack</item>
+        <item>Taiwanese</item>
+        <item>Thai</item>
+        <item>Turkish</item>
+        <item>Vegetarian</item>
+        <item>Vietnamese</item>
+        <item>Western</item>
+        <item>Yong Tau Fu</item>
+
+    </string-array>
+
+    <!-- [Gallery Media] jason -->
+    <string name="camera">Camera</string>
+    <string name="select_media">Select Media</string>
+    <!-- [string for Business Hours] -->
+
+
+    <string-array name="BussH_Spinner_arrays">
+                  
+        <item>12:30AM</item> 
+        <item>01:00AM</item>
+        <item>01:30AM</item> 
+        <item>02:00AM</item> 
+        <item>02:30AM</item> 
+        <item>03:00AM</item> 
+        <item>03:30AM</item>
+        <item>04:00AM</item> 
+        <item>04:30AM</item> 
+        <item>05:00AM</item> 
+        <item>05:30AM</item> 
+        <item>06:00AM</item>
+        <item>06:30AM</item>
+        <item>07:00AM</item> 
+        <item>07:30AM</item> 
+        <item>08:00AM</item> 
+        <item>08:30AM</item> 
+        <item>09:00AM</item> 
+        <item>09:30AM</item> 
+        <item>10:00AM</item> 
+        <item>10:30AM</item>  
+        <item>11:00AM</item>  
+        <item>11:30AM</item> 
+        <item>12:00PM</item>
+        <item>12:30PM</item> 
+        <item>12:30PM</item> 
+        <item>01:00PM</item> 
+        <item>01:30PM</item>
+        <item>02:00PM</item>  
+        <item>02:30PM</item> 
+        <item>03:00PM</item> 
+        <item>03:30PM</item>  
+        <item>04:00PM</item> 
+        <item>04:30PM</item> 
+        <item>05:00PM</item> 
+        <item>05:30PM</item>
+        <item>06:00PM</item>
+        <item>06:30PM</item> 
+        <item>07:00PM</item> 
+        <item>07:30PM</item>
+        <item>08:00PM</item> 
+        <item>08:30PM</item> 
+        <item>09:00PM</item> 
+        <item>09:30PM</item> 
+        <item>10:00PM</item> 
+        <item>10:30PM</item> 
+        <item>11:00PM</item> 
+        <item>11:30PM</item> 
+        <item>Closed</item>
+
+    </string-array>
+
+
+    <!--<!—Suggest edit from hardcode to softcode >-->
+    <string name="confirmkey">Confirm</string>
+    <string name="Restaurant_Information">Restaurant Information</string>
+    <string name="Description">Description</string>
+    <string name="Name">Name</string>
+    <string name="Main_cuisine">Main cuisine</string>
+    <string name="Cuisine_2">Cuisine 2</string>
+    <string name="Cuisine_3">Cuisine 3</string>
+    <string name="Price">Price</string>
+    <string name="address">Mall</string>
+    <string name="Alcohol">Alcohol</string>
+    <string name="Phone_number">Phone number</string>
+    <string name="Wifi">Wifi</string>
+    <string name="Outdoor">Outdoor</string>
+    <string name="Halal">Halal</string>
+    <string name="Operating_Hours">Operating Hours</string>
+    <string name="Monday">Monday</string>
+    <string name="Tuesday">Tuesday</string>
+    <string name="Wednesday">Wednesday</string>
+    <string name="Thursday">Thursday</string>
+    <string name="Friday">Friday</string>
+    <string name="Saturday">Saturday</string>
+    <string name="Sunday">Sunday</string>
+    <string name="location">location</string>
+    <string name="ConfirmEdit">Confirm</string>
+    <string name="hintfortestingforautocomplete_etxt"> Search Mall name here </string>
+
+    <string-array name="Price_list">
+        <item>Please select a price</item>
+        <item>RM10 and below </item>
+        <item>RM11 - RM20</item>
+        <item>RM21 - RM40</item>
+        <item>RM41 - RM80 </item>
+        <item>RM81 - RM150</item>
+        <item>Above RM150</item>
+    </string-array>
+
+
+    <!--autocompletetextview mall lists-->
+
+    <string-array name="malllists">
+        <item>Mont Kiara</item>
+        <item>Shamelin Shopping Mall</item>
+        <item>EON AU2</item>
+        <item>AEON Metro Prima Shopping Centre</item>,
+        <item>Low Yat Plaza </item>
+        <item>Petaling Jaya</item>
+        <item>1 Utama</item>
+        <item>3 Two Square</item>
+        <item>AmCorp Mall</item>
+        <item>Ativo Plaza</item>
+        <item>Atria Shopping Gallery </item>
+        <item>Centrepoint Bandar Utama</item>
+        <item>Citta Mall</item>,
+        <item>Digital Mall</item>
+        <item>Empire Damansara</item>
+        <item>Encorp Strand Mall</item>,
+        <item>Evolve Concept Mall</item>
+        <item>IPC Shopping Centre</item>
+        <item>Jaya Shopping Centre</item>
+        <item>Jaya One</item>
+        <item>Kelana Mall</item>,
+        <item>Paradigm Mall</item>
+        <item>Pacific Star</item>
+        <item>Perdana Shopping Centre</item>
+        <item>Sunway Giza Mall</item>
+        <item>The Curve</item>
+        <item>The Starling</item>
+        <item>Tropicana City Mall</item>
+        <item>AEON Big Subang Jaya</item>
+        <item>Da Men Mall</item>,
+        <item>Empire Shopping Gallery</item>
+        <item>Giant USJ Shopping Centre</item>
+        <item>Main Place Mall</item>
+        <item>SS15 Courtyard</item>
+        <item>Subang Parade</item>
+        <item>Subang Square</item>
+        <item>Sunway Pyramid</item>
+        <item>The Summit USJ</item>
+        <item>The 19 USJ City Mall</item>
+        <item>Ampang</item>,
+        <item>Ampang Point</item>
+        <item>KiP Mall</item>
+        <item>Bangi Gateway</item>
+        <item>Cyberjaya</item>
+        <item>Centrus Mall</item>
+        <item>DPULZE Shopping Centre</item>
+        <item>Kajang</item>
+        <item>Metro Point Complex</item>
+        <item>Plaza Metro Kajang</item>
+        <item>Klang</item>
+        <item>AEON Bukit Raja Shopping Centre</item>
+        <item>AEON Bukit Tinggi Shopping Centre</item>
+        <item>Centro Mall</item>
+        <item>Klang Parade</item>
+        <item>Shaw Centrepoint</item>
+        <item>Puchong","8 Kinrara</item>
+        <item>IOI Mall</item>
+        <item>M Square </item>
+        <item>Millenia Mall</item>
+        <item>SetiaWalk Mall</item>
+        <item>Tesco Extra</item>
+        <item>Alamanda Shopping Centre</item>
+        <item>IOI City Mall</item>
+        <item>AEON Rawang Shopping Mall</item>
+        <item>Selayang StarCity Mall</item>
+        <item>Selayang Mall</item>
+        <item>Mitsui Outlet Park KLIA</item>
+        <item>AEON Cheras Selatan Shopping Centre</item>
+        <item>AEON Taman Equine Shopping Centre</item>
+        <item>Amerin Mall</item>
+        <item>Mines Resort City</item>
+        <item>South City Plaza</item>
+        <item>SACC Mall Shah Alam</item>
+        <item>Kompleks PKNS Shah Alam</item>
+        <item>Anggerik Mall</item>
+        <item>AEON Mall Shah Alam</item>
+        <item>Gamuda Walk</item>
+        <item>Plaza Shah Alam</item>
+        <item>Plaza Alam Sentral</item>
+        <item>Setia City Mall</item>
+        <item>Star Avenue lifestyle Mall</item>
+        <item>Space U8 Mall</item>
+        <item>Batu Pahat Mall</item>
+        <item>AEON Bukit Indah Shopping Centre</item>,
+        <item>Angsana Johor Bahru Mall</item>
+        <item>Danga City Mall</item>
+        <item>Johor Bahru City Square</item>
+        <item>Komtar JBCC</item>
+        <item>KSL City</item>
+        <item>Johor Premium Outlets</item>
+        <item>Aman Central</item>
+        <item>Alor Setar MalL</item>
+        <item>City Plaza Alor Setar</item>
+        <item>Star Parade</item>
+        <item>Sentosa Plaza</item>
+        <item>AEON Bandaraya Melaka</item>
+        <item>Dataran Pahlawan</item>
+        <item>Malacca Megamall</item>
+        <item>Mahkota Parade</item>
+        <item>Melaka Mall</item>
+        <item> Soon Seng Plaza</item>
+        <item>The Shore Shopping Centre</item>
+        <item>Terminal One Mall</item>
+        <item>Era Square</item>
+        <item>Palm Mall</item>
+        <item>Terminal Two</item>
+        <item>Angsana Mall Ampangan</item>
+        <item>Seremban Gateaway</item>
+        <item>Plaza Mara</item>
+        <item>KM Plaza</item>
+        <item>Seremban Prima</item>
+        <item>Seremban Centerpoint</item>
+        <item>AEON Seremban 2</item>
+        <item>S2 Mall</item>
+        <item>First World Plaza</item>,
+        <item>Berjaya Megamall</item>
+        <item>East Coast Mall</item>
+        <item>Star Mall</item>
+        <item>1st Avenue MalL</item>
+        <item>Gurney Paragon</item>
+        <item>Gurney Plaza</item>
+        <item>"Penang Times Square</item>
+        <item>Prangin Mall</item>
+        <item>Komtar</item>
+        <item>Queensbay Mall</item>
+        <item>Straits Quay</item>
+        <item>Seberang Perai</item>
+        <item>Sunway Carnival Mall</item>
+        <item>Design Village MalL</item>
+        <item>Prai Megamall</item>
+        <item>GEM MalL</item>
+        <item>Ipoh Parade</item>
+        <item>Aeon Mall Kinta City</item>
+        <item>Aeon Mall Ipoh Station 18</item>
+        <item>MYDIN Mall Meru Raya</item>
+        <item>Aeon Midtown Falim Shopping Centre</item>
+        <item>Aeon Mall Taiping</item>
+        <item>Taiping Sentral MalL</item>
+        <item>Kerian Sentral MalL</item>
+        <item>MYDIN Mall Parit BuntaR</item>
+        <item>Aeon Mall Ipoh</item>
+        <item>AeonMallSeri,Manjung</item>
+        <item>Giant</item>
+        <item>Mydin Mall</item>
+        <item>Paya Bunga Square</item>
+        <item>Mesra Mall</item>
+        <item>Casa Limbong</item>
+        <item>1Borneo Hypermall</item>
+        <item>Aeropod</item>
+        <item>Centre Point</item>
+        <item>Imago KK Times Square</item>
+        <item>Jesselton Quay</item>
+        <item>Jesselton Residences",</item>
+        <item>Karamunsing Complex</item>
+        <item>Mega Long Mall</item>
+        <item>Oceanus Waterfront Mall</item>
+        <item>Plaza Shell</item>
+        <item>Suria Sabah</item>
+        <item>Wisma Merdeka</item>
+        <item>Harbour Mall Sandakan</item>
+        <item>Wisma Sanyan</item>
+        <item>CityOne Megamall</item>
+        <item>The Spring Shopping Mall</item>
+        <item>Vivacity Megamall</item>
+        <item>Times Square Megamall</item>
+        <item>Boulevard Shopping Mall</item>
+
+
+    </string-array>
+
+    <!--calendar-->
+
+    <!--Tutorial-->
+    <string name="tuto_profile_text">Scan QR code to add more friends.</string>
+    <string name="tuto_chat_text">Chat, share photos and videos to your friends.</string>
+    <string name="tuto_food_text">Search popular restaurants to dine in.</string>
+    <string name="tuto_schedule_text">Create an appointment in the scheduler.</string>
+    <string name="tuto_schedule2_text">Check real time response from your friend.</string>
+
+    <!--Reward-->
+    <string name="reward_title">REWARDS</string>
+    <string name="claimed">Claimed</string>
+    <string name="reward_loading">Loading Rewards</string>
+    <string name="reward_terms">TERMS AND CONDITIONS</string>
+    <string name="reward_res_voucher">RESTAURANT VOUCHER</string>
+
+    <!--my reward activity-->
+    <string name="reward_desc">Invite two friends into Soapp and get a free *Softsrve Ice-cream! </string>
+    <string name="reward_desc_claimed">Please click on \"My Reward List\" to check and redeem your claimed rewards</string>
+    <string name="redeem_voucher">Redeem Voucher</string>
+    <string name="redeem_voucher_msg">Are you sure you want to redeem this voucher?</string>
+    <string name="delete_voucher">Delete Voucher</string>
+    <string name="delete_voucher_msg">Are you sure you want to delete this voucher? You won\'t be able
+        to redeem or claim this reward again.</string>
+    <string name="delete_voucher_success">The voucher has been successfully deleted</string>
+
+</resources>
+
+

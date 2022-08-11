@@ -1,0 +1,156 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey3">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_wth_statusbar"
+        android:background="@color/grey2"
+        android:elevation="9dp"
+        android:fitsSystemWindows="true"
+        android:minHeight="@dimen/toolbar_wth_statusbar"
+        android:textAlignment="center"
+        android:theme="@style/toolbarBackBtnBlack"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/toolbar_wth_statusbar"
+            android:fontFamily="@font/quicksand_bold"
+            android:gravity="center"
+            android:text="@string/settings"
+            android:textAppearance="@style/quicksand_bold"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/notificationCard"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="-40dp"
+            app:cardBackgroundColor="@color/grey5"
+            app:cardCornerRadius="40dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/rl_cardview_noticationsettings"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="40dp"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center_vertical"
+                android:paddingStart="30dp"
+                android:text="@string/settings_notification_setting"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/dataCard"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="-40dp"
+            android:layout_marginBottom="30dp"
+            app:cardBackgroundColor="@color/primaryLight2"
+            app:cardCornerRadius="37dp"
+            app:cardElevation="3dp"
+            app:layout_constraintTop_toTopOf="@+id/notificationCard">
+
+            <TextView
+                android:id="@+id/cardview_dataandusage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="40dp"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center_vertical"
+                android:paddingStart="30dp"
+                android:text="@string/settings_data_usage"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!--retrieve grps-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/retrieveCard"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="-40dp"
+            app:cardBackgroundColor="@color/grey2"
+            app:cardCornerRadius="37dp"
+            app:cardElevation="2dp"
+            app:layout_constraintTop_toTopOf="@+id/dataCard">
+
+
+            <TextView
+                android:id="@+id/cardview_retrieveoldgroup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="40dp"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center_vertical"
+                android:paddingStart="30dp"
+                android:text="@string/settings_retrieve_old_groups"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!--devOpt: delete account-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/delete_card"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginStart="180dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="-40dp"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/primaryLight1"
+            app:cardCornerRadius="37dp"
+            app:cardElevation="1dp"
+            app:layout_constraintTop_toTopOf="@+id/retrieveCard">
+
+
+            <TextView
+                android:id="@+id/cardview_delete_acc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="40dp"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center_vertical"
+                android:paddingStart="30dp"
+                android:text="@string/settings_delete_acc"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

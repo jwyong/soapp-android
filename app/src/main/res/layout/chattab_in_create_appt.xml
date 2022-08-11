@@ -1,0 +1,242 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--text for if no apptID-->
+    <TextView
+        android:id="@+id/chat_log_appt_status_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingStart="30dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="5dp"
+        android:text="@string/appt_created"
+        android:textColor="@color/grey9"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <!--guideline-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_ver_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/gl_ver_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/chat_log_bubble_cl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey2">
+
+            <!--foreground-->
+            <View
+                android:id="@+id/chat_log_black_fore"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/black9a"
+                android:translationZ="1dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--appt img-->
+            <ImageView
+                android:id="@+id/chat_log_appt_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ly_create_appt_694px" />
+
+            <!--going btn-->
+            <ImageView
+                android:id="@+id/chat_going_btn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_resbooking_goingbtn_150px"
+                android:translationZ="@dimen/_1sdp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--not going btn-->
+            <ImageView
+                android:id="@+id/chat_not_going_btn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="5dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_resbooking_notgoingbtn_150px"
+                android:translationZ="@dimen/_1sdp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chat_going_btn" />
+
+            <!--date ll-->
+            <LinearLayout
+                android:id="@+id/chat_log_appt_date_cl"
+                android:layout_width="50dp"
+                android:layout_height="0dp"
+                android:background="@color/grey4"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/time_appt"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chat_log_appt_img">
+
+                <TextView
+                    android:id="@+id/chat_log_appt_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/chat_log_appt_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MAR"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!--appt title-->
+            <TextView
+                android:id="@+id/chat_log_appt_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Appointment "
+                android:textColor="@color/primaryDark4"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/chat_log_appt_date_cl"
+                app:layout_constraintTop_toTopOf="@id/chat_log_appt_date_cl" />
+
+            <!--time icon-->
+            <ImageView
+                android:id="@+id/time_appt"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_time_full_grey_100px"
+
+                app:layout_constraintEnd_toStartOf="@id/chat_log_appt_time"
+                app:layout_constraintStart_toEndOf="@id/chat_log_appt_date_cl"
+                app:layout_constraintTop_toBottomOf="@id/chat_log_appt_title" />
+
+            <!--time label-->
+            <TextView
+                android:id="@+id/chat_log_appt_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="11:00 - 12:00"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toStartOf="@id/location_icon"
+                app:layout_constraintStart_toEndOf="@id/time_appt"
+                app:layout_constraintTop_toBottomOf="@id/chat_log_appt_title" />
+
+            <!--location icon-->
+            <ImageView
+                android:id="@+id/location_icon"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_location_full_grey_100px"
+                app:layout_constraintEnd_toStartOf="@id/chat_log_appt_loc"
+                app:layout_constraintStart_toEndOf="@id/chat_log_appt_time"
+                app:layout_constraintTop_toBottomOf="@id/chat_log_appt_title" />
+
+            <!--location label-->
+            <TextView
+                android:id="@+id/chat_log_appt_loc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Soapp Cafe"
+                android:textSize="10sp"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/location_icon"
+                app:layout_constraintTop_toBottomOf="@id/chat_log_appt_title" />
+
+            <!--timer symbol for offline msges-->
+            <ImageView
+                android:id="@+id/chat_log_offline_waiting"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginEnd="3dp"
+                android:src="@drawable/ic_offline_timer"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/chat_log_time"
+                app:layout_constraintEnd_toStartOf="@id/chat_log_time"
+                app:layout_constraintTop_toTopOf="@id/chat_log_time" />
+
+            <!--time of msg-->
+            <TextView
+                android:id="@+id/chat_log_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/chattab_time"
+                android:textColor="@color/grey8"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chat_log_appt_loc"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

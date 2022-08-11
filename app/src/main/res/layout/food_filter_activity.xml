@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal">
+    <!--ToolbarForClear-->
+
+
+    <!--<androidx.appcompat.widget.Toolbar-->
+    <!--android:id="@+id/toolbar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="44dp"-->
+    <!--android:background="@color/primaryDark4"-->
+    <!--android:elevation="9dp"-->
+    <!--android:textAlignment="center"-->
+    <!--android:theme="@style/toolbarBackBtn"-->
+    <!--app:contentInsetLeft="0dp"-->
+    <!--app:contentInsetStart="0dp"-->
+    <!--app:contentInsetStartWithNavigation="0dp"-->
+    <!--&gt;-->
+    <!---->
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_wth_statusbar"
+        android:minHeight="@dimen/toolbar_wth_statusbar"
+        android:theme="@style/toolbarBackBtnWhite"
+        android:background="@color/primaryDark2"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp">
+
+        <ImageButton
+            android:id="@+id/sort_clear"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/chatroom"
+            android:cropToPadding="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_dustbin_white_100px"
+            android:tint="@color/white" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <LinearLayout
+        android:id="@+id/cuisinearea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center">
+
+        <Spinner
+            android:id="@+id/spinnercuisine"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/xml_roundcorner_apptheme"
+            android:entries="@array/cuisine_arrays"
+            android:gravity="center_horizontal"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/advance_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cuisinearea"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp">
+
+        <Switch
+            android:id="@+id/switch_advance_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/advanced_search" />
+
+    </LinearLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/filter_confirm"
+        android:layout_below="@+id/advance_search"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/filter_confirm"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/xml_roundcorner_primarylogo"
+        android:text="@string/confirm"
+        android:textColor="@color/white" />
+
+
+</RelativeLayout>

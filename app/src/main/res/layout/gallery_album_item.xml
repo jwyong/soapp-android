@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_marginLeft="0.5dp"
+    android:layout_marginRight="0.5dp">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:src="@drawable/default_img_400" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif"
+        android:text="folder name"
+        android:textSize="14dp" />
+
+</RelativeLayout>

@@ -1,0 +1,25 @@
+//plugins {
+//    id "com.jfrog.bintray" version "1.7.1"
+//}
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 21
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation "androidx.legacy:legacy-support-v4:$supportLibVersion"
+    implementation "androidx.annotation:annotation:$supportLibVersion"
+    implementation "androidx.appcompat:appcompat:$supportLibVersion"
+    implementation "com.google.android.material:material:$supportLibVersion"
+}
+
+apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
+// apply from: 'bintray.gradle'

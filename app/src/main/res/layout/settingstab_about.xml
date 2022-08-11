@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_wth_statusbar"
+        android:minHeight="@dimen/toolbar_wth_statusbar"
+        android:background="@color/grey2"
+        android:elevation="9dp"
+        android:fitsSystemWindows="true"
+        android:textAlignment="center"
+        android:theme="@style/toolbarBackBtnBlack"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/toolbar_wth_statusbar"
+            android:gravity="center"
+            android:text="@string/settings_about_US"
+            android:fontFamily="@font/quicksand_bold"
+            android:textAppearance="@style/quicksand_bold"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/img_soapp_logo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintDimensionRatio="h, 1:0.5"
+        android:contentDescription="@string/about_logo"
+        android:src="@drawable/ic_logo_soapp_800px"
+        app:layout_constraintBottom_toTopOf="@id/text_view_version_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/text_view_version_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_marginTop="15dp"
+        android:text="Soapp version 1.0.0."
+        android:textAlignment="center"
+        android:textColor="@color/primaryDark4"
+        android:textSize="14sp"
+        android:fontFamily="@font/quicksand_bold"
+        android:textAppearance="@style/quicksand_bold"
+        app:layout_constraintBottom_toTopOf="@id/guideline1"
+        app:layout_constraintTop_toBottomOf="@id/img_soapp_logo" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <TextView
+        android:id="@+id/terms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome2"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:fontFamily="@font/quicksand_bold"
+        android:textAppearance="@style/quicksand_bold"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/primaryDark4"
+        app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:layout_constraintTop_toBottomOf="@id/guideline1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <!--<TextView-->
+        <!--android:id="@+id/reachusat"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="25dp"-->
+        <!--android:text="@string/reachus"-->
+        <!--android:textAlignment="center"-->
+        <!--android:layout_marginBottom="15dp"-->
+        <!--android:textSize="16sp"-->
+        <!--app:layout_constraintVertical_chainStyle="packed"-->
+        <!--app:layout_constraintBottom_toTopOf="@id/btn_fb"-->
+        <!--app:layout_constraintTop_toBottomOf="@id/guideline2" />-->
+
+    <ImageView
+        android:id="@+id/btn_fb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:shadowColor="@color/white"
+        android:src="@drawable/ic_fb_icon150"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_insta"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintVertical_bias="0.4" />
+
+
+    <ImageView
+        android:id="@+id/btn_tw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:shadowColor="@color/white"
+        android:src="@drawable/ic_twitter_150px"
+        app:layout_constraintBottom_toBottomOf="@id/btn_insta"
+        app:layout_constraintEnd_toStartOf="@id/btn_web"
+        app:layout_constraintStart_toEndOf="@id/btn_insta" />
+
+    <ImageView
+        android:id="@+id/btn_insta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:shadowColor="@color/white"
+        android:src="@drawable/ic_ig_icon150"
+        app:layout_constraintBottom_toBottomOf="@id/btn_fb"
+        app:layout_constraintEnd_toStartOf="@id/btn_tw"
+        app:layout_constraintStart_toEndOf="@id/btn_fb" />
+
+
+    <ImageView
+        android:id="@+id/btn_web"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/ic_web_icon150"
+        android:shadowColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/btn_tw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_tw" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
